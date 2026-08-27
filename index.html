@@ -3,137 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JAMTARIS - Privacy-First Small Business Tools</title>
-    <!-- Tailwind CSS (Fixed CDN to load properly) -->
-    <script src="https://jsdelivr.net"></script>
-    <!-- Google Fonts for Premium Look -->
-    <link rel="preconnect" href="https://googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- FontAwesome for Modern Icons -->
+    <title>JAMTARIS - Premium Small Business Tools</title>
+    
+    <!-- Ultra-Fast CSS Engine Injection -->
     <link rel="stylesheet" href="https://cloudflare.com">
     
     <style>
-        body { 
-            font-family: 'Plus Jakarta Sans', sans-serif; 
-            background-color: #f8fafc;
+        /* ⚡ SPEED OPTIMIZED CUSTOM CORE STYLES */
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --accent-amber: #f59e0b;
+            --accent-emerald: #10b981;
+            --accent-red: #ef4444;
+            --slate-900: #0f172a;
+            --slate-600: #475569;
+            --slate-100: #f1f5f9;
         }
-        /* Glassmorphism Navigation Effect */
-        .glass-nav {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-        }
-        /* Soft Premium Shadow for Cards */
-        .premium-card {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .premium-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 20px 25px -5px rgba(59, 130, 246, 0.1), 0 10px 10px -5px rgba(59, 130, 246, 0.04);
-        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: system-ui, -apple-system, sans-serif; background-color: #f8fafc; color: var(--slate-900); line-height: 1.5; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        
+        /* HEADER & NAVIGATION */
+        header { position: sticky; top: 0; background: rgba(255,255,255,0.9); backdrop-filter: blur(10px); border-b: 1px solid var(--slate-100); z-index: 100; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+        .nav-container { display: flex; align-items: center; justify-content: space-between; height: 75px; }
+        .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; font-size: 24px; font-weight: 800; color: var(--primary); tracking-wider; }
+        .logo-box { background: linear-gradient(135deg, #3b82f6, #1d4ed8); width: 40px; height: 40px; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; }
+        .nav-links { display: flex; gap: 30px; }
+        .nav-links a { text-decoration: none; color: var(--slate-600); font-weight: 600; font-size: 15px; transition: 0.2s; }
+        .nav-links a:hover { color: var(--primary); }
+        .btn-header { background: var(--primary); color: white; padding: 10px 20px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 14px; box-shadow: 0 4px 6px -1px rgba(37,99,235,0.2); }
+        
+        /* HERO SECTION */
+        .hero { padding: 80px 0; display: flex; flex-direction: column; md-flex-direction: row; gap: 40px; align-items: center; }
+        .hero-left { flex: 1; text-align: center; }
+        @media(min-width: 768px) { .hero { flex-direction: row; text-align: left; } .hero-left { text-align: left; } }
+        .badge { display: inline-flex; align-items: center; gap: 6px; background: #eff6ff; border: 1px solid #bfdbfe; color: #1e40af; padding: 6px 16px; border-radius: 9999px; font-size: 12px; font-weight: 700; margin-bottom: 20px; text-transform: uppercase; }
+        .hero-title { font-size: 42px; font-weight: 800; line-height: 1.2; margin-bottom: 20px; color: #1e293b; }
+        .hero-title span { background: linear-gradient(to right, #2563eb, #4f46e5); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero-desc { font-size: 17px; color: var(--slate-600); margin-bottom: 30px; font-weight: 500; }
+        .btn-hero { background: var(--slate-900); color: white; padding: 16px 32px; border-radius: 12px; text-decoration: none; font-weight: 700; box-shadow: 0 10px 15px -3px rgba(15,23,42,0.2); transition: 0.2s; }
+        .btn-hero:hover { transform: translateY(-2px); }
+        
+        /* ATTRACTIVE LIVE APP PREVIEW CARD */
+        .hero-right { flex: 1; width: 100%; }
+        .preview-card { background: linear-gradient(135deg, #2563eb, #4f46e5); padding: 40px; border-radius: 24px; color: white; box-shadow: 0 20px 25px -5px rgba(37,99,235,0.2); position: relative; overflow: hidden; min-h: 280px; display: flex; flex-direction: column; justify-content: space-between; }
+        .preview-badge { background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 6px; font-size: 12px; font-weight: 700; display: inline-block; width: max-content; }
+        .preview-title { font-size: 24px; font-weight: 700; margin-top: 15px; margin-bottom: 10px; }
+        .preview-desc { font-size: 14px; color: #dbeafe; }
+        .status-box { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); padding: 15px; border-radius: 16px; margin-top: 25px; display: flex; justify-content: space-between; align-items: center; }
+        .status-left { display: flex; align-items: center; gap: 10px; }
+        .status-dot { width: 10px; height: 10px; background: #34d399; border-radius: 50%; box-shadow: 0 0 8px #34d399; }
+        
+        /* THREE FEATURES ROW */
+        .features-row { background: white; border-top: 1px solid var(--slate-100); border-bottom: 1px solid var(--slate-100); padding: 60px 0; }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .f-card { padding: 20px; border-radius: 16px; }
+        .f-icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; margin-bottom: 15px; }
+        .f-title { font-size: 18px; font-weight: 700; margin-bottom: 8px; color: #1e293b; }
+        .f-desc { font-size: 14px; color: var(--slate-600); }
+        
+        /* PREMIUM CATALOG CARDS */
+        .catalog { padding: 80px 0; }
+        .cat-header { text-align: center; max-width: 600px; margin: 0 auto 50px; }
+        .cat-header h2 { font-size: 32px; font-weight: 800; margin-bottom: 10px; }
+        .cat-group-title { font-size: 12px; font-weight: 700; text-transform: uppercase; tracking-wider; color: #94a3b8; margin-bottom: 20px; display: flex; align-items: center; gap: 8px; }
+        .cat-group-title span { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+        .tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; margin-bottom: 50px; }
+        .tool-card { background: white; padding: 24px; border-radius: 20px; border: 1px solid #f1f5f9; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 1px 2px rgba(0,0,0,0.02); }
+        .tool-card:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.05); border-color: #e2e8f0; }
+        .tool-icon { width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; margin-bottom: 15px; }
+        .tool-name { font-size: 16px; font-weight: 700; margin-bottom: 6px; color: #1e293b; }
+        .tool-desc { font-size: 13px; color: var(--slate-600); }
+        
+        /* FOOTER */
+        footer { background: white; border-top: 1px solid var(--slate-100); padding: 50px 0; font-size: 14px; color: var(--slate-600); }
+        .footer-flex { display: flex; flex-direction: column; md-flex-direction: row; justify-content: space-between; gap: 30px; }
+        @media(min-width: 768px) { .footer-flex { flex-direction: row; } }
+        .footer-left { max-width: 500px; }
+        .footer-title { font-weight: 700; color: var(--slate-900); font-size: 16px; margin-bottom: 10px; }
+        .footer-desc { font-size: 12px; color: #64748b; }
     </style>
 </head>
-<body class="text-slate-900 scroll-smooth">
+<body>
 
-    <!-- 🌐 SECTION 1: HEADER NAVIGATION (With Dynamic Colorful Logo) -->
-    <header class="sticky top-0 z-50 glass-nav border-b border-slate-100 shadow-xs">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <!-- Brand Logo -->
-            <a href="#" class="flex items-center gap-2 group">
-                <div class="bg-gradient-to-tr from-blue-600 to-indigo-600 w-10 h-10 rounded-xl flex items-center justify-center shadow-md shadow-blue-200">
-                    <i class="fa-solid fa-screwdriver-wrench text-white text-lg"></i>
-                </div>
-                <span class="text-2xl font-extrabold tracking-wider bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">JAMTARIS</span>
+    <!-- 🌐 NAVIGATION HEADER -->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <div class="logo-box"><i class="fa-solid fa-layer-group"></i></div>
+                JAMTARIS
             </a>
-            
-            <!-- Navbar Menus -->
-            <nav class="hidden md:flex items-center gap-8 font-semibold text-slate-600">
-                <a href="#pdf-tools" class="hover:text-blue-600 transition flex items-center gap-1.5"><i class="fa-solid fa-file-pdf text-red-500"></i> PDF Tools</a>
-                <a href="#business-tools" class="hover:text-blue-600 transition flex items-center gap-1.5"><i class="fa-solid fa-briefcase text-amber-500"></i> Business Tools</a>
-                <a href="#image-tools" class="hover:text-blue-600 transition flex items-center gap-1.5"><i class="fa-solid fa-image text-emerald-500"></i> Image Tools</a>
-                <a href="#ai-tools" class="hover:text-blue-600 transition flex items-center gap-1.5"><i class="fa-solid fa-robot text-purple-500"></i> AI Tools</a>
+            <nav class="nav-links" style="display:none; @media(min-width:768px){display:flex;}">
+                <a href="#pdf-tools"><i class="fa-solid fa-file-pdf" style="color:var(--accent-red)"></i> PDF Tools</a>
+                <a href="#business-tools"><i class="fa-solid fa-briefcase" style="color:var(--accent-amber)"></i> Business Tools</a>
             </nav>
-
-            <!-- Action Button -->
-            <div>
-                <a href="#explore-tools" class="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold px-6 py-2.5 rounded-xl transition shadow-md shadow-blue-200 flex items-center gap-2">
-                    <i class="fa-solid fa-bolt animate-pulse"></i> Open App
-                </a>
-            </div>
+            <a href="#explore-tools" class="btn-header"><i class="fa-solid fa-bolt"></i> Open App</a>
         </div>
     </header>
 
-    <!-- 🚀 SECTION 2: HERO AREA (Beautiful Colorful Background & Badge) -->
-    <main>
-        <section class="max-w-7xl mx-auto px-6 pt-16 pb-24 text-center md:text-left md:flex items-center justify-between gap-12">
-            <div class="md:w-1/2 space-y-6">
-                <div class="inline-flex items-center gap-2 bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-100 text-blue-700 px-4 py-1.5 rounded-full text-xs font-bold tracking-wide uppercase shadow-2xs">
-                    <i class="fa-solid fa-sparkles text-amber-500"></i> 81+ Superfast Tools Live & Free
-                </div>
-                <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight text-slate-900">
-                    Simple, Power-Packed Tools for Your Small Business. <br><span class="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Zero Clutter. 100% Private.</span>
-                </h1>
-                <p class="text-lg text-slate-600 leading-relaxed font-medium">
-                    Convert, edit, and manage your daily store paperwork instantly. JAMTARIS runs entirely inside your web browser—your sensitive business files never leave your device.
-                </p>
-                <div class="pt-4">
-                    <a href="#explore-tools" class="inline-flex items-center gap-3 bg-slate-900 hover:bg-slate-800 text-white font-bold px-8 py-4 rounded-xl transition-all transform hover:-translate-y-1 shadow-lg shadow-slate-300">
-                        Explore All Tools <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                </div>
+    <!-- 🚀 HERO AREA -->
+    <div class="container">
+        <section class="hero">
+            <div class="hero-left">
+                <div class="badge"><i class="fa-solid fa-star" style="color:var(--accent-amber)"></i> 81+ Web Tools Live & Free</div>
+                <h1 class="hero-title">Simple, Power-Packed Tools for Your Small Business. <br><span>Zero Clutter. 100% Private.</span></h1>
+                <p class="hero-desc">Convert, edit, and manage your daily store paperwork instantly. JAMTARIS runs entirely inside your web browser—your sensitive business files never leave your device.</p>
+                <a href="#explore-tools" class="btn-hero">Explore All Tools <i class="fa-solid fa-arrow-right" style="margin-left:5px"></i></a>
             </div>
             
-            <!-- Graphic Card Presentation -->
-            <div class="md:w-1/2 mt-12 md:mt-0 bg-gradient-to-tr from-blue-600 via-indigo-600 to-purple-700 p-8 rounded-3xl text-white shadow-2xl shadow-blue-200 flex flex-col justify-between min-h-[320px] relative overflow-hidden">
-                <div class="absolute -right-10 -top-10 w-40 h-40 bg-white/10 rounded-full blur-2xl"></div>
-                <div>
-                    <span class="bg-white/20 backdrop-blur-md px-3 py-1 rounded-md text-xs font-bold uppercase tracking-wider"><i class="fa-solid fa-shield-halved"></i> Browser Execution</span>
-                    <h3 class="text-2xl font-bold mt-4 mb-2"><i class="fa-solid fa-microchip"></i> No Server Uploads</h3>
-                    <p class="text-blue-100 text-sm leading-relaxed">Your files stay safe on your computer or phone. Client-side sandbox ensures total accounting privacy for retail owners.</p>
-                </div>
-                <div class="bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/20 flex items-center justify-between mt-6">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 bg-emerald-400 text-slate-900 rounded-xl flex items-center justify-center font-bold text-lg shadow-sm">✓</div>
-                        <div>
-                            <p class="text-xs text-blue-200 font-semibold">Security Protocol</p>
-                            <p class="text-sm font-bold tracking-wide">100% Secure Local Sandbox</p>
-                        </div>
+            <div class="hero-right">
+                <div class="preview-card">
+                    <div>
+                        <span class="preview-badge"><i class="fa-solid fa-shield-halved"></i> Browser Isolation Security</span>
+                        <h3 class="preview-title"><i class="fa-solid fa-bolt"></i> No Cloud Uploads</h3>
+                        <p class="preview-desc">Your accounting spreadsheets, PDFs, and client lists stay safe on your computer or phone phone local screen storage.</p>
                     </div>
-                    <span class="bg-white text-blue-700 font-extrabold px-3 py-1 rounded-lg text-xs">FREE FOREVER</span>
+                    <div class="status-box">
+                        <div class="status-left">
+                            <div class="status-dot"></div>
+                            <span style="font-size:13px; font-weight:600;">Status: Secure Browser Core Active</span>
+                        </div>
+                        <span style="font-size:11px; font-weight:700; background:white; color:var(--primary); padding:3px 8px; border-radius:5px;">FREE</span>
+                    </div>
                 </div>
             </div>
         </section>
+    </div>
 
-        <!-- 🔒 SECTION 3: PRIVACY & FEATURES (Grid Columns with Colored Icons) -->
-        <section class="bg-white border-y border-slate-100 py-16 shadow-2xs">
-            <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-10">
-                <div class="space-y-3 p-4 rounded-2xl hover:bg-slate-50 transition-colors">
-                    <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center text-xl font-bold"><i class="fa-solid fa-user-shield"></i></div>
-                    <h3 class="text-xl font-bold text-slate-800">Privacy-First Design</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">Your files are safe. Processing happens right inside your local browser. No external servers tracking your data.</p>
-                </div>
-                <div class="space-y-3 p-4 rounded-2xl hover:bg-slate-50 transition-colors">
-                    <div class="w-12 h-12 bg-amber-50 text-amber-600 rounded-xl flex items-center justify-center text-xl font-bold"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
-                    <h3 class="text-xl font-bold text-slate-800">Zero Clutter, No Ads</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">Built specifically for busy store operators. No annoying popup videos or forced redirects just to convert documents.</p>
-                </div>
-                <div class="space-y-3 p-4 rounded-2xl hover:bg-slate-50 transition-colors">
-                    <div class="w-12 h-12 bg-emerald-50 text-emerald-600 rounded-xl flex items-center justify-center text-xl font-bold"><i class="fa-solid fa-shop"></i></div>
-                    <h3 class="text-xl font-bold text-slate-800">Store-Ready Toolkit</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">From immediate PDF-to-Excel layouts to optimized invoice and salary creators, control your admin workload in one place.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- 🧰 SECTION 4: POPULAR TOOLS CATALOG GRID (Colorful Cards Layout) -->
-        <section id="explore-tools" class="max-w-7xl mx-auto px-6 py-20 space-y-16">
-            <div class="text-center max-w-2xl mx-auto space-y-3">
-                <h2 class="text-3xl font-extrabold tracking-tight text-slate-900">Featured Business Utilities</h2>
-                <p class="text-slate-500 font-medium">Select any professional toolkit below to launch it instantly in your safe local browser app.</p>
-            </div>
-
-            <!-- Category: Business Tools -->
-            <div id="business-tools" class="space-y-6">
-                <h3 class="text-xs font-bold text-slate-400 tracking-widest uppercase flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-amber-500"></span> 💼 Shop & Accounting Utilities</h3>
-                <div class="grid md:grid-cols-3 gap-6">
+    <!-- 🔒 FEATURES SECTION -->
+    <section class="features-row">
+        <div class="container">
+            <div class="features-grid">
