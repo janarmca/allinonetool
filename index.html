@@ -6,7 +6,7 @@
     <title>JAMTARIS - AI Agent & Premium Small Business Tools</title>
     
     <style>
-        /* ⚡ DYNAMIC ENGINE INITIALIZATION */
+        /* ⚡ SPEED & ERROR-FREE CORE STYLES */
         :root {
             --primary: #2563eb;
             --primary-dark: #1d4ed8;
@@ -41,17 +41,19 @@
         /* 🚀 HERO PRESENTATION LAYOUT */
         .hero-section { padding: 50px 0 70px; }
         .hero { display: flex; flex-direction: column; gap: 40px; align-items: center; }
-        @media(min-width: 768px) { .hero { flex-direction: row; text-align: left; } }
         
         .hero-left { flex: 1; text-align: center; }
-        @media(min-width: 768px) { .hero-left { text-align: left; } }
-        
         .badge { display: inline-flex; align-items: center; gap: 6px; background: #eff6ff; border: 1px solid #bfdbfe; color: #1e40af; padding: 6px 16px; border-radius: 9999px; font-size: 13px; font-weight: 700; margin-bottom: 24px; text-transform: uppercase; }
         .hero-title { font-size: 42px; font-weight: 800; line-height: 1.2; margin-bottom: 22px; color: #1e293b; }
         .hero-title span { background: linear-gradient(to right, #2563eb, #4f46e5); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .hero-desc { font-size: 17px; color: var(--slate-600); margin-bottom: 35px; font-weight: 500; }
-        
         .btn-hero { background: var(--slate-900); color: white; padding: 16px 36px; border-radius: 14px; text-decoration: none; font-weight: 700; font-size: 16px; box-shadow: 0 10px 20px rgba(15,23,42,0.15); display: inline-flex; align-items: center; gap: 8px; }
+        
+        /* RESPONSIVE LAYOUT DISPATCH */
+        @media(min-width: 768px) { 
+            .hero { flex-direction: row; text-align: left; } 
+            .hero-left { text-align: left; }
+        }
         
         /* 🤖 INTERACTIVE AI AGENT WORKSPACE PANEL */
         .hero-right { flex: 1; width: 100%; }
@@ -62,14 +64,14 @@
         
         .agent-body { flex: 1; padding: 20px; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; background: #f8fafc; }
         .msg { max-width: 80%; padding: 12px 16px; border-radius: 16px; font-size: 14px; font-weight: 500; }
-        .msg.bot { background: #ffffff; color: var(--slate-900); align-self: flex-start; border: 1px solid #e2e8f0; border-radius-topleft: 4px; }
-        .msg.user { background: var(--primary); color: white; align-self: flex-end; border-radius-topright: 4px; }
+        .msg.bot { background: #ffffff; color: var(--slate-900); align-self: flex-start; border: 1px solid #e2e8f0; border-top-left-radius: 4px; }
+        .msg.user { background: var(--primary); color: white; align-self: flex-end; border-top-right-radius: 4px; }
         
         /* DYNAMIC INTERACTIVE APP INJECTOR SANDBOX */
         .app-sandbox { background: #eff6ff; border: 2px dashed #bfdbfe; padding: 16px; border-radius: 16px; margin-top: 10px; display: none; flex-direction: column; gap: 10px; }
         .sandbox-title { font-size: 14px; font-weight: 700; color: #1e40af; display: flex; align-items: center; gap: 6px; }
-        .sandbox-input { width: 100%; padding: 10px; border: 1px solid #bfdbfe; border-radius: 8px; outline: none; font-size: 13px; }
-        .sandbox-btn { background: var(--primary); color: white; border: none; padding: 10px; border-radius: 8px; font-weight: 700; cursor: pointer; font-size: 13px; }
+        .sandbox-input { width: 100%; padding: 10px; border: 1px solid #bfdbfe; border-radius: 8px; outline: none; font-size: 13px; margin-bottom: 5px; }
+        .sandbox-btn { background: var(--primary); color: white; border: none; padding: 10px; border-radius: 8px; font-weight: 700; cursor: pointer; font-size: 13px; width: 100%; }
         
         .agent-footer { padding: 12px; background: #ffffff; border-top: 1px solid #e2e8f0; display: flex; gap: 10px; }
         .agent-input { flex: 1; padding: 12px 16px; border: 1px solid #e2e8f0; border-radius: 12px; outline: none; font-size: 14px; transition: border-color 0.2s; }
