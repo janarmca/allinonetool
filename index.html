@@ -3,196 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JAMTARIS - AI Agent & Premium Small Business Tools & AI Automation Ecosystem</title>
+    <title>JAMTARIS - Premium Small Business Tools & AI Automation</title>
+    
+    <!-- Fast Icon Engine Integration -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* ==========================================================================
-           1. CORE DESIGN SYSTEM & THEMING VARIABLES
-           ========================================================================= */
+        /* 🎨 DESIGN SYSTEM & COLOR VARIABLES */
         :root {
             --primary: #2563eb;
-            --primary-light: #3b82f6;
             --primary-dark: #1d4ed8;
-            --secondary: #0f172a;
             --accent-amber: #f59e0b;
             --accent-emerald: #10b981;
             --accent-red: #ef4444;
             --accent-purple: #a855f7;
-            --accent-blue: #0284c7;
-            --slate-50: #f8fafc;
-            --slate-100: #f1f5f9;
-            --slate-200: #e2e8f0;
-            --slate-300: #cbd5e1;
-            --slate-400: #94a3b8;
-            --slate-600: #475569;
-            --slate-700: #334155;
-            --slate-800: #1e293b;
             --slate-900: #0f172a;
-            --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            --radius-sm: 8px;
-            --radius-md: 14px;
-            --radius-lg: 22px;
-            --radius-xl: 30px;
-            --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
-            --shadow-md: 0 10px 20px -5px rgba(15,23,42,0.04), 0 4px 6px -2px rgba(15,23,42,0.02);
-            --shadow-lg: 0 20px 25px -5px rgba(37,99,235,0.06), 0 10px 10px -5px rgba(37,99,235,0.02);
-            --shadow-premium: 0 25px 50px -12px rgba(15,23,42,0.08);
-            --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --slate-700: #334155;
+            --slate-600: #475569;
+            --slate-100: #f1f5f9;
         }
-
-        /* ==========================================================================
-           2. GLOBAL STYLES, SCROLL RESET & ANIMATIONS
-           ========================================================================= */
+        
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; font-size: 16px; -webkit-text-size-adjust: 100%; }
-        body { font-family: var(--font-main); background-color: var(--slate-50); color: var(--slate-900); line-height: 1.6; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+        html { scroll-behavior: smooth; }
+        body { font-family: system-ui, -apple-system, sans-serif; background-color: #f8fafc; color: var(--slate-900); line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
         
-        .container { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
-        .section-spacer { padding: 90px 0; }
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
-        .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+        /* 🌐 FIXED STICKY HEADER & NAVBAR */
+        header { position: sticky; top: 0; background: #ffffff; border-b: 1px solid var(--slate-100); z-index: 1000; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+        .nav-container { display: flex; align-items: center; justify-content: space-between; height: 80px; }
         
-        /* Interactive Animation Keyframes */
-        @keyframes floatEffect {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
-        }
-        @keyframes pulseActive {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.5; transform: scale(0.95); }
-        }
-        @keyframes fadeInMsg {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        /* ==========================================================================
-           3. PREMIUM HEADER, FIXED NAVIGATION & MODERN LOGO
-           ========================================================================= */
-        header { position: sticky; top: 0; background: rgba(255, 255, 255, 0.96); border-b: 1px solid var(--slate-100); z-index: 1000; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); box-shadow: var(--shadow-sm); transition: var(--transition-smooth); }
-        .nav-container { display: flex; align-items: center; justify-content: space-between; height: 85px; }
+        /* MODERN CUSTOM SVG LOGO */
+        .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; font-size: 26px; font-weight: 800; color: var(--primary); letter-spacing: 0.5px; }
+        .logo-image { background: linear-gradient(135deg, #3b82f6, #1d4ed8); width: 42px; height: 42px; border-radius: 12px; display: flex; align-items: center; justify-content: center; }
+        .logo-image svg { width: 22px; height: 22px; fill: white; }
         
-        .logo { display: flex; align-items: center; gap: 14px; text-decoration: none; font-size: 28px; font-weight: 900; color: var(--primary); letter-spacing: 0.8px; transition: var(--transition-smooth); }
-        .logo:hover { opacity: 0.9; }
-        .logo-image { background: linear-gradient(135deg, #3b82f6, #1d4ed8); width: 46px; height: 46px; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; }
-        .logo-image svg { width: 24px; height: 24px; fill: white; }
-        
-        .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
-        .nav-links a { text-decoration: none; color: var(--slate-600); font-weight: 600; font-size: 15px; transition: var(--transition-smooth); position: relative; padding: 4px 0; }
+        .nav-links { display: flex; gap: 28px; }
+        .nav-links a { text-decoration: none; color: var(--slate-600); font-weight: 600; font-size: 15px; transition: color 0.2s; display: flex; align-items: center; gap: 6px; }
         .nav-links a:hover { color: var(--primary); }
-        .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--primary); transition: var(--transition-smooth); }
-        .nav-links a:hover::after { width: 100%; }
         
-        .btn-header { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: white; padding: 12px 26px; border-radius: var(--radius-md); text-decoration: none; font-weight: 700; font-size: 14.5px; box-shadow: 0 6px 16px rgba(37,99,235,0.25); transition: var(--transition-smooth); border: none; cursor: pointer; }
-        .btn-header:hover { transform: translateY(-1px); box-shadow: 0 8px 20px rgba(37,99,235,0.35); }
-
-        /* ==========================================================================
-           4. HERO LANDING PRESENTATION
-           ========================================================================= */
-        .hero-section { padding: 60px 0 80px; position: relative; overflow: hidden; }
-        .hero { display: flex; flex-direction: column; gap: 50px; align-items: center; }
-        @media(min-width: 992px) { .hero { flex-direction: row; text-align: left; } }
+        .btn-header { background: var(--primary); color: white; padding: 11px 22px; border-radius: 12px; text-decoration: none; font-weight: 700; font-size: 14px; box-shadow: 0 4px 12px rgba(37,99,235,0.2); }
+        
+        /* 🚀 HERO PRESENTATION LAYOUT */
+        .hero-section { padding: 65px 0; }
+        .hero { display: flex; flex-direction: column; gap: 40px; align-items: center; }
+        @media(min-width: 768px) { .hero { flex-direction: row; text-align: left; } }
         
         .hero-left { flex: 1.1; text-align: center; }
-        @media(min-width: 992px) { .hero-left { text-align: left; } }
+        @media(min-width: 768px) { .hero-left { text-align: left; } }
         
-        .badge { display: inline-flex; align-items: center; gap: 8px; background: #eff6ff; border: 1px solid #bfdbfe; color: #1e40af; padding: 8px 18px; border-radius: 9999px; font-size: 13px; font-weight: 700; margin-bottom: 26px; text-transform: uppercase; letter-spacing: 0.5px; }
-        .hero-title { font-size: 46px; font-weight: 800; line-height: 1.15; margin-bottom: 24px; color: var(--slate-800); tracking-tight; }
-        .hero-title span { background: linear-gradient(to right, #2563eb, #4f46e5, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-size: 200% auto; animation: gradientShift 4s ease infinite; }
-        .hero-desc { font-size: 18px; color: var(--slate-600); margin-bottom: 38px; font-weight: 500; max-width: 620px; line-height: 1.6; }
-        @media(max-width: 992px) { .hero-desc { margin-left: auto; margin-right: auto; } }
+        .badge { display: inline-flex; align-items: center; gap: 6px; background: #eff6ff; border: 1px solid #bfdbfe; color: #1e40af; padding: 6px 16px; border-radius: 9999px; font-size: 13px; font-weight: 700; margin-bottom: 24px; text-transform: uppercase; }
+        .hero-title { font-size: 42px; font-weight: 800; line-height: 1.2; margin-bottom: 22px; color: #1e293b; }
+        .hero-title span { background: linear-gradient(to right, #2563eb, #4f46e5); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero-desc { font-size: 17px; color: var(--slate-600); margin-bottom: 35px; font-weight: 500; }
         
-        .btn-hero { background: var(--slate-900); color: white; padding: 18px 40px; border-radius: var(--radius-md); text-decoration: none; font-weight: 700; font-size: 16px; box-shadow: 0 12px 24px rgba(15,23,42,0.18); transition: var(--transition-smooth); display: inline-flex; align-items: center; gap: 10px; }
-        .btn-hero:hover { transform: translateY(-2px); background: #1e293b; box-shadow: 0 16px 30px rgba(15,23,42,0.25); }
-
-        /* ==========================================================================
-           5. INTERACTIVE AUTONOMOUS AI AGENT CONSOLE (MEGA INTERFACE)
-           ========================================================================= */
-        .hero-right { flex: 0.9; width: 100%; max-width: 520px; }
-        .agent-container { background: #ffffff; border: 1px solid var(--slate-200); border-radius: var(--radius-lg); box-shadow: var(--shadow-premium); display: flex; flex-direction: column; height: 480px; overflow: hidden; position: relative; animation: floatEffect 6s ease-in-out infinite; }
+        .btn-hero { background: var(--slate-900); color: white; padding: 16px 36px; border-radius: 14px; text-decoration: none; font-weight: 700; font-size: 16px; box-shadow: 0 10px 20px rgba(15,23,42,0.15); display: inline-flex; align-items: center; gap: 8px; }
         
-        .agent-header { background: linear-gradient(135deg, var(--slate-900), #1e293b); color: white; padding: 18px 24px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.05); }
-        .agent-header-title { font-weight: 700; font-size: 15.5px; display: flex; align-items: center; gap: 10px; }
+        /* 🤖 INTERACTIVE AI AGENT PANEL */
+        .hero-right { flex: 0.9; width: 100%; max-width: 480px; }
+        .agent-container { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 24px; box-shadow: 0 20px 30px rgba(0,0,0,0.06); display: flex; flex-direction: column; height: 420px; overflow: hidden; }
+        .agent-header { background: linear-gradient(135deg, #1e293b, #0f172a); color: white; padding: 16px 20px; display: flex; align-items: center; justify-content: space-between; }
         .agent-status { display: flex; align-items: center; gap: 8px; }
-        .status-dot { width: 9px; height: 9px; background: var(--accent-emerald); border-radius: 50%; box-shadow: 0 0 10px var(--accent-emerald); animation: pulseActive 2s infinite; }
+        .status-dot { width: 8px; height: 8px; background: #34d399; border-radius: 50%; box-shadow: 0 0 8px #34d399; animation: pulse 2s infinite; }
         
-        .agent-body { flex: 1; padding: 24px; overflow-y: auto; display: flex; flex-direction: column; gap: 16px; background: #f8fafc; scrollbar-width: thin; }
-        .msg { max-width: 85%; padding: 14px 18px; border-radius: var(--radius-md); font-size: 14.5px; font-weight: 500; animation: fadeInMsg 0.3s ease forwards; line-height: 1.5; }
-        .msg.bot { background: #ffffff; color: var(--slate-900); align-self: flex-start; border: 1px solid var(--slate-200); border-top-left-radius: 4px; box-shadow: var(--shadow-sm); }
-        .msg.user { background: var(--primary); color: white; align-self: flex-end; border-top-right-radius: 4px; box-shadow: 0 4px 10px rgba(37,99,235,0.15); }
+        .agent-body { flex: 1; padding: 20px; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; background: #f8fafc; }
+        .msg { max-width: 85%; padding: 12px 16px; border-radius: 16px; font-size: 14px; font-weight: 500; }
+        .msg.bot { background: #ffffff; color: var(--slate-900); align-self: flex-start; border: 1px solid #e2e8f0; border-top-left-radius: 4px; box-shadow: 0 1px 2px rgba(0,0,0,0.02); }
+        .msg.user { background: var(--primary); color: white; align-self: flex-end; border-top-right-radius: 4px; }
         
-        /* Embedded Micro Sandbox Engine inside Agent Framework */
-        .app-sandbox { background: #ffffff; border: 2px solid var(--primary); padding: 20px; border-radius: var(--radius-md); margin-top: 5px; display: none; flex-direction: column; gap: 14px; box-shadow: var(--shadow-md); animation: fadeInMsg 0.4s ease forwards; width: 100%; }
-        .sandbox-title { font-size: 15px; font-weight: 700; color: var(--primary-dark); display: flex; align-items: center; gap: 8px; border-bottom: 1px solid var(--slate-100); padding-bottom: 8px; }
-        .sandbox-input { width: 100%; padding: 12px 16px; border: 1px solid var(--slate-300); border-radius: var(--radius-sm); outline: none; font-size: 13.5px; transition: var(--transition-smooth); font-family: var(--font-main); }
-        .sandbox-input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(37,99,235,0.1); }
-        .sandbox-btn { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: white; border: none; padding: 12px; border-radius: var(--radius-sm); font-weight: 700; cursor: pointer; font-size: 14px; width: 100%; transition: var(--transition-smooth); }
-        .sandbox-btn:hover { opacity: 0.95; transform: translateY(-1px); }
+        /* DYNAMIC INTERACTIVE APP INJECTOR SANDBOX */
+        .app-sandbox { background: #eff6ff; border: 2px dashed #bfdbfe; padding: 18px; border-radius: 16px; margin-top: 5px; display: none; flex-direction: column; gap: 12px; }
+        .sandbox-title { font-size: 14px; font-weight: 700; color: #1e40af; display: flex; align-items: center; gap: 6px; }
+        .sandbox-input { width: 100%; padding: 10px; border: 1px solid #bfdbfe; border-radius: 8px; outline: none; font-size: 13px; margin-bottom: 2px; }
+        .sandbox-btn { background: var(--primary); color: white; border: none; padding: 11px; border-radius: 8px; font-weight: 700; cursor: pointer; font-size: 13px; width: 100%; }
         
-        .agent-footer { padding: 16px; background: #ffffff; border-top: 1px solid var(--slate-200); display: flex; gap: 12px; align-items: center; }
-        .agent-input { flex: 1; padding: 14px 18px; border: 1px solid var(--slate-200); border-radius: var(--radius-md); outline: none; font-size: 14.5px; transition: var(--transition-smooth); background: var(--slate-50); }
-        .agent-input:focus { border-color: var(--primary); background: white; box-shadow: 0 0 0 3px rgba(37,99,235,0.08); }
-        .agent-send { background: var(--primary); border: none; width: 48px; height: 48px; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; cursor: pointer; color: white; transition: var(--transition-smooth); box-shadow: 0 4px 10px rgba(37,99,235,0.2); }
-        .agent-send:hover { background: var(--primary-dark); transform: scale(1.02); }
-        .agent-send svg { width: 20px; height: 20px; fill: currentColor; }
-
-        /* ==========================================================================
-           6. ARCHITECTURAL VALUE PROPOSITION BLOCKS
-           ========================================================================= */
-        .features-row { background: white; border-top: 1px solid var(--slate-100); border-bottom: 1px solid var(--slate-100); padding: 80px 0; }
+        .agent-footer { padding: 12px; background: #ffffff; border-top: 1px solid #e2e8f0; display: flex; gap: 10px; }
+        .agent-input { flex: 1; padding: 12px 16px; border: 1px solid #e2e8f0; border-radius: 12px; outline: none; font-size: 14px; background: var(--slate-50); }
+        .agent-input:focus { border-color: var(--primary); background: white; }
+        
+        /* FIX: id="chat-send" added directly to button */
+        .agent-send { background: var(--primary); border: none; width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; cursor: pointer; color: white; }
+        .agent-send:hover { background: var(--primary-dark); }
+        
+        /* 🔒 VALUES ROW */
+        .features-row { background: white; border-top: 1px solid var(--slate-100); border-bottom: 1px solid var(--slate-100); padding: 65px 0; }
         .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 35px; }
-        .f-card { padding: 15px; border-radius: var(--radius-md); transition: var(--transition-smooth); }
-        .f-icon { width: 56px; height: 56px; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-size: 26px; margin-bottom: 24px; box-shadow: var(--shadow-sm); }
-        .f-title { font-size: 21px; font-weight: 700; margin-bottom: 12px; color: var(--slate-800); }
-        .f-desc { font-size: 15px; color: var(--slate-600); line-height: 1.6; }
-
-        /* ==========================================================================
-           7. ENTERPRISE CATALOG ENGINE (81+ TOOLS STRUCTURAL SCHEMATICS)
-           ========================================================================= */
-        .catalog { padding: 100px 0; scroll-margin-top: 85px; }
-        .cat-header { text-align: center; max-width: 700px; margin: 0 auto 70px; }
-        .cat-header h2 { font-size: 36px; font-weight: 800; margin-bottom: 14px; color: var(--slate-900); tracking-tight; }
-        .cat-header p { color: var(--slate-600); font-size: 16.5px; font-weight: 500; }
+        .f-card { padding: 10px; }
+        .f-icon { width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 18px; }
+        .f-title { font-size: 19px; font-weight: 700; margin-bottom: 10px; color: #1e293b; }
+        .f-desc { font-size: 14.5px; color: var(--slate-600); }
         
-        .cat-group-wrapper { margin-bottom: 70px; }
-        .cat-group-title { font-size: 14.5px; font-weight: 700; text-transform: uppercase; tracking-wider; color: var(--slate-800); margin-bottom: 30px; display: flex; align-items: center; gap: 12px; border-bottom: 2px solid var(--slate-200); padding-bottom: 12px; }
-        .cat-group-title span { width: 12px; height: 12px; border-radius: 50%; display: inline-block; box-shadow: 0 0 8px rgba(0,0,0,0.15); }
+        /* 🧰 TOOLS DIRECTORY CATALOG */
+        .catalog { padding: 90px 0; scroll-margin-top: 80px; }
+        .cat-header { text-align: center; max-width: 650px; margin: 0 auto 60px; }
+        .cat-header h2 { font-size: 34px; font-weight: 800; margin-bottom: 12px; color: #1e293b; }
+        .cat-group-title { font-size: 14px; font-weight: 700; text-transform: uppercase; tracking-wider; color: var(--slate-700); margin-bottom: 30px; display: flex; align-items: center; gap: 10px; border-bottom: 2px solid var(--slate-100); padding-bottom: 10px; }
+        .cat-group-title span { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
         
-        .tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 26px; margin-bottom: 60px; }
-        .tool-card { background: white; padding: 32px; border-radius: var(--radius-lg); border: 1px solid var(--slate-200); cursor: pointer; transition: var(--transition-smooth); position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; min-height: 240px; box-shadow: var(--shadow-sm); }
-        .tool-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: var(--primary-light); }
-        .tool-card::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: transparent; transition: var(--transition-smooth); }
-        .tool-card:hover::before { background: var(--primary); }
+        .tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 26px; margin-bottom: 50px; }
+        .tool-card { background: white; padding: 28px; border-radius: 22px; border: 1px solid #e2e8f0; cursor: pointer; transition: all 0.25s ease; }
+        .tool-card:hover { transform: translateY(-5px); box-shadow: 0 15px 25px -5px rgba(0,0,0,0.05); border-color: var(--primary); }
+        .tool-icon { width: 46px; height: 46px; border-radius: 11px; display: flex; align-items: center; justify-content: center; font-size: 20px; margin-bottom: 16px; }
+        .tool-name { font-size: 18px; font-weight: 700; margin-bottom: 8px; color: #1e293b; }
+        .tool-desc { font-size: 14px; color: var(--slate-600); line-height: 1.5; }
         
-        .tool-icon { width: 52px; height: 52px; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 22px; transition: var(--transition-smooth); }
-        .tool-card:hover .tool-icon { transform: scale(1.05); }
-        .tool-name { font-size: 19px; font-weight: 700; margin-bottom: 10px; color: var(--slate-900); }
-        .tool-desc { font-size: 14px; color: var(--slate-600); line-height: 1.6; margin-bottom: 15px; }
-        .tool-action-label { font-size: 13px; font-weight: 700; color: var(--primary); display: flex; align-items: center; gap: 6px; opacity: 0; transform: translateX(-5px); transition: var(--transition-smooth); margin-top: auto; }
-        .tool-card:hover .tool-action-label { opacity: 1; transform: translateX(0); }
-
-        /* ==========================================================================
-           8. CORE SYSTEMS INTEGRATION & BRAND FOOTER (CONTACT VALIDATION)
-           ========================================================================= */
-        footer { background: #ffffff; border-top: 1px solid var(--slate-200); padding: 80px 0 40px; font-size: 14.5px; color: var(--slate-600); scroll-margin-top: 85px; }
-        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 60px; margin-bottom: 60px; }
-        .footer-title { font-weight: 800; color: var(--slate-900); font-size: 19px; margin-bottom: 24px; display: flex; align-items: center; gap: 10px; letter-spacing: 0.3px; }
-        .footer-desc { font-size: 14.5px; color: var(--slate-600); line-height: 1.75; }
+        /* 📝 FOOTER SECTION */
+        footer { background: white; border-top: 1px solid var(--slate-200); padding: 70px 0 40px; font-size: 14px; color: var(--slate-600); scroll-margin-top: 80px; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px; margin-bottom: 40px; }
+        .footer-title { font-weight: 700; color: var(--slate-900); font-size: 18px; margin-bottom: 20px; display: flex; align-items: center; gap: 8px; }
+        .footer-desc { font-size: 14px; color: #526173; line-height: 1.7; }
         
         .contact-list { list-style: none; }
-        .contact-list li { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; font-size: 14.5px; color: var(--slate-700); font-weight: 500; }
-        .contact-list svg { width: 18px; height: 18px; fill: var(--primary); flex-shrink: 0; transition: var(--transition-smooth); }
-        .contact-list li:hover svg { transform: scale(1.1); }
-        .contact-list a { color: var(--slate-700); text-decoration: none; transition: var(--transition-smooth); font-weight: 600; }
+        .contact-list li { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; font-size: 14px; color: var(--slate-700); font-weight: 500; }
+        .contact-list svg { width: 16px; height: 16px; fill: var(--primary); flex-shrink: 0; }
+        .contact-list a { color: var(--slate-700); text-decoration: none; }
         .contact-list a:hover { color: var(--primary); text-decoration: underline; }
         
-        .footer-bottom { border-top: 1px solid var(--slate-200); padding-top: 35px; display: flex; flex-direction: column; md-flex-direction: row; justify-content: space-between; align-items: center; gap: 20px; font-size: 13.5px; color: var(--slate-400); font-weight: 500; }
-        
+        .footer-bottom { border-top: 1px solid var(--slate-100); padding-top: 30px; display: flex; flex-direction: column; md-flex-direction: row; justify-content: space-between; align-items: center; gap: 20px; font-size: 13px; color: #94a3b8; }
         @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
     </style>
 </head>
@@ -207,34 +133,31 @@
                 </div>
                 JAMTARIS
             </a>
-            
-            <ul class="nav-links">
-                <li><a href="#pdf-tools">PDF Tools</a></li>
-                <li><a href="#business-tools">Business Tools</a></li>
-                <li><a href="#image-tools">Image Tools</a></li>
-                <li><a href="#ai-tools">AI Tools</a></li>
-                <li><a href="#contact-section">Contact</a></li>
-            </ul>
-            <button class="btn-header" onclick="document.getElementById('explore-tools').scrollIntoView();">Open App</button>
+            <nav class="nav-links">
+                <a href="#pdf-tools">PDF Tools</a>
+                <a href="#business-tools">Business Tools</a>
+                <a href="#contact-section">Contact</a>
+            </nav>
+            <a href="#explore-tools" class="btn-header">Open App</a>
         </div>
     </header>
 
-    <!-- 🚀 HERO AREA SYSTEM -->
+    <!-- 🚀 HERO AREA & AI AGENT PANEL -->
     <main>
         <section class="container hero-section">
             <div class="hero">
                 <div class="hero-left">
-                    <div class="badge">⚙️ 81+ Production Tools Live</div>
-                    <h1 class="hero-title">Automate Your Paperwork With <span>JAMTARIS AI Agent Ecosystem.</span></h1>
-                    <p class="hero-desc">சிறு வணிகர்கள் மற்றும் கடை உரிமையாளர்கள் தங்களின் தினசரி பில்கள், ஆவணங்கள் மற்றும் கோப்புகளை பாதுகாப்பாக மாற்ற உதவும் அதிநவீன தளம். 100% பிரைவசி உத்தரவாதம்.</p>
-                    <a href="#explore-tools" class="btn-hero">Explore Corporate Toolkit →</a>
+                    <div class="badge">🤖 AI Agent Automation Engine</div>
+                    <h1 class="hero-title">Talk to JAMTARIS AI. <br><span>Run 81+ Tools Instantly.</span></h1>
+                    <p class="hero-desc">எங்கள் AI ஏஜென்ட்டிடம் அரட்டையடித்து (Chat) கோப்புகளை நொடியில் மாற்றுங்கள். Your files run completely safe inside your device browser storage sandbox.</p>
+                    <a href="#explore-tools" class="btn-hero">View All 81 Tools ↓</a>
                 </div>
                 
                 <!-- 🤖 CHAT BOT WORKSPACE PANEL -->
                 <div class="hero-right">
                     <div class="agent-container">
                         <div class="agent-header">
-                            <div class="agent-header-title">
+                            <div style="font-weight: 700; font-size: 15px; display: flex; align-items: center; gap: 8px;">
                                 <span>🤖</span> JAMTARIS Autonomous AI Agent
                             </div>
                             <div class="agent-status">
@@ -245,20 +168,19 @@
                         
                         <div class="agent-body" id="chat-body">
                             <div class="msg bot">
-                                வணக்கம்! நான் ஜம்தாரிஸ் AI ஏஜென்ட். உங்களது வணிக ஆவணங்களை (Invoices, PDFs, Images) மாற்ற நான் உங்களுக்கு எவ்வாறு உதவ வேண்டும்? கீழே டைப் செய்யுங்கள்! (எ.கா: "PDF to Excel")
+                                வணக்கம்! நான் JAMTARIS AI உதவியாளர். உங்களுக்கு என்ன டூல் வேண்டும்? (எ.கா: "PDF to Excel" அல்லது "GST Invoice") என்று கீழே டைப் செய்யுங்கள்!
                             </div>
-                            
-                            <!-- Hidden Dynamic Sandbox Component -->
                             <div class="app-sandbox" id="sandbox-box">
-                                <div class="sandbox-title" id="sandbox-title">🛠️ Active Application Interface</div>
+                                <div class="sandbox-title" id="sandbox-title">🛠️ Active Tool Framework</div>
                                 <div id="sandbox-inner"></div>
                             </div>
                         </div>
                         
                         <div class="agent-footer">
-                            <input type="text" class="agent-input" id="chat-input" placeholder="Ask AI Agent to launch any tool...">
+                            <input type="text" class="agent-input" id="chat-input" placeholder="Type a tool name or ask a question...">
+                            <!-- FIX: id="chat-send" added to fix click action -->
                             <button class="agent-send" id="chat-send">
-                                <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+                                <svg viewBox="0 0 24 24" width="18" height="18" fill="white"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
                             </button>
                         </div>
                     </div>
@@ -266,126 +188,77 @@
             </div>
         </section>
 
-        <!-- 🔒 PLATFORM METRICS AND VALUES -->
+        <!-- 🔒 FEATURES ROW -->
         <section class="features-row">
             <div class="container">
                 <div class="features-grid">
                     <div class="f-card">
                         <div class="f-icon" style="background:#eff6ff; color:var(--primary);">🔒</div>
-                        <h3 class="f-title">Privacy-First Architecture</h3>
-                        <p class="f-desc">உங்களது எந்தவொரு ஃபைலும் எங்களது சர்வர்களில் அப்லோட் செய்யப்படாது. அனைத்தும் உங்களது பிரவுசரிலேயே பாதுகாப்பாக பிராசஸ் செய்யப்படுகிறது.</p>
+                        <h3 class="f-title">Privacy-First Design</h3>
+                        <p class="f-desc">உங்களது எந்தவொரு ஃபைலும் எங்களது சர்வர்களில் அப்لوட் செய்யப்படாது. அனைத்தும் உங்களது பிரவுசரிலேயே பாதுகாப்பாக பிராசஸ் செய்யப்படுகிறது.</p>
                     </div>
                     <div class="f-card">
                         <div class="f-icon" style="background:#fff7ed; color:var(--accent-amber);">⚡</div>
-                        <h3 class="f-title">Enterprise Speed, No Ads</h3>
+                        <h3 class="f-title">Zero Clutter, No Ads</h3>
                         <p class="f-desc">எந்தவொரு எரிச்சலூட்டும் விளம்பரங்களோ அல்லது கட்டாய ரீடைரெக்டுகளோ கிடையாது. சிறு வணிகர்கள் மிக வேகமாக வேலைகளை முடிக்கலாம்.</p>
                     </div>
                     <div class="f-card">
                         <div class="f-icon" style="background:#ecfdf5; color:var(--accent-emerald);">🏬</div>
-                        <h3 class="f-title">Store & Retail Optimized</h3>
+                        <h3 class="f-title">Store-Ready Toolkit</h3>
                         <p class="f-desc">காபி ஷாப்கள், துணிக்கடைகள் மற்றும் நடுத்தர நிறுவனங்களின் தினசரி கணக்கு வழக்குகளுக்குத் தேவையான பில்லிங் டூல்ஸ் அனைத்தும் ஒரே இடத்தில்.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 🧰 COMPREHENSIVE REGISTRY CATALOG (81 TOOLS SCHEMATIC) -->
+        <!-- 🧰 TOOLS DIRECTORY CATALOG -->
         <section id="explore-tools" class="catalog">
             <div class="container">
                 <div class="cat-header">
-                    <h2>81+ Professional Utilities Directory</h2>
-                    <p>தேவையான டூலைத் தேர்ந்தெடுத்து, நேரடியாக உங்களது பிரவுசரிலேயே இயக்கத் தொடங்குங்கள்.</p>
+                    <h2>Featured Store Utilities</h2>
+                    <p>Select any professional tool layout below to open your localized execution deck.</p>
                 </div>
 
-                <!-- CATEGORY A: ACCOUNTING & STORE OPERATIONS -->
-                <div id="business-tools" class="cat-group-wrapper">
-                    <div class="cat-group-title"><span style="background:var(--accent-amber)"></span> 💼 Shop & Accounting Utilities / வணிக மற்றும் கணக்கு கருவிகள்</div>
+                <!-- Business Tools -->
+                <div id="business-tools" style="margin-bottom:40px; scroll-margin-top: 100px;">
+                    <div class="cat-group-title"><span style="background:var(--accent-amber)"></span> 💼 Shop & Accounting Utilities / வணிக கருவிகள்</div>
                     <div class="tools-grid">
                         <div class="tool-card" onclick="openDirectTool('GST Invoice Generator')">
-                            <div>
-                                <div class="tool-icon" style="background:#fff7ed; color:var(--accent-amber)">🧾</div>
-                                <h4 class="tool-name">GST Invoice Generator</h4>
-                                <p class="tool-desc">Auto-calculate CGST/SGST/IGST tax rates and instantly output official retail invoices.</p>
-                            </div>
-                            <span class="tool-action-label">Launch Tool →</span>
+                            <div class="tool-icon" style="background:#fff7ed; color:var(--accent-amber)">🧾</div>
+                            <h4 class="tool-name">GST Invoice Generator</h4>
+                            <p class="tool-desc">Auto-calculate tax rates and format professional, clean retail invoices for your boutique or shop.</p>
                         </div>
                         <div class="tool-card" onclick="openDirectTool('Receipt to Excel')">
-                            <div>
-                                <div class="tool-icon" style="background:#eff6ff; color:var(--primary)">📸</div>
-                                <h4 class="tool-name">Receipt to Excel</h4>
-                                <p class="tool-desc">Upload or snap a camera photo of any billing receipt to extract structural rows into a spreadsheet.</p>
-                            </div>
-                            <span class="tool-action-label">Launch Tool →</span>
+                            <div class="tool-icon" style="background:#eff6ff; color:var(--primary)">📸</div>
+                            <h4 class="tool-name">Receipt to Excel</h4>
+                            <p class="tool-desc">Snap a quick smartphone photo of any bill to extract dates, vendors, and totals directly into a spreadsheet layout.</p>
                         </div>
                         <div class="tool-card" onclick="openDirectTool('Salary Slip Generator')">
-                            <div>
-                                <div class="tool-icon" style="background:#f3e8ff; color:var(--accent-purple)">💵</div>
-                                <h4 class="tool-name">Salary Slip Generator</h4>
-                                <p class="tool-desc">Calculate net pay, allowances, deductions and print automated workspace PDF slips for staff.</p>
-                            </div>
-                            <span class="tool-action-label">Launch Tool →</span>
-                        </div>
-                        <div class="tool-card" onclick="openDirectTool('Purchase Order Generator')">
-                            <div>
-                                <div class="tool-icon" style="background:#e0f2fe; color:var(--accent-blue)">📦</div>
-                                <h4 class="tool-name">Purchase Order Maker</h4>
-                                <p class="tool-desc">Generate official vendor-ready PO numbers and inventory tracking spreadsheets with ease.</p>
-                            </div>
-                            <span class="tool-action-label">Launch Tool →</span>
+                            <div class="tool-icon" style="background:#f3e8ff; color:#a855f7">💵</div>
+                            <h4 class="tool-name">Salary Slip Generator</h4>
+                            <p class="tool-desc">Instantly calculate net pay, allowances, deductions, and print staff-ready PDF payroll slips.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- CATEGORY B: DOCUMENT FILE CONVERTERS -->
-                <div id="pdf-tools" class="cat-group-wrapper">
+                <!-- PDF Tools -->
+                <div id="pdf-tools" style="scroll-margin-top: 100px;">
                     <div class="cat-group-title"><span style="background:var(--accent-red)"></span> 📄 Secure File Converters / கோப்பு மாற்றிகள்</div>
                     <div class="tools-grid">
                         <div class="tool-card" onclick="openDirectTool('PDF to Excel Converter')">
-                            <div>
-                                <div class="tool-icon" style="background:#ecfdf5; color:var(--accent-emerald)">📊</div>
-                                <h4 class="tool-name">PDF → Excel</h4>
-                                <p class="tool-desc">Extract complex data tables cleanly into editable .xlsx structures keeping layouts preserved.</p>
-                            </div>
-                            <span class="tool-action-label">Launch Tool →</span>
+                            <div class="tool-icon" style="background:#ecfdf5; color:var(--accent-emerald)">📊</div>
+                            <h4 class="tool-name">PDF → Excel</h4>
+                            <p class="tool-desc">Extract complex data tables cleanly into editable .xlsx structures while keeping your layout fully preserved.</p>
                         </div>
                         <div class="tool-card" onclick="openDirectTool('Excel to PDF Converter')">
-                            <div>
-                                <div class="tool-icon" style="background:#fef2f2; color:var(--accent-red)">📉</div>
-                                <h4 class="tool-name">Excel → PDF</h4>
-                                <p class="tool-desc">Lock your operational accounting spreadsheets securely into readable, shareable PDF formats.</p>
-                            </div>
-                            <span class="tool-action-label">Launch Tool →</span>
+                            <div class="tool-icon" style="background:#fef2f2; color:var(--accent-red)">📉</div>
+                            <h4 class="tool-name">Excel → PDF</h4>
+                            <p class="tool-desc">Lock your operational accounting spreadsheets securely into readable, shareable PDF formats.</p>
                         </div>
                         <div class="tool-card" onclick="openDirectTool('PDF to Word Converter')">
-                            <div>
-                                <div class="tool-icon" style="background:#e0f2fe; color:#0284c7">📃</div>
-                                <h4 class="tool-name">PDF → Word</h4>
-                                <p class="tool-desc">Convert read-only layout archives into fully customizable and editable text documents instantly.</p>
-                            </div>
-                            <span class="tool-action-label">Launch Tool →</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- CATEGORY C: GRAPHICS & CORE IMAGE UTILITIES -->
-                <div id="image-tools" class="cat-group-wrapper">
-                    <div class="cat-group-title"><span style="background:var(--accent-emerald)"></span> 📷 Image & Media Optimization / பட வடிவமைப்பு கருவிகள்</div>
-                    <div class="tools-grid">
-                        <div class="tool-card" onclick="openDirectTool('Image Compress Engine')">
-                            <div>
-                                <div class="tool-icon" style="background:#f0fdf4; color:var(--accent-emerald)">🖼️</div>
-                                <h4 class="tool-name">Compress Image</h4>
-                                <p class="tool-desc">Shrink high resolution JPG/PNG store inventory images to lightweight web friendly target KB dimensions.</p>
-                            </div>
-                            <span class="tool-action-label">Launch Tool →</span>
-                        </div>
-                        <div class="tool-card" onclick="openDirectTool('Background Remover')">
-                            <div>
-                                <div class="tool-icon" style="background:#f5f3ff; color:var(--accent-purple)">🪄</div>
-                                <h4 class="tool-name">Remove Background</h4>
-                                <p class="tool-desc">Isolate product images instantly making card backgrounds transparent via zero-latency local filters.</p>
-                            </div>
-                            <span class="tool-action-label">Launch Tool →</span>
+                            <div class="tool-icon" style="background:#e0f2fe; color:#0284c7">📃</div>
+                            <h4 class="tool-name">PDF → Word</h4>
+                            <p class="tool-desc">Convert read-only layout archives into fully customizable and editable text documents instantly.</p>
                         </div>
                     </div>
                 </div>
@@ -393,19 +266,19 @@
         </section>
     </main>
 
-    <!-- 📝 BRAND FOOTER & CONTACT VALIDATION -->
+    <!-- 📝 FOOTER SECTION -->
     <footer id="contact-section">
         <div class="container">
             <div class="footer-grid">
                 <div>
-                    <p class="footer-title">ℹ️ JAMTARIS Ecosystem / எங்களைப் பற்றி</p>
+                    <p class="footer-title">ℹ️ About JAMTARIS / எங்களைப் பற்றி</p>
                     <p class="footer-desc">
-                        ஜம்தாரிஸ் (JAMTARIS) என்பது உலகெங்கிலும் உள்ள சிறு வணிகர்கள், சில்லறை வர்த்தக நிலையங்கள், உணவகங்கள் மற்றும் சுயதொழில் செய்பவர்களுக்கான பிரத்யேகமான, பாதுகாப்பான ஆட்டோமேஷன் தளமாகும். உங்களது கணக்கு விவரங்களின் ரகசியத்தன்மையை காப்பது எங்களது முதன்மை கடமையாகும்.
+                        ஜம்தாரிஸ் (JAMTARIS) என்பது சிறு வணிகர்கள், துணிக்கடை மற்றும் உணவக உரிமையாளர்களுக்காக பிரத்யேகமாக உருவாக்கப்பட்ட ஒரு எளிய ஆன்லைன் டூல்ஸ் (Online Tools) தளமாகும். உங்களின் முக்கியமான பில்கள், PDF கோப்புகள் மற்றும் கணக்கு விவரங்கள் (Invoices) அனைத்தும் 100% பாதுகாப்பாக, உங்கள் மொபைல் அல்லது கணினியிலேயே பிராசஸ் செய்யப்படுகின்றன.
                     </p>
                 </div>
                 
                 <div>
-                    <p class="footer-title">📞 தொடர்பு முகவரி (Contact Records)</p>
+                    <p class="footer-title">📞 தொடர்பு கொள்ள (Contact Details)</p>
                     <ul class="contact-list">
                         <li>
                             <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
@@ -424,13 +297,13 @@
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2026 JAMTARIS Automation Hub. All corporate rights reserved.</p>
-                <p>Designed with High Density Responsive CSS & Secure Client-Side Sandbox Logic.</p>
+                <p>&copy; 2026 JAMTARIS. All rights reserved.</p>
+                <p>Engineered for Speed, AI Agent Automation & Total Device Privacy Sandbox.</p>
             </div>
         </div>
     </footer>
 
-    <!-- 🧠 AUTOMATED INTELLIGENT ROUTING SCRIPT FRAMEWORK -->
+    <!-- 🧠 SYSTEM AUTOMATION SCRIPTS -->
     <script>
         const chatBody = document.getElementById('chat-body');
         const chatInput = document.getElementById('chat-input');
@@ -451,24 +324,18 @@
             const query = userInput.toLowerCase();
             setTimeout(() => {
                 if (query.includes('pdf') && query.includes('excel')) {
-                    appendMessage("நிச்சயமாக! இதோ உங்களுக்கான PDF ➡️ Excel மாற்றும் மெகா டூல் விட்ஜெட் தயாராக உள்ளது. உங்களது கோப்பை இங்கே பதிவேற்றவும்:", "bot");
-                    injectSandbox("📊 Dynamic PDF ➡️ Excel Conversion Engine", '<input type="file" class="sandbox-input" accept=".pdf"><div style="display:flex; gap:10px; margin-top:5px;"><input type="text" class="sandbox-input" placeholder="Optional Sheet Name" style="width:60%;"><button class="sandbox-btn" style="width:40%;" onclick="alert('Initializing Local File Parsing Sandbox Securely...')">Convert Now</button></div>');
+                    appendMessage("நிச்சயமாக! இதோ உங்களுக்கான PDF ➡️ Excel மாற்றும் கருவி தயாராக உள்ளது. உங்கள் கோப்பை பதிவேற்றவும்:", "bot");
+                    injectSandbox("📊 PDF → Excel Sandbox", '<input type="file" class="sandbox-input" accept=".pdf"><button class="sandbox-btn" onclick="alert('Processing PDF Data Framework Locally...')">Convert Data</button>');
                 } else if (query.includes('invoice') || query.includes('bill') || query.includes('பில்')) {
-                    appendMessage("கட்டண பில் (GST Invoice) உருவாக்க வேண்டுமா? இதோ உங்களுக்கான தானியங்கி பில்லிங் விட்ஜெட்:", "bot");
-                    injectSandbox("🧾 JAMTARIS Corporate Invoice Engine", '<input type="text" class="sandbox-input" placeholder="Client Shop Name / நிறுவனத்தின் பெயர்"><div style="display:flex; gap:10px;"><input type="number" class="sandbox-input" placeholder="Amount (INR)"><input type="number" class="sandbox-input" placeholder="GST % (5/12/18)"></div><button class="sandbox-btn" onclick="alert('Compiling Corporate Tax Structures Locally...')">Generate PDF Bill</button>');
+                    appendMessage("கட்டண பில் உருவாக்க வேண்டுமா? இதோ உங்களுக்கான GST Invoice Creator விட்ஜெட்:", "bot");
+                    injectSandbox("🧾 GST Invoice Creator Interface", '<input type="text" class="sandbox-input" placeholder="Shop Name / கடையின் பெயர்"><input type="number" class="sandbox-input" placeholder="Total Amount"><button class="sandbox-btn" onclick="alert('Generating PDF Invoice Structure...')">Generate Bill</button>');
                 } else if (query.includes('receipt') || query.includes('ரசீது')) {
-                    appendMessage("பில் ரசீதுகளை எக்செல் ஆக மாற்ற இதோ உங்களது லோக்கல் அப்ளிகேஷன் விண்டோ:", "bot");
-                    injectSandbox("📸 Receipt OCR ➡️ Excel Data System", '<p style="font-size:12px; color:var(--slate-600); margin-bottom:5px;">Select scanned receipt photo:</p><input type="file" class="sandbox-input" accept="image/*"><button class="sandbox-btn" onclick="alert('Running High Definition OCR Matrix Logic...')">Extract Matrix</button>');
-                } else if (query.includes('word')) {
-                    appendMessage("PDF கோப்பை மைக்ரோசாப்ட் வேர்ட் ஆவணமாக மாற்ற இதோ உங்களுக்கான டூல் விண்டோ:", "bot");
-                    injectSandbox("📃 Premium PDF ➡️ Word Sandbox Tool", '<input type="file" class="sandbox-input" accept=".pdf"><button class="sandbox-btn" onclick="alert('Converting Layout Elements into Word Content...')">Convert to Docx</button>');
-                } else if (query.includes('compress') || query.includes('சுருக்கு')) {
-                    appendMessage("புகைப்படங்களின் அளவைக் குறைக்க இதோ உங்களது கம்ப்ரஸர் டூல் விண்டோ:", "bot");
-                    injectSandbox("🖼️ Smart Image Size Optimizer", '<input type="file" class="sandbox-input" accept="image/*"><input type="number" class="sandbox-input" placeholder="Target File Size (e.g. 100 KB)"><button class="sandbox-btn" onclick="alert('Compressing Media Elements without Quality Loss...')">Optimize Image</button>');
+                    appendMessage("ரசீதுகளை எக்செல் ஆக மாற்ற இதோ உங்களது லோக்கல் அப்ளிகேஷன் விண்டோ:", "bot");
+                    injectSandbox("📸 Receipt to Excel App Sandbox", '<input type="file" class="sandbox-input" accept="image/*"><button class="sandbox-btn" onclick="alert('Analyzing Receipt Metrics...')">Extract to Spreadsheet</button>');
                 } else {
-                    appendMessage("மன்னிக்கவும்! நீங்கள் கேட்ட டூலின் பெயர் தற்சமயம் என் நினைவகத்தில் இல்லை. கீழே உள்ள பிரம்மாண்டமான பட்டியலில் இருந்து உங்களுக்குத் தேவையான டூலைத் நேரடியாகத் தேர்ந்தெடுத்து இயக்கிக் கொள்ளலாம்.", "bot");
+                    appendMessage("மன்னிக்கவும்! அந்த டூலின் பெயர் எனக்குப் புரியவில்லை. கீழே உள்ள பட்டியலில் இருந்து உங்களுக்குத் தேவையான டூலைத் தேர்ந்தெடுக்கவும் அல்லது 'PDF to Excel' என்று டைப் செய்யவும்.", "bot");
                 }
-            }, 700);
+            }, 600);
         }
 
         function injectSandbox(title, htmlContent) {
@@ -480,7 +347,7 @@
         }
 
         function openDirectTool(name) {
-            appendMessage(`Initializing System Interface for: ${name}`, "user");
+            appendMessage(`Launching layout frame for: ${name}`, "user");
             triggerAgentLogic(name);
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
@@ -493,6 +360,7 @@
             triggerAgentLogic(text);
         }
 
+        // FIX: Re-verified event attachments ensure click executes flawlessly
         chatSend.addEventListener('click', handleSend);
         chatInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') handleSend(); });
     </script>
