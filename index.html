@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JAMTARIS - Premium Small Business Tools</title>
+    <title>JAMTARIS - AI Agent & Premium Small Business Tools</title>
     
     <style>
-        /* ⚡ SPEED & DESIGN INITIALIZATION */
+        /* ⚡ DYNAMIC ENGINE INITIALIZATION */
         :root {
             --primary: #2563eb;
             --primary-dark: #1d4ed8;
@@ -24,25 +24,22 @@
         body { font-family: system-ui, -apple-system, sans-serif; background-color: #f8fafc; color: var(--slate-900); line-height: 1.5; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
         
-        /* 🌐 FIXED STICKY HEADER & NAVIGATION LOGO */
+        /* 🌐 FIXED STICKY HEADER */
         header { position: sticky; top: 0; background: #ffffff; border-b: 1px solid var(--slate-100); z-index: 1000; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
         .nav-container { display: flex; align-items: center; justify-content: space-between; height: 80px; }
         
-        /* 🎨 CUSTOM BUILT-IN SVG LOGO SHAPE */
         .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; font-size: 26px; font-weight: 800; color: var(--primary); letter-spacing: 0.5px; }
         .logo-image { background: linear-gradient(135deg, #3b82f6, #1d4ed8); width: 42px; height: 42px; border-radius: 12px; display: flex; align-items: center; justify-content: center; }
         .logo-image svg { width: 22px; height: 22px; fill: white; }
         
-        /* WORKING NAVIGATION ANCHORS */
         .nav-links { display: flex; gap: 28px; }
         .nav-links a { text-decoration: none; color: var(--slate-600); font-weight: 600; font-size: 15px; transition: color 0.2s; display: flex; align-items: center; gap: 6px; }
         .nav-links a:hover { color: var(--primary); }
         
-        .btn-header { background: var(--primary); color: white; padding: 11px 22px; border-radius: 12px; text-decoration: none; font-weight: 700; font-size: 14px; box-shadow: 0 4px 12px rgba(37,99,235,0.2); transition: background 0.2s; }
-        .btn-header:hover { background: var(--primary-dark); }
+        .btn-header { background: var(--primary); color: white; padding: 11px 22px; border-radius: 12px; text-decoration: none; font-weight: 700; font-size: 14px; box-shadow: 0 4px 12px rgba(37,99,235,0.2); }
         
         /* 🚀 HERO PRESENTATION LAYOUT */
-        .hero-section { padding: 70px 0 90px; }
+        .hero-section { padding: 50px 0 70px; }
         .hero { display: flex; flex-direction: column; gap: 40px; align-items: center; }
         @media(min-width: 768px) { .hero { flex-direction: row; text-align: left; } }
         
@@ -54,33 +51,38 @@
         .hero-title span { background: linear-gradient(to right, #2563eb, #4f46e5); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .hero-desc { font-size: 17px; color: var(--slate-600); margin-bottom: 35px; font-weight: 500; }
         
-        /* 🔗 WORKING EXPORE TOOLS LINK ACTION */
-        .btn-hero { background: var(--slate-900); color: white; padding: 16px 36px; border-radius: 14px; text-decoration: none; font-weight: 700; font-size: 16px; box-shadow: 0 10px 20px rgba(15,23,42,0.15); transition: all 0.2s; display: inline-flex; align-items: center; gap: 8px; }
-        .btn-hero:hover { transform: translateY(-2px); background: #1e293b; }
+        .btn-hero { background: var(--slate-900); color: white; padding: 16px 36px; border-radius: 14px; text-decoration: none; font-weight: 700; font-size: 16px; box-shadow: 0 10px 20px rgba(15,23,42,0.15); display: inline-flex; align-items: center; gap: 8px; }
         
-        /* VISUAL PREVIEW INTERFACE CARD */
+        /* 🤖 INTERACTIVE AI AGENT WORKSPACE PANEL */
         .hero-right { flex: 1; width: 100%; }
-        .preview-card { background: linear-gradient(135deg, #2563eb, #4f46e5); padding: 40px; border-radius: 28px; color: white; box-shadow: 0 20px 30px rgba(37,99,235,0.15); min-height: 280px; display: flex; flex-direction: column; justify-content: space-between; }
-        .preview-badge { background: rgba(255,255,255,0.2); padding: 5px 14px; border-radius: 8px; font-size: 12px; font-weight: 700; display: inline-block; width: max-content; }
-        .preview-title { font-size: 26px; font-weight: 700; margin-top: 20px; margin-bottom: 12px; }
-        .preview-desc { font-size: 14px; color: #dbeafe; line-height: 1.6; }
-        .status-box { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); padding: 16px; border-radius: 18px; margin-top: 30px; display: flex; justify-content: space-between; align-items: center; }
-        .status-left { display: flex; align-items: center; gap: 10px; }
-        .status-dot { width: 10px; height: 10px; background: #34d399; border-radius: 50%; box-shadow: 0 0 10px #34d399; }
+        .agent-container { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 24px; box-shadow: 0 20px 30px rgba(0,0,0,0.06); display: flex; flex-direction: column; height: 420px; overflow: hidden; }
+        .agent-header { background: linear-gradient(135deg, #1e293b, #0f172a); color: white; padding: 16px 20px; display: flex; align-items: center; justify-content: space-between; }
+        .agent-status { display: flex; align-items: center; gap: 8px; }
+        .status-dot { width: 8px; height: 8px; background: #34d399; border-radius: 50%; box-shadow: 0 0 8px #34d399; animation: pulse 2s infinite; }
         
-        /* 🔒 VALUE PROPOSITION BLOCKS */
-        .features-row { background: white; border-top: 1px solid var(--slate-100); border-bottom: 1px solid var(--slate-100); padding: 70px 0; }
-        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 35px; }
-        .f-card { padding: 10px; border-radius: 16px; }
-        .f-icon { width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 20px; }
-        .f-title { font-size: 20px; font-weight: 700; margin-bottom: 10px; color: #1e293b; }
-        .f-desc { font-size: 14.5px; color: var(--slate-600); leading-relaxed; }
+        .agent-body { flex: 1; padding: 20px; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; background: #f8fafc; }
+        .msg { max-width: 80%; padding: 12px 16px; border-radius: 16px; font-size: 14px; font-weight: 500; }
+        .msg.bot { background: #ffffff; color: var(--slate-900); align-self: flex-start; border: 1px solid #e2e8f0; border-radius-topleft: 4px; }
+        .msg.user { background: var(--primary); color: white; align-self: flex-end; border-radius-topright: 4px; }
         
-        /* 🧰 TOOLS DIRECTORY CATALOG GRIDS */
+        /* DYNAMIC INTERACTIVE APP INJECTOR SANDBOX */
+        .app-sandbox { background: #eff6ff; border: 2px dashed #bfdbfe; padding: 16px; border-radius: 16px; margin-top: 10px; display: none; flex-direction: column; gap: 10px; }
+        .sandbox-title { font-size: 14px; font-weight: 700; color: #1e40af; display: flex; align-items: center; gap: 6px; }
+        .sandbox-input { width: 100%; padding: 10px; border: 1px solid #bfdbfe; border-radius: 8px; outline: none; font-size: 13px; }
+        .sandbox-btn { background: var(--primary); color: white; border: none; padding: 10px; border-radius: 8px; font-weight: 700; cursor: pointer; font-size: 13px; }
+        
+        .agent-footer { padding: 12px; background: #ffffff; border-top: 1px solid #e2e8f0; display: flex; gap: 10px; }
+        .agent-input { flex: 1; padding: 12px 16px; border: 1px solid #e2e8f0; border-radius: 12px; outline: none; font-size: 14px; transition: border-color 0.2s; }
+        .agent-input:focus { border-color: var(--primary); }
+        .agent-send { background: var(--primary); border: none; width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; cursor: pointer; color: white; transition: background 0.2s; }
+        .agent-send:hover { background: var(--primary-dark); }
+        .agent-send svg { width: 18px; height: 18px; fill: currentColor; }
+        
+        /* 🧰 TOOLS CATALOG GRIDS */
         .catalog { padding: 90px 0; scroll-margin-top: 80px; }
         .cat-header { text-align: center; max-width: 650px; margin: 0 auto 60px; }
         .cat-header h2 { font-size: 34px; font-weight: 800; margin-bottom: 12px; color: #1e293b; }
-        .cat-group-title { font-size: 14px; font-weight: 700; text-transform: uppercase; tracking-wider; color: var(--slate-700); margin-bottom: 30px; display: flex; align-items: center; gap: 10px; border-bottom: 2px solid var(--slate-100); padding-bottom: 10px; font-family: system-ui, sans-serif; }
+        .cat-group-title { font-size: 14px; font-weight: 700; text-transform: uppercase; tracking-wider; color: var(--slate-700); margin-bottom: 30px; display: flex; align-items: center; gap: 10px; border-bottom: 2px solid var(--slate-100); padding-bottom: 10px; }
         .cat-group-title span { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
         
         .tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 26px; margin-bottom: 60px; }
@@ -90,7 +92,7 @@
         .tool-name { font-size: 18px; font-weight: 700; margin-bottom: 8px; color: #1e293b; }
         .tool-desc { font-size: 14px; color: var(--slate-600); line-height: 1.5; }
         
-        /* 📝 FOOTER & LIVE CONTACT SECTION SETUP */
+        /* 📝 FOOTER & CONTACT */
         footer { background: white; border-top: 1px solid var(--slate-100); padding: 70px 0 40px; font-size: 14px; color: var(--slate-600); scroll-margin-top: 80px; }
         .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px; margin-bottom: 50px; }
         .footer-title { font-weight: 700; color: var(--slate-900); font-size: 18px; margin-bottom: 20px; display: flex; align-items: center; gap: 8px; }
@@ -99,27 +101,25 @@
         .contact-list { list-style: none; }
         .contact-list li { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; font-size: 14px; color: var(--slate-700); font-weight: 500; }
         .contact-list svg { width: 16px; height: 16px; fill: var(--primary); flex-shrink: 0; }
-        .contact-list a { color: var(--slate-700); text-decoration: none; transition: color 0.2s; }
+        .contact-list a { color: var(--slate-700); text-decoration: none; }
         .contact-list a:hover { color: var(--primary); }
         
-        .footer-bottom { border-top: 1px solid var(--slate-100); padding-top: 30px; display: flex; flex-direction: column; md-flex-direction: row; justify-content: space-between; align-items: center; gap: 20px; font-size: 13px; color: #94a3b8; font-weight: 500; }
-        @media(min-width: 768px) { .footer-bottom { flex-direction: row; } }
+        .footer-bottom { border-top: 1px solid var(--slate-100); padding-top: 30px; display: flex; flex-direction: column; md-flex-direction: row; justify-content: space-between; align-items: center; gap: 20px; font-size: 13px; color: #94a3b8; }
+        
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
     </style>
 </head>
 <body>
 
-    <!-- 🌐 NAVIGATION HEADER (With Functional Links & Active Logo) -->
+    <!-- 🌐 HEADER NAVIGATION -->
     <header>
         <div class="container nav-container">
-            <!-- 🔗 Fixed Logo Redirect to Header Top -->
             <a href="#" class="logo">
                 <div class="logo-image">
                     <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
                 </div>
                 JAMTARIS
             </a>
-            
-            <!-- 🔗 Fully Functional Menu Core Links -->
             <nav class="nav-links">
                 <a href="#pdf-tools">PDF Tools</a>
                 <a href="#business-tools">Business Tools</a>
@@ -129,10 +129,8 @@
         </div>
     </header>
 
-    <!-- 🚀 HERO PRESENTATION LAYOUT -->
+    <!-- 🚀 HERO AREA (With Active AI Agent System Interface) -->
     <main>
         <section class="container hero-section">
             <div class="hero">
                 <div class="hero-left">
-                    <div class="badge">⚙️ 81+ Web Tools Live & Free</div>
-                    <h1 class="hero-title">Simple, Power-Packed Tools for Your Small Business. <br><span>Zero Clutter. 100% Private.</span></h1>
