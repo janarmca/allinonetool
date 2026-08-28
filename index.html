@@ -60,7 +60,7 @@
         
         /* 🤖 INTERACTIVE AI AGENT PANEL */
         .hero-right { flex: 0.9; width: 100%; max-width: 480px; }
-        .agent-container { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 24px; box-shadow: 0 20px 30px rgba(0,0,0,0.06); display: flex; flex-direction: column; height: 520px; overflow: hidden; }
+        .agent-container { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 24px; box-shadow: 0 20px 30px rgba(0,0,0,0.06); display: flex; flex-direction: column; height: 550px; overflow: hidden; }
         .agent-header { background: linear-gradient(135deg, #1e293b, #0f172a); color: white; padding: 16px 20px; display: flex; align-items: center; justify-content: space-between; }
         .agent-status { display: flex; align-items: center; gap: 8px; }
         .status-dot { width: 8px; height: 8px; background: #34d399; border-radius: 50%; box-shadow: 0 0 8px #34d399; animation: pulse 2s infinite; }
@@ -91,6 +91,8 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 8px;
         }
         .sample-doc h3 .badge-doc {
             font-size: 11px;
@@ -174,6 +176,7 @@
             gap: 10px;
             transition: all 0.2s;
             font-size: 13px;
+            width: 100%;
         }
         .quick-buttons button:hover {
             border-color: var(--primary);
@@ -425,8 +428,8 @@
                         </div>
                         <div class="tool-card" onclick="openDirectTool('Receipt')">
                             <div class="tool-icon" style="background:#fce4ec; color:#dc2626;">📸</div>
-                            <h4 class="tool-name">Receipt to Excel</h4>
-                            <p class="tool-desc">Snap a quick smartphone photo of any bill to extract dates, vendors, and totals directly into a spreadsheet layout.</p>
+                            <h4 class="tool-name">Receipt Generator</h4>
+                            <p class="tool-desc">Generate payment receipts with mode, amount, and transaction details for customers.</p>
                             <span class="integration-badge" onclick="event.stopPropagation();openDirectTool('Receipt')">💬 Generate Sample</span>
                         </div>
                         <div class="tool-card" onclick="openDirectTool('Salary Slip')">
@@ -537,20 +540,36 @@
                 chatBody.scrollTop = chatBody.scrollHeight;
             }
 
-            // 🆕 DOWNLOAD FUNCTION - Creates and downloads a text file
+            // 🆕 FIXED DOWNLOAD FUNCTION - Works with any text content
             function downloadSample(content, filename) {
-                const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
-                const url = URL.createObjectURL(blob);
-                const a = document.createElement('a');
-                a.href = url;
-                a.download = filename;
-                document.body.appendChild(a);
-                a.click();
-                document.body.removeChild(a);
-                URL.revokeObjectURL(url);
-                
-                // Show download feedback
-                appendMessage(`✅ <strong>Downloaded:</strong> ${filename} (${Math.round(blob.size/1024)} KB)`, 'bot');
+                try {
+                    // Create a blob with the content
+                    const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+                    const url = URL.createObjectURL(blob);
+                    
+                    // Create a temporary anchor element
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = filename;
+                    document.body.appendChild(a);
+                    
+                    // Trigger the download
+                    a.click();
+                    
+                    // Clean up
+                    setTimeout(() => {
+                        document.body.removeChild(a);
+                        URL.revokeObjectURL(url);
+                    }, 100);
+                    
+                    // Show success message
+                    appendMessage(`✅ <strong>Downloaded:</strong> ${filename} (${Math.round(blob.size/1024)} KB)`, 'bot');
+                    return true;
+                } catch (error) {
+                    console.error('Download error:', error);
+                    appendMessage(`❌ Download failed: ${error.message}`, 'bot');
+                    return false;
+                }
             }
 
             // 🆕 GENERATE QUOTATION
@@ -562,6 +581,35 @@
                 validUntil.setDate(validUntil.getDate() + 15);
                 const validStr = validUntil.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
                 
+                const items = details.items || [
+                    { name: 'Service Consultation', amount: 1500 },
+                    { name: 'Design Work', amount: 2000 },
+                    { name: 'Implementation', amount: 2500 }
+                ];
+                const subtotal = items.reduce((sum, i) => sum + i.amount, 0);
+                const gst = Math.round(subtotal * 0.18);
+                const total = subtotal + gst;
+                
+                // Build text content for download
+                const textContent = `${type}
+================================
+Quote No: ${quoteNo}
+Date: ${dateStr}
+Customer: ${details.customer || 'Sample Customer'}
+Contact: ${details.contact || '+91 98765 43210'}
+Valid Until: ${validStr}
+--------------------------------
+Items:
+${items.map(i => `  ${i.name.padEnd(30)} ₹${i.amount}`).join('\n')}
+--------------------------------
+Subtotal: ₹${subtotal}
+GST (18%): ₹${gst}
+--------------------------------
+TOTAL: ₹${total}
+================================
+Terms: 50% advance • 15 days validity • GST applicable
+`;
+
                 let html = `<div class="sample-doc" style="border-color:#d97706;">`;
                 html += `<h3 style="color:#d97706;">📋 ${type} <span class="badge-doc">Valid until ${validStr}</span></h3>`;
                 html += `<div class="doc-row"><span class="doc-label">Quote No:</span><span class="doc-value">${quoteNo}</span></div>`;
@@ -569,24 +617,18 @@
                 html += `<div class="doc-row"><span class="doc-label">Customer:</span><span class="doc-value">${details.customer || 'Sample Customer'}</span></div>`;
                 html += `<div class="doc-row"><span class="doc-label">Contact:</span><span class="doc-value">${details.contact || '+91 98765 43210'}</span></div>`;
                 
-                if (details.items && details.items.length > 0) {
-                    html += `<div style="margin-top:8px;border-top:1px solid #e2e8f0;padding-top:8px;">`;
-                    details.items.forEach(item => {
-                        html += `<div class="doc-row"><span>${item.name}</span><span>₹${item.amount}</span></div>`;
-                    });
-                    html += `</div>`;
-                }
-                
-                const subtotal = details.items ? details.items.reduce((sum, i) => sum + i.amount, 0) : 0;
-                const gst = Math.round(subtotal * 0.18);
-                const total = subtotal + gst;
+                html += `<div style="margin-top:8px;border-top:1px solid #e2e8f0;padding-top:8px;">`;
+                items.forEach(item => {
+                    html += `<div class="doc-row"><span>${item.name}</span><span>₹${item.amount}</span></div>`;
+                });
+                html += `</div>`;
                 
                 html += `<div class="doc-row"><span class="doc-label">Subtotal:</span><span>₹${subtotal}</span></div>`;
                 html += `<div class="doc-row"><span class="doc-label">GST (18%):</span><span>₹${gst}</span></div>`;
                 html += `<div class="doc-row total"><span>Total Quote Amount:</span><span>₹${total}</span></div>`;
                 html += `<div class="doc-gst" style="border-left-color:#d97706;">✅ Terms: 50% advance • 15 days validity • GST applicable</div>`;
                 html += `<div class="doc-actions">`;
-                html += `<button onclick="downloadSample('${type}\\nQuote No: ${quoteNo}\\nDate: ${dateStr}\\nCustomer: ${details.customer}\\nTotal: ₹${total}\\nValid until: ${validStr}','Quotation_${quoteNo}.txt')" class="download-btn">⬇️ Download .txt</button>`;
+                html += `<button class="download-btn" onclick="downloadSample(\`${textContent.replace(/`/g, '\\`')}\`, 'Quotation_${quoteNo}.txt')">⬇️ Download .txt</button>`;
                 html += `<button onclick="window.open('https://janarmca.github.io/pdf-tools-backend/', '_blank')">📄 Create Full PDF</button>`;
                 html += `<button class="secondary" onclick="this.parentElement.parentElement.parentElement.remove()">✖ Close</button>`;
                 html += `</div>`;
@@ -599,6 +641,8 @@
                 const now = new Date();
                 const dateStr = now.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
                 const quoteNo = 'MR-' + String(Math.floor(1000 + Math.random() * 9000));
+                const device = ['iPhone 13', 'Samsung Galaxy S23', 'OnePlus 11', 'Pixel 7'][Math.floor(Math.random() * 4)];
+                const issue = ['Screen Cracked', 'Battery Drain', 'Charging Issue', 'Camera Not Working', 'Water Damage'][Math.floor(Math.random() * 5)];
                 
                 const repairItems = [
                     { name: '📱 Screen Replacement (Original)', amount: 2500 },
@@ -607,21 +651,39 @@
                     { name: '📷 Camera Lens Replacement', amount: 1500 },
                     { name: '🛠️ Labour Charges', amount: 500 }
                 ];
-                
-                // Randomly select 2-3 items
                 const selected = repairItems.slice(0, 2 + Math.floor(Math.random() * 2));
                 const subtotal = selected.reduce((sum, i) => sum + i.amount, 0);
                 const gst = Math.round(subtotal * 0.18);
                 const total = subtotal + gst;
                 const warranty = 3 + Math.floor(Math.random() * 3);
                 
+                const textContent = `Mobile Repair Quotation
+================================
+Quote No: ${quoteNo}
+Date: ${dateStr}
+Customer: Sample Customer
+Device: ${device}
+Issue: ${issue}
+--------------------------------
+Repair Items:
+${selected.map(i => `  ${i.name.padEnd(35)} ₹${i.amount}`).join('\n')}
+--------------------------------
+Subtotal: ₹${subtotal}
+GST (18%): ₹${gst}
+--------------------------------
+TOTAL: ₹${total}
+================================
+Warranty: ${warranty} months on repairs
+Free diagnostic • Genuine parts
+`;
+
                 let html = `<div class="sample-doc" style="border-color:#2563eb;">`;
                 html += `<h3 style="color:#2563eb;">📱 Mobile Repair Quotation <span class="badge-doc">${warranty} months warranty</span></h3>`;
                 html += `<div class="doc-row"><span class="doc-label">Quote No:</span><span class="doc-value">${quoteNo}</span></div>`;
                 html += `<div class="doc-row"><span class="doc-label">Date:</span><span class="doc-value">${dateStr}</span></div>`;
                 html += `<div class="doc-row"><span class="doc-label">Customer:</span><span class="doc-value">Sample Customer</span></div>`;
-                html += `<div class="doc-row"><span class="doc-label">Device:</span><span class="doc-value">${['iPhone 13','Samsung Galaxy S23','OnePlus 11','Pixel 7'][Math.floor(Math.random()*4)]}</span></div>`;
-                html += `<div class="doc-row"><span class="doc-label">Issue:</span><span class="doc-value">${['Screen Cracked','Battery Drain','Charging Issue','Camera Not Working','Water Damage'][Math.floor(Math.random()*5)]}</span></div>`;
+                html += `<div class="doc-row"><span class="doc-label">Device:</span><span class="doc-value">${device}</span></div>`;
+                html += `<div class="doc-row"><span class="doc-label">Issue:</span><span class="doc-value">${issue}</span></div>`;
                 
                 html += `<div style="margin-top:8px;border-top:1px solid #e2e8f0;padding-top:8px;">`;
                 selected.forEach(item => {
@@ -634,7 +696,7 @@
                 html += `<div class="doc-row total"><span>Total Repair Cost:</span><span>₹${total}</span></div>`;
                 html += `<div class="doc-gst" style="border-left-color:#2563eb;">✅ ${warranty} months warranty on repairs • Free diagnostic • Genuine parts</div>`;
                 html += `<div class="doc-actions">`;
-                html += `<button onclick="downloadSample('Mobile Repair Quotation\\nQuote No: ${quoteNo}\\nDate: ${dateStr}\\nDevice: ${document.querySelector('.sample-doc .doc-row:nth-child(4) .doc-value')?.innerText || 'Unknown'}\\nTotal: ₹${total}\\nWarranty: ${warranty} months','MobileRepair_${quoteNo}.txt')" class="download-btn">⬇️ Download .txt</button>`;
+                html += `<button class="download-btn" onclick="downloadSample(\`${textContent.replace(/`/g, '\\`')}\`, 'MobileRepair_${quoteNo}.txt')">⬇️ Download .txt</button>`;
                 html += `<button onclick="window.open('https://janarmca.github.io/pdf-tools-backend/', '_blank')">📄 Create Full PDF</button>`;
                 html += `<button class="secondary" onclick="this.parentElement.parentElement.parentElement.remove()">✖ Close</button>`;
                 html += `</div>`;
@@ -657,6 +719,24 @@
                 const gst = Math.round(subtotal * 0.18);
                 const total = subtotal + gst;
                 
+                const textContent = `GST Tax Invoice
+================================
+Invoice No: ${invoiceNo}
+Date: ${dateStr}
+Customer: Sample Customer
+GSTIN: 33ABCDE1234F1Z5
+--------------------------------
+Items:
+${items.map(i => `  ${i.name.padEnd(30)} ₹${i.amount}`).join('\n')}
+--------------------------------
+Subtotal: ₹${subtotal}
+GST (18%): ₹${gst}
+--------------------------------
+TOTAL: ₹${total}
+================================
+HSN/SAC: 9983
+`;
+
                 let html = `<div class="sample-doc" style="border-color:#059669;">`;
                 html += `<h3 style="color:#059669;">🧾 GST Tax Invoice <span class="badge-doc">Tax Invoice</span></h3>`;
                 html += `<div class="doc-row"><span class="doc-label">Invoice No:</span><span class="doc-value">${invoiceNo}</span></div>`;
@@ -672,7 +752,7 @@
                 html += `<div class="doc-row total"><span>Total Amount:</span><span>₹${total}</span></div>`;
                 html += `<div class="doc-gst">✅ GSTIN: 33ABCDE1234F1Z5 • HSN/SAC: 9983</div>`;
                 html += `<div class="doc-actions">`;
-                html += `<button onclick="downloadSample('GST Invoice\\nInvoice No: ${invoiceNo}\\nDate: ${dateStr}\\nCustomer: Sample Customer\\nTotal: ₹${total}\\nGSTIN: 33ABCDE1234F1Z5','Invoice_${invoiceNo}.txt')" class="download-btn">⬇️ Download .txt</button>`;
+                html += `<button class="download-btn" onclick="downloadSample(\`${textContent.replace(/`/g, '\\`')}\`, 'Invoice_${invoiceNo}.txt')">⬇️ Download .txt</button>`;
                 html += `<button onclick="window.open('https://janarmca.github.io/pdf-tools-backend/', '_blank')">📄 Create Full PDF</button>`;
                 html += `<button class="secondary" onclick="this.parentElement.parentElement.parentElement.remove()">✖ Close</button>`;
                 html += `</div>`;
@@ -686,18 +766,35 @@
                 const dateStr = now.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
                 const receiptNo = 'RCP-' + String(Math.floor(1000 + Math.random() * 9000));
                 const amount = Math.floor(200 + Math.random() * 800);
+                const mode = ['Cash', 'UPI', 'Card', 'Bank Transfer'][Math.floor(Math.random() * 4)];
+                const purpose = ['Product Purchase', 'Service Fee', 'Repair Service', 'Advance Payment'][Math.floor(Math.random() * 4)];
+                const terms = ['No returns after 7 days', 'Exchange within 3 days', 'Warranty applicable'][Math.floor(Math.random() * 3)];
                 
+                const textContent = `Payment Receipt
+================================
+Receipt No: ${receiptNo}
+Date: ${dateStr}
+Received From: Sample Customer
+Amount: ₹${amount}
+Payment Mode: ${mode}
+For: ${purpose}
+--------------------------------
+${terms}
+================================
+Received with thanks
+`;
+
                 let html = `<div class="sample-doc" style="border-color:#dc2626;">`;
                 html += `<h3 style="color:#dc2626;">📸 Payment Receipt <span class="badge-doc">Paid</span></h3>`;
                 html += `<div class="doc-row"><span class="doc-label">Receipt No:</span><span class="doc-value">${receiptNo}</span></div>`;
                 html += `<div class="doc-row"><span class="doc-label">Date:</span><span class="doc-value">${dateStr}</span></div>`;
                 html += `<div class="doc-row"><span class="doc-label">Received From:</span><span class="doc-value">Sample Customer</span></div>`;
                 html += `<div class="doc-row"><span class="doc-label">Amount:</span><span class="doc-value">₹${amount}</span></div>`;
-                html += `<div class="doc-row"><span class="doc-label">Payment Mode:</span><span class="doc-value">${['Cash','UPI','Card','Bank Transfer'][Math.floor(Math.random()*4)]}</span></div>`;
-                html += `<div class="doc-row"><span class="doc-label">For:</span><span class="doc-value">${['Product Purchase','Service Fee','Repair Service','Advance Payment'][Math.floor(Math.random()*4)]}</span></div>`;
-                html += `<div class="doc-gst" style="border-left-color:#dc2626;">✅ Received with thanks • ${['No returns after 7 days','Exchange within 3 days','Warranty applicable'][Math.floor(Math.random()*3)]}</div>`;
+                html += `<div class="doc-row"><span class="doc-label">Payment Mode:</span><span class="doc-value">${mode}</span></div>`;
+                html += `<div class="doc-row"><span class="doc-label">For:</span><span class="doc-value">${purpose}</span></div>`;
+                html += `<div class="doc-gst" style="border-left-color:#dc2626;">✅ Received with thanks • ${terms}</div>`;
                 html += `<div class="doc-actions">`;
-                html += `<button onclick="downloadSample('Payment Receipt\\nReceipt No: ${receiptNo}\\nDate: ${dateStr}\\nAmount: ₹${amount}\\nPayment Mode: ${document.querySelector('.sample-doc .doc-row:nth-child(5) .doc-value')?.innerText || 'Unknown'}','Receipt_${receiptNo}.txt')" class="download-btn">⬇️ Download .txt</button>`;
+                html += `<button class="download-btn" onclick="downloadSample(\`${textContent.replace(/`/g, '\\`')}\`, 'Receipt_${receiptNo}.txt')">⬇️ Download .txt</button>`;
                 html += `<button onclick="window.open('https://janarmca.github.io/pdf-tools-backend/', '_blank')">📄 Create Full PDF</button>`;
                 html += `<button class="secondary" onclick="this.parentElement.parentElement.parentElement.remove()">✖ Close</button>`;
                 html += `</div>`;
@@ -717,6 +814,27 @@
                 const ptax = 200;
                 const net = gross - pf - ptax;
                 
+                const textContent = `Salary Slip - ${month}
+================================
+Employee: Sample Employee
+Designation: Store Manager
+--------------------------------
+Earnings:
+  Basic Pay                    ₹${basic}
+  HRA                          ₹${hra}
+  Allowances                   ₹${allowances}
+  ------------------------------
+  Gross Pay                    ₹${gross}
+--------------------------------
+Deductions:
+  PF Deduction                 -₹${pf}
+  Professional Tax             -₹${ptax}
+  ------------------------------
+  Net Pay                      ₹${net}
+================================
+Paid via Bank Transfer • ${month}
+`;
+
                 let html = `<div class="sample-doc" style="border-color:#7c3aed;">`;
                 html += `<h3 style="color:#7c3aed;">💵 Salary Slip - ${month} <span class="badge-doc">Net: ₹${net}</span></h3>`;
                 html += `<div class="doc-row"><span class="doc-label">Employee:</span><span class="doc-value">Sample Employee</span></div>`;
@@ -732,7 +850,7 @@
                 html += `</div>`;
                 html += `<div class="doc-gst" style="border-left-color:#7c3aed;">✅ Net Pay: ₹${net} • Paid via Bank Transfer • ${month}</div>`;
                 html += `<div class="doc-actions">`;
-                html += `<button onclick="downloadSample('Salary Slip - ${month}\\nEmployee: Sample Employee\\nGross Pay: ₹${gross}\\nNet Pay: ₹${net}\\nPF: ₹${pf}\\nPT: ₹${ptax}','SalarySlip_${month.replace(' ','_')}.txt')" class="download-btn">⬇️ Download .txt</button>`;
+                html += `<button class="download-btn" onclick="downloadSample(\`${textContent.replace(/`/g, '\\`')}\`, 'SalarySlip_${month.replace(/ /g, '_')}.txt')">⬇️ Download .txt</button>`;
                 html += `<button onclick="window.open('https://janarmca.github.io/pdf-tools-backend/', '_blank')">📄 Create Full PDF</button>`;
                 html += `<button class="secondary" onclick="this.parentElement.parentElement.parentElement.remove()">✖ Close</button>`;
                 html += `</div>`;
@@ -746,7 +864,7 @@
                 if (query === '') return;
 
                 setTimeout(() => {
-                    // 🆕 QUOTATION
+                    // QUOTATION
                     if (query.includes('quotation') || query.includes('quote') || query.includes('estimate') || query.includes('price list')) {
                         appendMessage(`📋 Here's a professional Quotation for your services:`, 'bot');
                         appendMessage(generateQuotation('Service Quotation', {
@@ -761,7 +879,7 @@
                         return;
                     }
 
-                    // 🆕 MOBILE REPAIR
+                    // MOBILE REPAIR
                     if (query.includes('mobile') || query.includes('repair') || query.includes('phone') || query.includes('fix') || query.includes('screen') || query.includes('battery')) {
                         appendMessage(`📱 Here's a Mobile Repair Quotation with parts and labour:`, 'bot');
                         appendMessage(generateMobileRepairQuote(), 'bot');
@@ -807,7 +925,7 @@
                         return;
                     }
 
-                    // 🆕 DEFAULT: Show quick action buttons
+                    // DEFAULT: Show quick action buttons
                     appendMessage(`📋 நான் இந்த மாதிரி ஆவணங்களை உருவாக்க முடியும்:`, 'bot');
                     appendMessage(`
                         <div class="quick-buttons">
@@ -874,8 +992,9 @@
             window.generateReceipt = generateReceipt;
             window.generateSalarySlip = generateSalarySlip;
 
-            console.log('JAMTARIS AI Agent initialized with QUOTATION & MOBILE REPAIR!');
-            console.log('Try typing: "Quotation", "Mobile Repair", "GST Invoice", "Receipt", or "Salary Slip"');
+            console.log('✅ JAMTARIS AI Agent initialized with WORKING DOWNLOAD!');
+            console.log('📥 Try typing: "Quotation", "Mobile Repair", "GST Invoice", "Receipt", or "Salary Slip"');
+            console.log('⬇️ Each sample has a working "Download .txt" button!');
         })();
     </script>
 </body>
