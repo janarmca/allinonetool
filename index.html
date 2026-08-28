@@ -60,18 +60,18 @@
         
         /* 🤖 INTERACTIVE AI AGENT PANEL */
         .hero-right { flex: 0.9; width: 100%; max-width: 480px; }
-        .agent-container { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 24px; box-shadow: 0 20px 30px rgba(0,0,0,0.06); display: flex; flex-direction: column; height: 480px; overflow: hidden; }
+        .agent-container { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 24px; box-shadow: 0 20px 30px rgba(0,0,0,0.06); display: flex; flex-direction: column; height: 520px; overflow: hidden; }
         .agent-header { background: linear-gradient(135deg, #1e293b, #0f172a); color: white; padding: 16px 20px; display: flex; align-items: center; justify-content: space-between; }
         .agent-status { display: flex; align-items: center; gap: 8px; }
         .status-dot { width: 8px; height: 8px; background: #34d399; border-radius: 50%; box-shadow: 0 0 8px #34d399; animation: pulse 2s infinite; }
         
         .agent-body { flex: 1; padding: 20px; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; background: #f8fafc; }
-        .msg { max-width: 85%; padding: 12px 16px; border-radius: 16px; font-size: 14px; font-weight: 500; }
-        .msg.bot { background: #ffffff; color: var(--slate-900); align-self: flex-start; border: 1px solid #e2e8f0; border-top-left-radius: 4px; box-shadow: 0 1px 2px rgba(0,0,0,0.02); }
-        .msg.user { background: var(--primary); color: white; align-self: flex-end; border-top-right-radius: 4px; }
+        .msg { max-width: 100%; padding: 12px 16px; border-radius: 16px; font-size: 14px; font-weight: 500; }
+        .msg.bot { background: #ffffff; color: var(--slate-900); align-self: flex-start; border: 1px solid #e2e8f0; border-top-left-radius: 4px; box-shadow: 0 1px 2px rgba(0,0,0,0.02); width: 100%; }
+        .msg.user { background: var(--primary); color: white; align-self: flex-end; border-top-right-radius: 4px; max-width: 85%; }
         
-        /* 🆕 SAMPLE INVOICE STYLES */
-        .sample-invoice {
+        /* 🆕 SAMPLE DOCUMENT STYLES */
+        .sample-doc {
             background: white;
             border: 2px solid var(--primary);
             border-radius: 12px;
@@ -82,29 +82,40 @@
             max-width: 100%;
             box-shadow: 0 4px 12px rgba(0,0,0,0.08);
         }
-        .sample-invoice h3 {
+        .sample-doc h3 {
             color: var(--primary);
             font-size: 18px;
             margin-bottom: 12px;
             border-bottom: 2px solid var(--slate-100);
             padding-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
-        .invoice-row {
+        .sample-doc h3 .badge-doc {
+            font-size: 11px;
+            background: #dbeafe;
+            padding: 2px 10px;
+            border-radius: 999px;
+            color: var(--primary);
+            font-weight: 600;
+        }
+        .doc-row {
             display: flex;
             justify-content: space-between;
             padding: 4px 0;
             border-bottom: 1px dashed #e2e8f0;
         }
-        .invoice-row.total {
+        .doc-row.total {
             font-weight: 700;
             font-size: 15px;
             border-bottom: 2px solid var(--primary);
             padding-top: 8px;
             margin-top: 4px;
         }
-        .invoice-label { color: var(--slate-600); }
-        .invoice-value { font-weight: 600; color: var(--slate-900); }
-        .invoice-gst {
+        .doc-label { color: var(--slate-600); }
+        .doc-value { font-weight: 600; color: var(--slate-900); }
+        .doc-gst {
             background: #f0fdf4;
             padding: 8px 12px;
             border-radius: 6px;
@@ -112,31 +123,76 @@
             font-size: 12px;
             border-left: 3px solid var(--accent-emerald);
         }
-        .invoice-actions {
+        .doc-actions {
             display: flex;
             gap: 8px;
             margin-top: 12px;
             flex-wrap: wrap;
         }
-        .invoice-actions button {
+        .doc-actions button, .doc-actions a {
             background: var(--primary);
             color: white;
             border: none;
-            padding: 6px 14px;
-            border-radius: 6px;
+            padding: 8px 16px;
+            border-radius: 8px;
             font-size: 12px;
             font-weight: 600;
             cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
         }
-        .invoice-actions button:hover { background: var(--primary-dark); }
-        .invoice-actions button.secondary {
+        .doc-actions button:hover, .doc-actions a:hover { background: var(--primary-dark); }
+        .doc-actions button.secondary, .doc-actions a.secondary {
             background: var(--slate-100);
             color: var(--slate-700);
         }
-        .invoice-actions button.secondary:hover { background: var(--slate-200); }
+        .doc-actions button.secondary:hover, .doc-actions a.secondary:hover { background: var(--slate-200); }
+        .doc-actions .download-btn {
+            background: var(--accent-emerald);
+        }
+        .doc-actions .download-btn:hover { background: #059669; }
+        
+        /* 🆕 QUICK ACTION BUTTONS */
+        .quick-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            width: 100%;
+        }
+        .quick-buttons button {
+            background: white;
+            border: 1px solid #e2e8f0;
+            padding: 10px 14px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.2s;
+            font-size: 13px;
+        }
+        .quick-buttons button:hover {
+            border-color: var(--primary);
+            background: #f8fafc;
+            transform: translateX(4px);
+        }
+        .quick-buttons .icon-circle {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
         
         /* DYNAMIC INTERACTIVE APP INJECTOR SANDBOX */
-        .app-sandbox { background: #eff6ff; border: 2px dashed #bfdbfe; padding: 18px; border-radius: 16px; margin-top: 5px; display: none; flex-direction: column; gap: 12px; }
+        .app-sandbox { background: #eff6ff; border: 2px dashed #bfdbfe; padding: 18px; border-radius: 16px; margin-top: 5px; display: none; flex-direction: column; gap: 12px; width: 100%; }
         .sandbox-title { font-size: 14px; font-weight: 700; color: #1e40af; display: flex; align-items: center; gap: 6px; }
         .sandbox-input { width: 100%; padding: 10px; border: 1px solid #bfdbfe; border-radius: 8px; outline: none; font-size: 13px; margin-bottom: 2px; }
         .sandbox-btn { background: var(--primary); color: white; border: none; padding: 11px; border-radius: 8px; font-weight: 700; cursor: pointer; font-size: 13px; width: 100%; }
@@ -198,6 +254,7 @@
             font-weight: 700;
             margin-top: 8px;
             border: 1px solid #a7f3d0;
+            cursor: pointer;
         }
         .launch-btn {
             display: inline-block;
@@ -212,6 +269,15 @@
             transition: background 0.2s;
         }
         .launch-btn:hover { background: var(--primary-dark); }
+
+        /* 🆕 DOWNLOAD ANIMATION */
+        @keyframes downloadPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        .downloading {
+            animation: downloadPulse 0.6s ease 3;
+        }
     </style>
 </head>
 <body>
@@ -260,7 +326,31 @@
                         
                         <div class="agent-body" id="chat-body">
                             <div class="msg bot">
-                                வணக்கம்! நான் JAMTARIS AI உதவியாளர். உங்களுக்கு என்ன டூல் வேண்டும்? (எ.கா: "PDF to Excel" அல்லது "GST Invoice") என்று கீழே டைப் செய்யுங்கள்!
+                                <strong>👋 வணக்கம்! நான் JAMTARIS AI உதவியாளர்.</strong><br>
+                                நான் இந்த மாதிரி ஆவணங்களை உருவாக்க முடியும்:
+                                <div class="quick-buttons" style="margin-top:8px;">
+                                    <button onclick="triggerAgentLogic('Quotation')">
+                                        <span class="icon-circle" style="background:#fef3c7;color:#d97706;">📋</span>
+                                        <span><strong>Quotation</strong><br><span style="font-weight:400;font-size:12px;color:var(--slate-600);">Professional price quote with GST</span></span>
+                                    </button>
+                                    <button onclick="triggerAgentLogic('Mobile Repair')">
+                                        <span class="icon-circle" style="background:#dbeafe;color:#2563eb;">📱</span>
+                                        <span><strong>Mobile Repair Quotation</strong><br><span style="font-weight:400;font-size:12px;color:var(--slate-600);">Phone fixing estimate with parts</span></span>
+                                    </button>
+                                    <button onclick="triggerAgentLogic('GST Invoice')">
+                                        <span class="icon-circle" style="background:#d1fae5;color:#059669;">🧾</span>
+                                        <span><strong>GST Invoice</strong><br><span style="font-weight:400;font-size:12px;color:var(--slate-600);">Tax invoice with items & GST</span></span>
+                                    </button>
+                                    <button onclick="triggerAgentLogic('Receipt')">
+                                        <span class="icon-circle" style="background:#fce4ec;color:#dc2626;">📸</span>
+                                        <span><strong>Receipt</strong><br><span style="font-weight:400;font-size:12px;color:var(--slate-600);">Payment receipt for customers</span></span>
+                                    </button>
+                                    <button onclick="triggerAgentLogic('Salary Slip')">
+                                        <span class="icon-circle" style="background:#f3e8ff;color:#7c3aed;">💵</span>
+                                        <span><strong>Salary Slip</strong><br><span style="font-weight:400;font-size:12px;color:var(--slate-600);">Payroll slip with deductions</span></span>
+                                    </button>
+                                </div>
+                                <p style="font-size:12px;color:var(--slate-600);margin-top:8px;">👇 கீழே உள்ள பட்டன்களை கிளிக் செய்து மாதிரி ஆவணங்களை பார்க்கவும் அல்லது டைப் செய்யவும்!</p>
                             </div>
                             <div class="app-sandbox" id="sandbox-box">
                                 <div class="sandbox-title" id="sandbox-title">🛠️ Active Tool Framework</div>
@@ -269,7 +359,7 @@
                         </div>
                         
                         <div class="agent-footer">
-                            <input type="text" class="agent-input" id="chat-input" placeholder="Type a tool name or ask a question...">
+                            <input type="text" class="agent-input" id="chat-input" placeholder="Type 'Quotation', 'Mobile Repair', 'Invoice', 'Receipt', or 'Salary Slip'...">
                             <button class="agent-send" id="chat-send">
                                 <svg viewBox="0 0 24 24" width="18" height="18" fill="white"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
                             </button>
@@ -296,7 +386,7 @@
                     <div class="f-card">
                         <div class="f-icon" style="background:#ecfdf5; color:var(--accent-emerald);">🏬</div>
                         <h3 class="f-title">Store-Ready Toolkit</h3>
-                        <p class="f-desc">காபி ஷாப்கள், துணிக்கடைகள் மற்றும் நடுத்தர நிறுவனங்களின் தினசரி கணக்கு வழக்குகளுக்குத் தேவையான பில்லிங் டூல்ஸ் அனைத்தும் ஒரே இடத்தில்.</p>
+                        <p class="f-desc">காபி ஷாப்கள், துணிக்கடைகள், மொபைல் ரிப்பேர் கடைகள் மற்றும் நடுத்தர நிறுவனங்களின் தினசரி கணக்கு வழக்குகளுக்குத் தேவையான பில்லிங் டூல்ஸ் அனைத்தும் ஒரே இடத்தில்.</p>
                     </div>
                 </div>
             </div>
@@ -315,23 +405,35 @@
                 <div id="business-tools" style="margin-bottom:40px; scroll-margin-top: 100px;">
                     <div class="cat-group-title"><span style="background:var(--accent-amber)"></span> 💼 Shop & Accounting Utilities / வணிக கருவிகள்</div>
                     <div class="tools-grid">
-                        <div class="tool-card" onclick="openDirectTool('GST Invoice Generator')">
-                            <div class="tool-icon" style="background:#fff7ed; color:var(--accent-amber)">🧾</div>
+                        <div class="tool-card" onclick="openDirectTool('Quotation')">
+                            <div class="tool-icon" style="background:#fef3c7; color:#d97706;">📋</div>
+                            <h4 class="tool-name">Quotation Generator</h4>
+                            <p class="tool-desc">Professional price quotes for services, mobile repairs, and products with GST calculation.</p>
+                            <span class="integration-badge" onclick="event.stopPropagation();openDirectTool('Quotation')">💬 Generate Sample</span>
+                        </div>
+                        <div class="tool-card" onclick="openDirectTool('Mobile Repair')">
+                            <div class="tool-icon" style="background:#dbeafe; color:#2563eb;">📱</div>
+                            <h4 class="tool-name">Mobile Repair Quotation</h4>
+                            <p class="tool-desc">Specialized quotation for phone repair services with parts, labor, and warranty details.</p>
+                            <span class="integration-badge" onclick="event.stopPropagation();openDirectTool('Mobile Repair')">💬 Generate Sample</span>
+                        </div>
+                        <div class="tool-card" onclick="openDirectTool('GST Invoice')">
+                            <div class="tool-icon" style="background:#d1fae5; color:#059669;">🧾</div>
                             <h4 class="tool-name">GST Invoice Generator</h4>
                             <p class="tool-desc">Auto-calculate tax rates and format professional, clean retail invoices for your boutique or shop.</p>
-                            <span class="integration-badge" style="cursor:pointer;" onclick="event.stopPropagation();openDirectTool('GST Invoice Generator')">💬 Ask in Chat</span>
+                            <span class="integration-badge" onclick="event.stopPropagation();openDirectTool('GST Invoice')">💬 Generate Sample</span>
                         </div>
-                        <div class="tool-card" onclick="openDirectTool('Receipt to Excel')">
-                            <div class="tool-icon" style="background:#eff6ff; color:var(--primary)">📸</div>
+                        <div class="tool-card" onclick="openDirectTool('Receipt')">
+                            <div class="tool-icon" style="background:#fce4ec; color:#dc2626;">📸</div>
                             <h4 class="tool-name">Receipt to Excel</h4>
                             <p class="tool-desc">Snap a quick smartphone photo of any bill to extract dates, vendors, and totals directly into a spreadsheet layout.</p>
-                            <span class="integration-badge" style="cursor:pointer;" onclick="event.stopPropagation();openDirectTool('Receipt to Excel')">💬 Ask in Chat</span>
+                            <span class="integration-badge" onclick="event.stopPropagation();openDirectTool('Receipt')">💬 Generate Sample</span>
                         </div>
-                        <div class="tool-card" onclick="openDirectTool('Salary Slip Generator')">
-                            <div class="tool-icon" style="background:#f3e8ff; color:#a855f7">💵</div>
+                        <div class="tool-card" onclick="openDirectTool('Salary Slip')">
+                            <div class="tool-icon" style="background:#f3e8ff; color:#7c3aed;">💵</div>
                             <h4 class="tool-name">Salary Slip Generator</h4>
                             <p class="tool-desc">Instantly calculate net pay, allowances, deductions, and print staff-ready PDF payroll slips.</p>
-                            <span class="integration-badge" style="cursor:pointer;" onclick="event.stopPropagation();openDirectTool('Salary Slip Generator')">💬 Ask in Chat</span>
+                            <span class="integration-badge" onclick="event.stopPropagation();openDirectTool('Salary Slip')">💬 Generate Sample</span>
                         </div>
                     </div>
                 </div>
@@ -344,19 +446,19 @@
                             <div class="tool-icon" style="background:#ecfdf5; color:var(--accent-emerald)">📊</div>
                             <h4 class="tool-name">PDF → Excel</h4>
                             <p class="tool-desc">Extract complex data tables cleanly into editable .xlsx structures while keeping your layout fully preserved.</p>
-                            <span class="integration-badge" style="cursor:pointer;" onclick="event.stopPropagation();openDirectTool('PDF to Excel Converter')">💬 Ask in Chat</span>
+                            <span class="integration-badge" onclick="event.stopPropagation();openDirectTool('PDF to Excel Converter')">💬 Ask in Chat</span>
                         </div>
                         <div class="tool-card" onclick="openDirectTool('Excel to PDF Converter')">
                             <div class="tool-icon" style="background:#fef2f2; color:var(--accent-red)">📉</div>
                             <h4 class="tool-name">Excel → PDF</h4>
                             <p class="tool-desc">Lock your operational accounting spreadsheets securely into readable, shareable PDF formats.</p>
-                            <span class="integration-badge" style="cursor:pointer;" onclick="event.stopPropagation();openDirectTool('Excel to PDF Converter')">💬 Ask in Chat</span>
+                            <span class="integration-badge" onclick="event.stopPropagation();openDirectTool('Excel to PDF Converter')">💬 Ask in Chat</span>
                         </div>
                         <div class="tool-card" onclick="openDirectTool('PDF to Word Converter')">
                             <div class="tool-icon" style="background:#e0f2fe; color:#0284c7">📃</div>
                             <h4 class="tool-name">PDF → Word</h4>
                             <p class="tool-desc">Convert read-only layout archives into fully customizable and editable text documents instantly.</p>
-                            <span class="integration-badge" style="cursor:pointer;" onclick="event.stopPropagation();openDirectTool('PDF to Word Converter')">💬 Ask in Chat</span>
+                            <span class="integration-badge" onclick="event.stopPropagation();openDirectTool('PDF to Word Converter')">💬 Ask in Chat</span>
                         </div>
                     </div>
                 </div>
@@ -371,7 +473,7 @@
                 <div>
                     <p class="footer-title">ℹ️ About JAMTARIS / எங்களைப் பற்றி</p>
                     <p class="footer-desc">
-                        ஜம்தாரிஸ் (JAMTARIS) என்பது சிறு வணிகர்கள், துணிக்கடை மற்றும் உணவக உரிமையாளர்களுக்காக பிரத்யேகமாக உருவாக்கப்பட்ட ஒரு எளிய ஆன்லைன் டூல்ஸ் (Online Tools) தளமாகும். உங்களின் முக்கியமான பில்கள், PDF கோப்புகள் மற்றும் கணக்கு விவரங்கள் (Invoices) அனைத்தும் 100% பாதுகாப்பாக, உங்கள் மொபைல் அல்லது கணினியிலேயே பிராசஸ் செய்யப்படுகின்றன.
+                        ஜம்தாரிஸ் (JAMTARIS) என்பது சிறு வணிகர்கள், துணிக்கடை, மொபைல் ரிப்பேர் கடைகள் மற்றும் உணவக உரிமையாளர்களுக்காக பிரத்யேகமாக உருவாக்கப்பட்ட ஒரு எளிய ஆன்லைன் டூல்ஸ் (Online Tools) தளமாகும். உங்களின் முக்கியமான பில்கள், PDF கோப்புகள் மற்றும் கணக்கு விவரங்கள் (Invoices) அனைத்தும் 100% பாதுகாப்பாக, உங்கள் மொபைல் அல்லது கணினியிலேயே பிராசஸ் செய்யப்படுகின்றன.
                     </p>
                     <p style="margin-top: 16px;">
                         <a href="https://janarmca.github.io/pdf-tools-backend/" target="_blank" style="color: var(--primary); font-weight: 600; text-decoration: none;">🚀 Visit Full Toolkit →</a>
@@ -427,7 +529,7 @@
                 const el = document.createElement('div');
                 el.className = `msg ${sender}`;
                 if (sender === 'bot') {
-                    el.innerHTML = text; // Allow HTML for bot messages
+                    el.innerHTML = text;
                 } else {
                     el.innerText = text;
                 }
@@ -435,22 +537,42 @@
                 chatBody.scrollTop = chatBody.scrollHeight;
             }
 
-            // 🆕 FUNCTION TO GENERATE SAMPLE INVOICE HTML
-            function generateSampleInvoice(type, details) {
+            // 🆕 DOWNLOAD FUNCTION - Creates and downloads a text file
+            function downloadSample(content, filename) {
+                const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = filename;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+                
+                // Show download feedback
+                appendMessage(`✅ <strong>Downloaded:</strong> ${filename} (${Math.round(blob.size/1024)} KB)`, 'bot');
+            }
+
+            // 🆕 GENERATE QUOTATION
+            function generateQuotation(type, details) {
                 const now = new Date();
                 const dateStr = now.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
-                const invoiceNo = 'INV-' + String(Math.floor(1000 + Math.random() * 9000));
+                const quoteNo = 'QT-' + String(Math.floor(1000 + Math.random() * 9000));
+                const validUntil = new Date();
+                validUntil.setDate(validUntil.getDate() + 15);
+                const validStr = validUntil.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
                 
-                let html = `<div class="sample-invoice">`;
-                html += `<h3>🧾 ${type}</h3>`;
-                html += `<div class="invoice-row"><span class="invoice-label">Invoice No:</span><span class="invoice-value">${invoiceNo}</span></div>`;
-                html += `<div class="invoice-row"><span class="invoice-label">Date:</span><span class="invoice-value">${dateStr}</span></div>`;
-                html += `<div class="invoice-row"><span class="invoice-label">Customer:</span><span class="invoice-value">${details.customer || 'Sample Customer'}</span></div>`;
+                let html = `<div class="sample-doc" style="border-color:#d97706;">`;
+                html += `<h3 style="color:#d97706;">📋 ${type} <span class="badge-doc">Valid until ${validStr}</span></h3>`;
+                html += `<div class="doc-row"><span class="doc-label">Quote No:</span><span class="doc-value">${quoteNo}</span></div>`;
+                html += `<div class="doc-row"><span class="doc-label">Date:</span><span class="doc-value">${dateStr}</span></div>`;
+                html += `<div class="doc-row"><span class="doc-label">Customer:</span><span class="doc-value">${details.customer || 'Sample Customer'}</span></div>`;
+                html += `<div class="doc-row"><span class="doc-label">Contact:</span><span class="doc-value">${details.contact || '+91 98765 43210'}</span></div>`;
                 
                 if (details.items && details.items.length > 0) {
                     html += `<div style="margin-top:8px;border-top:1px solid #e2e8f0;padding-top:8px;">`;
                     details.items.forEach(item => {
-                        html += `<div class="invoice-row"><span>${item.name}</span><span>₹${item.amount}</span></div>`;
+                        html += `<div class="doc-row"><span>${item.name}</span><span>₹${item.amount}</span></div>`;
                     });
                     html += `</div>`;
                 }
@@ -459,74 +581,163 @@
                 const gst = Math.round(subtotal * 0.18);
                 const total = subtotal + gst;
                 
-                html += `<div class="invoice-row"><span class="invoice-label">Subtotal:</span><span>₹${subtotal}</span></div>`;
-                html += `<div class="invoice-row"><span class="invoice-label">GST (18%):</span><span>₹${gst}</span></div>`;
-                html += `<div class="invoice-row total"><span>Total Amount:</span><span>₹${total}</span></div>`;
-                html += `<div class="invoice-gst">✅ GSTIN: 33ABCDE1234F1Z5 • HSN/SAC: 9983</div>`;
-                html += `<div class="invoice-actions">`;
-                html += `<button onclick="window.open('https://janarmca.github.io/pdf-tools-backend/', '_blank')">📄 Create Full Invoice</button>`;
+                html += `<div class="doc-row"><span class="doc-label">Subtotal:</span><span>₹${subtotal}</span></div>`;
+                html += `<div class="doc-row"><span class="doc-label">GST (18%):</span><span>₹${gst}</span></div>`;
+                html += `<div class="doc-row total"><span>Total Quote Amount:</span><span>₹${total}</span></div>`;
+                html += `<div class="doc-gst" style="border-left-color:#d97706;">✅ Terms: 50% advance • 15 days validity • GST applicable</div>`;
+                html += `<div class="doc-actions">`;
+                html += `<button onclick="downloadSample('${type}\\nQuote No: ${quoteNo}\\nDate: ${dateStr}\\nCustomer: ${details.customer}\\nTotal: ₹${total}\\nValid until: ${validStr}','Quotation_${quoteNo}.txt')" class="download-btn">⬇️ Download .txt</button>`;
+                html += `<button onclick="window.open('https://janarmca.github.io/pdf-tools-backend/', '_blank')">📄 Create Full PDF</button>`;
                 html += `<button class="secondary" onclick="this.parentElement.parentElement.parentElement.remove()">✖ Close</button>`;
                 html += `</div>`;
                 html += `</div>`;
                 return html;
             }
 
-            // 🆕 FUNCTION TO GENERATE SAMPLE RECEIPT
-            function generateSampleReceipt() {
+            // 🆕 GENERATE MOBILE REPAIR QUOTATION
+            function generateMobileRepairQuote() {
+                const now = new Date();
+                const dateStr = now.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
+                const quoteNo = 'MR-' + String(Math.floor(1000 + Math.random() * 9000));
+                
+                const repairItems = [
+                    { name: '📱 Screen Replacement (Original)', amount: 2500 },
+                    { name: '🔋 Battery Replacement', amount: 1200 },
+                    { name: '🔌 Charging Port Repair', amount: 800 },
+                    { name: '📷 Camera Lens Replacement', amount: 1500 },
+                    { name: '🛠️ Labour Charges', amount: 500 }
+                ];
+                
+                // Randomly select 2-3 items
+                const selected = repairItems.slice(0, 2 + Math.floor(Math.random() * 2));
+                const subtotal = selected.reduce((sum, i) => sum + i.amount, 0);
+                const gst = Math.round(subtotal * 0.18);
+                const total = subtotal + gst;
+                const warranty = 3 + Math.floor(Math.random() * 3);
+                
+                let html = `<div class="sample-doc" style="border-color:#2563eb;">`;
+                html += `<h3 style="color:#2563eb;">📱 Mobile Repair Quotation <span class="badge-doc">${warranty} months warranty</span></h3>`;
+                html += `<div class="doc-row"><span class="doc-label">Quote No:</span><span class="doc-value">${quoteNo}</span></div>`;
+                html += `<div class="doc-row"><span class="doc-label">Date:</span><span class="doc-value">${dateStr}</span></div>`;
+                html += `<div class="doc-row"><span class="doc-label">Customer:</span><span class="doc-value">Sample Customer</span></div>`;
+                html += `<div class="doc-row"><span class="doc-label">Device:</span><span class="doc-value">${['iPhone 13','Samsung Galaxy S23','OnePlus 11','Pixel 7'][Math.floor(Math.random()*4)]}</span></div>`;
+                html += `<div class="doc-row"><span class="doc-label">Issue:</span><span class="doc-value">${['Screen Cracked','Battery Drain','Charging Issue','Camera Not Working','Water Damage'][Math.floor(Math.random()*5)]}</span></div>`;
+                
+                html += `<div style="margin-top:8px;border-top:1px solid #e2e8f0;padding-top:8px;">`;
+                selected.forEach(item => {
+                    html += `<div class="doc-row"><span>${item.name}</span><span>₹${item.amount}</span></div>`;
+                });
+                html += `</div>`;
+                
+                html += `<div class="doc-row"><span class="doc-label">Subtotal:</span><span>₹${subtotal}</span></div>`;
+                html += `<div class="doc-row"><span class="doc-label">GST (18%):</span><span>₹${gst}</span></div>`;
+                html += `<div class="doc-row total"><span>Total Repair Cost:</span><span>₹${total}</span></div>`;
+                html += `<div class="doc-gst" style="border-left-color:#2563eb;">✅ ${warranty} months warranty on repairs • Free diagnostic • Genuine parts</div>`;
+                html += `<div class="doc-actions">`;
+                html += `<button onclick="downloadSample('Mobile Repair Quotation\\nQuote No: ${quoteNo}\\nDate: ${dateStr}\\nDevice: ${document.querySelector('.sample-doc .doc-row:nth-child(4) .doc-value')?.innerText || 'Unknown'}\\nTotal: ₹${total}\\nWarranty: ${warranty} months','MobileRepair_${quoteNo}.txt')" class="download-btn">⬇️ Download .txt</button>`;
+                html += `<button onclick="window.open('https://janarmca.github.io/pdf-tools-backend/', '_blank')">📄 Create Full PDF</button>`;
+                html += `<button class="secondary" onclick="this.parentElement.parentElement.parentElement.remove()">✖ Close</button>`;
+                html += `</div>`;
+                html += `</div>`;
+                return html;
+            }
+
+            // 🆕 GENERATE GST INVOICE
+            function generateGSTInvoice() {
+                const now = new Date();
+                const dateStr = now.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
+                const invoiceNo = 'INV-' + String(Math.floor(1000 + Math.random() * 9000));
+                
+                const items = [
+                    { name: 'Product A x 2', amount: 500 },
+                    { name: 'Product B x 1', amount: 300 },
+                    { name: 'Service Charge', amount: 200 }
+                ];
+                const subtotal = items.reduce((sum, i) => sum + i.amount, 0);
+                const gst = Math.round(subtotal * 0.18);
+                const total = subtotal + gst;
+                
+                let html = `<div class="sample-doc" style="border-color:#059669;">`;
+                html += `<h3 style="color:#059669;">🧾 GST Tax Invoice <span class="badge-doc">Tax Invoice</span></h3>`;
+                html += `<div class="doc-row"><span class="doc-label">Invoice No:</span><span class="doc-value">${invoiceNo}</span></div>`;
+                html += `<div class="doc-row"><span class="doc-label">Date:</span><span class="doc-value">${dateStr}</span></div>`;
+                html += `<div class="doc-row"><span class="doc-label">Customer:</span><span class="doc-value">Sample Customer</span></div>`;
+                html += `<div style="margin-top:8px;border-top:1px solid #e2e8f0;padding-top:8px;">`;
+                items.forEach(item => {
+                    html += `<div class="doc-row"><span>${item.name}</span><span>₹${item.amount}</span></div>`;
+                });
+                html += `</div>`;
+                html += `<div class="doc-row"><span class="doc-label">Subtotal:</span><span>₹${subtotal}</span></div>`;
+                html += `<div class="doc-row"><span class="doc-label">GST (18%):</span><span>₹${gst}</span></div>`;
+                html += `<div class="doc-row total"><span>Total Amount:</span><span>₹${total}</span></div>`;
+                html += `<div class="doc-gst">✅ GSTIN: 33ABCDE1234F1Z5 • HSN/SAC: 9983</div>`;
+                html += `<div class="doc-actions">`;
+                html += `<button onclick="downloadSample('GST Invoice\\nInvoice No: ${invoiceNo}\\nDate: ${dateStr}\\nCustomer: Sample Customer\\nTotal: ₹${total}\\nGSTIN: 33ABCDE1234F1Z5','Invoice_${invoiceNo}.txt')" class="download-btn">⬇️ Download .txt</button>`;
+                html += `<button onclick="window.open('https://janarmca.github.io/pdf-tools-backend/', '_blank')">📄 Create Full PDF</button>`;
+                html += `<button class="secondary" onclick="this.parentElement.parentElement.parentElement.remove()">✖ Close</button>`;
+                html += `</div>`;
+                html += `</div>`;
+                return html;
+            }
+
+            // 🆕 GENERATE RECEIPT
+            function generateReceipt() {
                 const now = new Date();
                 const dateStr = now.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
                 const receiptNo = 'RCP-' + String(Math.floor(1000 + Math.random() * 9000));
+                const amount = Math.floor(200 + Math.random() * 800);
                 
-                let html = `<div class="sample-invoice" style="border-color:var(--accent-emerald);">`;
-                html += `<h3 style="color:var(--accent-emerald);">📸 Receipt</h3>`;
-                html += `<div class="invoice-row"><span class="invoice-label">Receipt No:</span><span class="invoice-value">${receiptNo}</span></div>`;
-                html += `<div class="invoice-row"><span class="invoice-label">Date:</span><span class="invoice-value">${dateStr}</span></div>`;
-                html += `<div class="invoice-row"><span class="invoice-label">Vendor:</span><span class="invoice-value">Sample Store</span></div>`;
-                html += `<div class="invoice-row"><span class="invoice-label">Amount:</span><span class="invoice-value">₹${Math.floor(200 + Math.random() * 800)}</span></div>`;
-                html += `<div class="invoice-row"><span class="invoice-label">Payment:</span><span class="invoice-value">${['Cash','UPI','Card'][Math.floor(Math.random()*3)]}</span></div>`;
-                html += `<div class="invoice-gst" style="border-left-color:var(--accent-emerald);">✅ Extracted from bill photo • ${Math.floor(1+Math.random()*5)} items</div>`;
-                html += `<div class="invoice-actions">`;
-                html += `<button onclick="window.open('https://janarmca.github.io/pdf-tools-backend/', '_blank')">📊 Export to Excel</button>`;
+                let html = `<div class="sample-doc" style="border-color:#dc2626;">`;
+                html += `<h3 style="color:#dc2626;">📸 Payment Receipt <span class="badge-doc">Paid</span></h3>`;
+                html += `<div class="doc-row"><span class="doc-label">Receipt No:</span><span class="doc-value">${receiptNo}</span></div>`;
+                html += `<div class="doc-row"><span class="doc-label">Date:</span><span class="doc-value">${dateStr}</span></div>`;
+                html += `<div class="doc-row"><span class="doc-label">Received From:</span><span class="doc-value">Sample Customer</span></div>`;
+                html += `<div class="doc-row"><span class="doc-label">Amount:</span><span class="doc-value">₹${amount}</span></div>`;
+                html += `<div class="doc-row"><span class="doc-label">Payment Mode:</span><span class="doc-value">${['Cash','UPI','Card','Bank Transfer'][Math.floor(Math.random()*4)]}</span></div>`;
+                html += `<div class="doc-row"><span class="doc-label">For:</span><span class="doc-value">${['Product Purchase','Service Fee','Repair Service','Advance Payment'][Math.floor(Math.random()*4)]}</span></div>`;
+                html += `<div class="doc-gst" style="border-left-color:#dc2626;">✅ Received with thanks • ${['No returns after 7 days','Exchange within 3 days','Warranty applicable'][Math.floor(Math.random()*3)]}</div>`;
+                html += `<div class="doc-actions">`;
+                html += `<button onclick="downloadSample('Payment Receipt\\nReceipt No: ${receiptNo}\\nDate: ${dateStr}\\nAmount: ₹${amount}\\nPayment Mode: ${document.querySelector('.sample-doc .doc-row:nth-child(5) .doc-value')?.innerText || 'Unknown'}','Receipt_${receiptNo}.txt')" class="download-btn">⬇️ Download .txt</button>`;
+                html += `<button onclick="window.open('https://janarmca.github.io/pdf-tools-backend/', '_blank')">📄 Create Full PDF</button>`;
                 html += `<button class="secondary" onclick="this.parentElement.parentElement.parentElement.remove()">✖ Close</button>`;
                 html += `</div>`;
                 html += `</div>`;
                 return html;
             }
 
-            // 🆕 FUNCTION TO GENERATE SAMPLE SALARY SLIP
-            function generateSampleSalarySlip() {
+            // 🆕 GENERATE SALARY SLIP
+            function generateSalarySlip() {
                 const now = new Date();
                 const month = now.toLocaleString('en-IN', { month: 'long', year: 'numeric' });
+                const basic = 25000;
+                const hra = 5000;
+                const allowances = 3000;
+                const gross = basic + hra + allowances;
+                const pf = Math.round(gross * 0.12);
+                const ptax = 200;
+                const net = gross - pf - ptax;
                 
-                let html = `<div class="sample-invoice" style="border-color:var(--accent-purple);">`;
-                html += `<h3 style="color:var(--accent-purple);">💵 Salary Slip - ${month}</h3>`;
-                html += `<div class="invoice-row"><span class="invoice-label">Employee:</span><span class="invoice-value">Sample Employee</span></div>`;
-                html += `<div class="invoice-row"><span class="invoice-label">Designation:</span><span class="invoice-value">Store Manager</span></div>`;
+                let html = `<div class="sample-doc" style="border-color:#7c3aed;">`;
+                html += `<h3 style="color:#7c3aed;">💵 Salary Slip - ${month} <span class="badge-doc">Net: ₹${net}</span></h3>`;
+                html += `<div class="doc-row"><span class="doc-label">Employee:</span><span class="doc-value">Sample Employee</span></div>`;
+                html += `<div class="doc-row"><span class="doc-label">Designation:</span><span class="doc-value">Store Manager</span></div>`;
                 html += `<div style="margin-top:8px;border-top:1px solid #e2e8f0;padding-top:8px;">`;
-                html += `<div class="invoice-row"><span>Basic Pay</span><span>₹25,000</span></div>`;
-                html += `<div class="invoice-row"><span>HRA</span><span>₹5,000</span></div>`;
-                html += `<div class="invoice-row"><span>Allowances</span><span>₹3,000</span></div>`;
-                html += `<div class="invoice-row" style="border-bottom:1px solid #e2e8f0;"><span>Gross Pay</span><span>₹33,000</span></div>`;
-                html += `<div class="invoice-row"><span style="color:#dc2626;">PF Deduction</span><span style="color:#dc2626;">-₹1,800</span></div>`;
-                html += `<div class="invoice-row"><span style="color:#dc2626;">Professional Tax</span><span style="color:#dc2626;">-₹200</span></div>`;
-                html += `<div class="invoice-row total"><span>Net Pay</span><span>₹31,000</span></div>`;
+                html += `<div class="doc-row"><span>Basic Pay</span><span>₹${basic}</span></div>`;
+                html += `<div class="doc-row"><span>HRA</span><span>₹${hra}</span></div>`;
+                html += `<div class="doc-row"><span>Allowances</span><span>₹${allowances}</span></div>`;
+                html += `<div class="doc-row" style="border-bottom:1px solid #e2e8f0;"><span>Gross Pay</span><span>₹${gross}</span></div>`;
+                html += `<div class="doc-row"><span style="color:#dc2626;">PF Deduction</span><span style="color:#dc2626;">-₹${pf}</span></div>`;
+                html += `<div class="doc-row"><span style="color:#dc2626;">Professional Tax</span><span style="color:#dc2626;">-₹${ptax}</span></div>`;
+                html += `<div class="doc-row total"><span>Net Pay</span><span>₹${net}</span></div>`;
                 html += `</div>`;
-                html += `<div class="invoice-gst" style="border-left-color:var(--accent-purple);">✅ Net Pay: ₹31,000 • Paid via Bank Transfer</div>`;
-                html += `<div class="invoice-actions">`;
-                html += `<button onclick="window.open('https://janarmca.github.io/pdf-tools-backend/', '_blank')">📄 Generate PDF Slip</button>`;
+                html += `<div class="doc-gst" style="border-left-color:#7c3aed;">✅ Net Pay: ₹${net} • Paid via Bank Transfer • ${month}</div>`;
+                html += `<div class="doc-actions">`;
+                html += `<button onclick="downloadSample('Salary Slip - ${month}\\nEmployee: Sample Employee\\nGross Pay: ₹${gross}\\nNet Pay: ₹${net}\\nPF: ₹${pf}\\nPT: ₹${ptax}','SalarySlip_${month.replace(' ','_')}.txt')" class="download-btn">⬇️ Download .txt</button>`;
+                html += `<button onclick="window.open('https://janarmca.github.io/pdf-tools-backend/', '_blank')">📄 Create Full PDF</button>`;
                 html += `<button class="secondary" onclick="this.parentElement.parentElement.parentElement.remove()">✖ Close</button>`;
                 html += `</div>`;
                 html += `</div>`;
                 return html;
-            }
-
-            // Function to inject a sandbox tool into the chat
-            function injectSandbox(title, htmlContent) {
-                sandboxBox.style.display = 'flex';
-                sandboxTitle.innerText = `🛠️ Active Agent Sandbox: ${title}`;
-                sandboxInner.innerHTML = htmlContent;
-                chatBody.appendChild(sandboxBox);
-                chatBody.scrollTop = chatBody.scrollHeight;
             }
 
             // Core logic: process user input and respond
@@ -535,40 +746,54 @@
                 if (query === '') return;
 
                 setTimeout(() => {
-                    // 🆕 INVOICE GENERATION - Show sample invoice
-                    if (query.includes('invoice') || query.includes('bill') || query.includes('பில்') || query.includes('gst') || query.includes('tax')) {
-                        const sampleInvoiceHTML = generateSampleInvoice('GST Tax Invoice', {
-                            customer: 'Sample Customer',
+                    // 🆕 QUOTATION
+                    if (query.includes('quotation') || query.includes('quote') || query.includes('estimate') || query.includes('price list')) {
+                        appendMessage(`📋 Here's a professional Quotation for your services:`, 'bot');
+                        appendMessage(generateQuotation('Service Quotation', {
+                            customer: 'Sample Business Client',
+                            contact: '+91 98765 43210',
                             items: [
-                                { name: 'Product A x 2', amount: 500 },
-                                { name: 'Product B x 1', amount: 300 },
-                                { name: 'Service Charge', amount: 200 }
+                                { name: 'Service Consultation', amount: 1500 },
+                                { name: 'Design Work', amount: 2000 },
+                                { name: 'Implementation', amount: 2500 }
                             ]
-                        });
-                        appendMessage(`📋 Here's a sample GST Invoice for you:`, 'bot');
-                        appendMessage(sampleInvoiceHTML, 'bot');
+                        }), 'bot');
                         return;
                     }
 
-                    // 🆕 RECEIPT GENERATION
-                    if (query.includes('receipt') || query.includes('ரசீது') || query.includes('bill photo') || query.includes('snap')) {
-                        appendMessage(`📸 Here's a sample receipt extracted from a bill photo:`, 'bot');
-                        appendMessage(generateSampleReceipt(), 'bot');
+                    // 🆕 MOBILE REPAIR
+                    if (query.includes('mobile') || query.includes('repair') || query.includes('phone') || query.includes('fix') || query.includes('screen') || query.includes('battery')) {
+                        appendMessage(`📱 Here's a Mobile Repair Quotation with parts and labour:`, 'bot');
+                        appendMessage(generateMobileRepairQuote(), 'bot');
                         return;
                     }
 
-                    // 🆕 SALARY SLIP GENERATION
+                    // GST INVOICE
+                    if (query.includes('invoice') || query.includes('bill') || query.includes('பில்') || query.includes('gst') || query.includes('tax')) {
+                        appendMessage(`🧾 Here's a GST Tax Invoice sample:`, 'bot');
+                        appendMessage(generateGSTInvoice(), 'bot');
+                        return;
+                    }
+
+                    // RECEIPT
+                    if (query.includes('receipt') || query.includes('ரசீது') || query.includes('payment')) {
+                        appendMessage(`📸 Here's a Payment Receipt sample:`, 'bot');
+                        appendMessage(generateReceipt(), 'bot');
+                        return;
+                    }
+
+                    // SALARY SLIP
                     if (query.includes('salary') || query.includes('payroll') || query.includes('slip') || query.includes('pay slip')) {
-                        appendMessage(`💵 Here's a sample salary slip for the current month:`, 'bot');
-                        appendMessage(generateSampleSalarySlip(), 'bot');
+                        appendMessage(`💵 Here's a Salary Slip sample for the current month:`, 'bot');
+                        appendMessage(generateSalarySlip(), 'bot');
                         return;
                     }
 
-                    // 🆕 PDF TO EXCEL
+                    // PDF TO EXCEL
                     if (query.includes('pdf') && query.includes('excel')) {
                         appendMessage("📊 PDF ➡️ Excel conversion tool is ready! Here's a sample data structure:", "bot");
                         injectSandbox("📊 PDF → Excel Sandbox", `
-                            <div style="background:white;padding:12px;border-radius:8px;font-size:12px;">
+                            <div style="background:white;padding:12px;border-radius:8px;font-size:12px;width:100%;">
                                 <strong>Sample Extracted Data:</strong>
                                 <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px;margin-top:6px;background:#f1f5f9;padding:8px;border-radius:4px;">
                                     <span><strong>Product</strong></span><span><strong>Qty</strong></span><span><strong>Price</strong></span>
@@ -582,14 +807,30 @@
                         return;
                     }
 
-                    // 🆕 DEFAULT: Show available sample types
+                    // 🆕 DEFAULT: Show quick action buttons
                     appendMessage(`📋 நான் இந்த மாதிரி ஆவணங்களை உருவாக்க முடியும்:`, 'bot');
                     appendMessage(`
-                        <div style="display:flex;flex-direction:column;gap:6px;margin-top:4px;width:100%;">
-                            <button onclick="triggerAgentLogic('GST Invoice')" style="background:#fff7ed;border:1px solid #f59e0b;padding:8px 14px;border-radius:8px;cursor:pointer;font-weight:600;text-align:left;">🧾 GST Invoice - Generate Sample</button>
-                            <button onclick="triggerAgentLogic('Receipt')" style="background:#eff6ff;border:1px solid #2563eb;padding:8px 14px;border-radius:8px;cursor:pointer;font-weight:600;text-align:left;">📸 Receipt - Generate Sample</button>
-                            <button onclick="triggerAgentLogic('Salary Slip')" style="background:#f3e8ff;border:1px solid #a855f7;padding:8px 14px;border-radius:8px;cursor:pointer;font-weight:600;text-align:left;">💵 Salary Slip - Generate Sample</button>
-                            <button onclick="triggerAgentLogic('PDF to Excel')" style="background:#ecfdf5;border:1px solid #10b981;padding:8px 14px;border-radius:8px;cursor:pointer;font-weight:600;text-align:left;">📊 PDF to Excel - Sample Data</button>
+                        <div class="quick-buttons">
+                            <button onclick="triggerAgentLogic('Quotation')">
+                                <span class="icon-circle" style="background:#fef3c7;color:#d97706;">📋</span>
+                                <span><strong>Quotation</strong><br><span style="font-weight:400;font-size:12px;color:var(--slate-600);">Professional price quote with GST</span></span>
+                            </button>
+                            <button onclick="triggerAgentLogic('Mobile Repair')">
+                                <span class="icon-circle" style="background:#dbeafe;color:#2563eb;">📱</span>
+                                <span><strong>Mobile Repair Quotation</strong><br><span style="font-weight:400;font-size:12px;color:var(--slate-600);">Phone fixing estimate with parts</span></span>
+                            </button>
+                            <button onclick="triggerAgentLogic('GST Invoice')">
+                                <span class="icon-circle" style="background:#d1fae5;color:#059669;">🧾</span>
+                                <span><strong>GST Invoice</strong><br><span style="font-weight:400;font-size:12px;color:var(--slate-600);">Tax invoice with items & GST</span></span>
+                            </button>
+                            <button onclick="triggerAgentLogic('Receipt')">
+                                <span class="icon-circle" style="background:#fce4ec;color:#dc2626;">📸</span>
+                                <span><strong>Receipt</strong><br><span style="font-weight:400;font-size:12px;color:var(--slate-600);">Payment receipt for customers</span></span>
+                            </button>
+                            <button onclick="triggerAgentLogic('Salary Slip')">
+                                <span class="icon-circle" style="background:#f3e8ff;color:#7c3aed;">💵</span>
+                                <span><strong>Salary Slip</strong><br><span style="font-weight:400;font-size:12px;color:var(--slate-600);">Payroll slip with deductions</span></span>
+                            </button>
                             <p style="font-size:12px;color:var(--slate-600);margin-top:4px;">👇 கீழே உள்ள பட்டன்களை கிளிக் செய்து மாதிரி ஆவணங்களை பார்க்கவும்!</p>
                         </div>
                     `, 'bot');
@@ -598,7 +839,7 @@
 
             // Function to open a tool directly from the catalog
             window.openDirectTool = function(name) {
-                appendMessage(`🔍 Searching for: ${name}`, "user");
+                appendMessage(`🔍 Opening: ${name}`, "user");
                 triggerAgentLogic(name);
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             };
@@ -626,12 +867,15 @@
             window.appendMessage = appendMessage;
             window.triggerAgentLogic = triggerAgentLogic;
             window.injectSandbox = injectSandbox;
-            window.generateSampleInvoice = generateSampleInvoice;
-            window.generateSampleReceipt = generateSampleReceipt;
-            window.generateSampleSalarySlip = generateSampleSalarySlip;
+            window.downloadSample = downloadSample;
+            window.generateQuotation = generateQuotation;
+            window.generateMobileRepairQuote = generateMobileRepairQuote;
+            window.generateGSTInvoice = generateGSTInvoice;
+            window.generateReceipt = generateReceipt;
+            window.generateSalarySlip = generateSalarySlip;
 
-            console.log('JAMTARIS AI Agent initialized with SAMPLE GENERATION!');
-            console.log('Try typing: "GST Invoice", "Receipt", "Salary Slip", or "PDF to Excel"');
+            console.log('JAMTARIS AI Agent initialized with QUOTATION & MOBILE REPAIR!');
+            console.log('Try typing: "Quotation", "Mobile Repair", "GST Invoice", "Receipt", or "Salary Slip"');
         })();
     </script>
 </body>
