@@ -96,7 +96,7 @@
         .catalog { padding: 90px 0; scroll-margin-top: 80px; }
         .cat-header { text-align: center; max-width: 650px; margin: 0 auto 60px; }
         .cat-header h2 { font-size: 34px; font-weight: 800; margin-bottom: 12px; color: #1e293b; }
-        .cat-group-title { font-size: 14px; font-weight: 700; text-transform: uppercase; tracking-wider; color: var(--slate-700); margin-bottom: 30px; display: flex; align-items: center; gap: 10px; border-bottom: 2px solid var(--slate-100); padding-bottom: 10px; }
+        .cat-group-title { font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--slate-700); margin-bottom: 30px; display: flex; align-items: center; gap: 10px; border-bottom: 2px solid var(--slate-100); padding-bottom: 10px; }
         .cat-group-title span { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
         
         .tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 26px; margin-bottom: 50px; }
@@ -118,8 +118,36 @@
         .contact-list a { color: var(--slate-700); text-decoration: none; }
         .contact-list a:hover { color: var(--primary); text-decoration: underline; }
         
-        .footer-bottom { border-top: 1px solid var(--slate-100); padding-top: 30px; display: flex; flex-direction: column; md-flex-direction: row; justify-content: space-between; align-items: center; gap: 20px; font-size: 13px; color: #94a3b8; }
+        .footer-bottom { border-top: 1px solid var(--slate-100); padding-top: 30px; display: flex; flex-direction: column; align-items: center; gap: 20px; font-size: 13px; color: #94a3b8; text-align: center; }
+        @media(min-width: 768px) { .footer-bottom { flex-direction: row; justify-content: space-between; } }
+        
         @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+        /* 🆕 INTEGRATION BADGE */
+        .integration-badge {
+            display: inline-block;
+            background: #ecfdf5;
+            color: #065f46;
+            padding: 4px 12px;
+            border-radius: 9999px;
+            font-size: 11px;
+            font-weight: 700;
+            margin-top: 8px;
+            border: 1px solid #a7f3d0;
+        }
+        .launch-btn {
+            display: inline-block;
+            margin-top: 12px;
+            background: var(--primary);
+            color: white;
+            padding: 8px 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 13px;
+            transition: background 0.2s;
+        }
+        .launch-btn:hover { background: var(--primary-dark); }
     </style>
 </head>
 <body>
@@ -138,7 +166,7 @@
                 <a href="#business-tools">Business Tools</a>
                 <a href="#contact-section">Contact</a>
             </nav>
-            <a href="#explore-tools" class="btn-header">Open App</a>
+            <a href="https://janarmca.github.io/pdf-tools-backend/" target="_blank" class="btn-header">🚀 Open Full Toolkit</a>
         </div>
     </header>
 
@@ -148,9 +176,9 @@
             <div class="hero">
                 <div class="hero-left">
                     <div class="badge">🤖 AI Agent Automation Engine</div>
-                    <h1 class="hero-title">Talk to JAMTARIS AI. <br><span>Run 81+ Tools Instantly.</span></h1>
+                    <h1 class="hero-title">Talk to JAMTARIS AI. <br><span>Run 82+ Tools Instantly.</span></h1>
                     <p class="hero-desc">எங்கள் AI ஏஜென்ட்டிடம் அரட்டையடித்து (Chat) கோப்புகளை நொடியில் மாற்றுங்கள். Your files run completely safe inside your device browser storage sandbox.</p>
-                    <a href="#explore-tools" class="btn-hero">View All 81 Tools ↓</a>
+                    <a href="https://janarmca.github.io/pdf-tools-backend/" target="_blank" class="btn-hero">View All 82 Tools →</a>
                 </div>
                 
                 <!-- 🤖 CHAT BOT WORKSPACE PANEL -->
@@ -216,6 +244,7 @@
                 <div class="cat-header">
                     <h2>Featured Store Utilities</h2>
                     <p>Select any professional tool layout below to open your localized execution deck.</p>
+                    <a href="https://janarmca.github.io/pdf-tools-backend/" target="_blank" class="launch-btn">🚀 Launch Full 82-Tool Suite</a>
                 </div>
 
                 <!-- Business Tools -->
@@ -226,16 +255,19 @@
                             <div class="tool-icon" style="background:#fff7ed; color:var(--accent-amber)">🧾</div>
                             <h4 class="tool-name">GST Invoice Generator</h4>
                             <p class="tool-desc">Auto-calculate tax rates and format professional, clean retail invoices for your boutique or shop.</p>
+                            <a href="https://janarmca.github.io/pdf-tools-backend/" target="_blank" class="integration-badge">🔗 Open in Full Suite</a>
                         </div>
                         <div class="tool-card" onclick="openDirectTool('Receipt to Excel')">
                             <div class="tool-icon" style="background:#eff6ff; color:var(--primary)">📸</div>
                             <h4 class="tool-name">Receipt to Excel</h4>
                             <p class="tool-desc">Snap a quick smartphone photo of any bill to extract dates, vendors, and totals directly into a spreadsheet layout.</p>
+                            <a href="https://janarmca.github.io/pdf-tools-backend/" target="_blank" class="integration-badge">🔗 Open in Full Suite</a>
                         </div>
                         <div class="tool-card" onclick="openDirectTool('Salary Slip Generator')">
                             <div class="tool-icon" style="background:#f3e8ff; color:#a855f7">💵</div>
                             <h4 class="tool-name">Salary Slip Generator</h4>
                             <p class="tool-desc">Instantly calculate net pay, allowances, deductions, and print staff-ready PDF payroll slips.</p>
+                            <a href="https://janarmca.github.io/pdf-tools-backend/" target="_blank" class="integration-badge">🔗 Open in Full Suite</a>
                         </div>
                     </div>
                 </div>
@@ -248,16 +280,44 @@
                             <div class="tool-icon" style="background:#ecfdf5; color:var(--accent-emerald)">📊</div>
                             <h4 class="tool-name">PDF → Excel</h4>
                             <p class="tool-desc">Extract complex data tables cleanly into editable .xlsx structures while keeping your layout fully preserved.</p>
+                            <a href="https://janarmca.github.io/pdf-tools-backend/" target="_blank" class="integration-badge">🔗 Open in Full Suite</a>
                         </div>
                         <div class="tool-card" onclick="openDirectTool('Excel to PDF Converter')">
                             <div class="tool-icon" style="background:#fef2f2; color:var(--accent-red)">📉</div>
                             <h4 class="tool-name">Excel → PDF</h4>
                             <p class="tool-desc">Lock your operational accounting spreadsheets securely into readable, shareable PDF formats.</p>
+                            <a href="https://janarmca.github.io/pdf-tools-backend/" target="_blank" class="integration-badge">🔗 Open in Full Suite</a>
                         </div>
                         <div class="tool-card" onclick="openDirectTool('PDF to Word Converter')">
                             <div class="tool-icon" style="background:#e0f2fe; color:#0284c7">📃</div>
                             <h4 class="tool-name">PDF → Word</h4>
                             <p class="tool-desc">Convert read-only layout archives into fully customizable and editable text documents instantly.</p>
+                            <a href="https://janarmca.github.io/pdf-tools-backend/" target="_blank" class="integration-badge">🔗 Open in Full Suite</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 🆕 AI Tools Section -->
+                <div id="ai-tools" style="margin-top: 40px; scroll-margin-top: 100px;">
+                    <div class="cat-group-title"><span style="background:var(--accent-purple)"></span> 🤖 AI-Powered Tools / செயற்கை நுண்ணறிவு கருவிகள்</div>
+                    <div class="tools-grid">
+                        <div class="tool-card" onclick="openDirectTool('AI Document Assistant')">
+                            <div class="tool-icon" style="background:#f3e8ff; color:var(--accent-purple)">🧠</div>
+                            <h4 class="tool-name">AI Document Assistant</h4>
+                            <p class="tool-desc">Ask AI about your documents, summarize long texts, translate between languages, and more.</p>
+                            <a href="https://janarmca.github.io/pdf-tools-backend/" target="_blank" class="integration-badge">🔗 Open in Full Suite</a>
+                        </div>
+                        <div class="tool-card" onclick="openDirectTool('Remove Background')">
+                            <div class="tool-icon" style="background:#fce4ec; color:#e11d48">🖼️</div>
+                            <h4 class="tool-name">AI Background Remover</h4>
+                            <p class="tool-desc">Remove backgrounds from images with AI precision. Swap colors or add new backgrounds.</p>
+                            <a href="https://janarmca.github.io/pdf-tools-backend/" target="_blank" class="integration-badge">🔗 Open in Full Suite</a>
+                        </div>
+                        <div class="tool-card" onclick="openDirectTool('Education Games')">
+                            <div class="tool-icon" style="background:#e0f7fa; color:#00838f">🎓</div>
+                            <h4 class="tool-name">Number Jungle Learning</h4>
+                            <p class="tool-desc">Free Math & Science quiz game for Grades 1-12. Bilingual Tamil/English with XP and badges.</p>
+                            <a href="https://janarmca.github.io/pdf-tools-backend/" target="_blank" class="integration-badge">🔗 Open in Full Suite</a>
                         </div>
                     </div>
                 </div>
@@ -273,6 +333,9 @@
                     <p class="footer-title">ℹ️ About JAMTARIS / எங்களைப் பற்றி</p>
                     <p class="footer-desc">
                         ஜம்தாரிஸ் (JAMTARIS) என்பது சிறு வணிகர்கள், துணிக்கடை மற்றும் உணவக உரிமையாளர்களுக்காக பிரத்யேகமாக உருவாக்கப்பட்ட ஒரு எளிய ஆன்லைன் டூல்ஸ் (Online Tools) தளமாகும். உங்களின் முக்கியமான பில்கள், PDF கோப்புகள் மற்றும் கணக்கு விவரங்கள் (Invoices) அனைத்தும் 100% பாதுகாப்பாக, உங்கள் மொபைல் அல்லது கணினியிலேயே பிராசஸ் செய்யப்படுகின்றன.
+                    </p>
+                    <p style="margin-top: 16px;">
+                        <a href="https://janarmca.github.io/pdf-tools-backend/" target="_blank" style="color: var(--primary); font-weight: 600; text-decoration: none;">🚀 Visit Full Toolkit →</a>
                     </p>
                 </div>
                 
@@ -349,13 +412,42 @@
                 setTimeout(() => {
                     if (query.includes('pdf') && query.includes('excel')) {
                         appendMessage("நிச்சயமாக! இதோ உங்களுக்கான PDF ➡️ Excel மாற்றும் கருவி தயாராக உள்ளது. உங்கள் கோப்பை பதிவேற்றவும்:", "bot");
-                        injectSandbox("📊 PDF → Excel Sandbox", '<input type="file" class="sandbox-input" accept=".pdf"><button class="sandbox-btn" onclick="alert(\'Processing PDF Data Framework Locally...\')">Convert Data</button>');
+                        injectSandbox("📊 PDF → Excel Sandbox", `
+                            <input type="file" class="sandbox-input" accept=".pdf">
+                            <button class="sandbox-btn" onclick="window.open('https://janarmca.github.io/pdf-tools-backend/', '_blank')">🚀 Open Full Tool</button>
+                            <p style="font-size:12px; color:#475569; margin-top:4px;">Full tool suite available at the link above</p>
+                        `);
                     } else if (query.includes('invoice') || query.includes('bill') || query.includes('பில்') || query.includes('gst')) {
                         appendMessage("கட்டண பில் உருவாக்க வேண்டுமா? இதோ உங்களுக்கான GST Invoice Creator விட்ஜெட்:", "bot");
-                        injectSandbox("🧾 GST Invoice Creator Interface", '<input type="text" class="sandbox-input" placeholder="Shop Name / கடையின் பெயர்"><input type="number" class="sandbox-input" placeholder="Total Amount"><button class="sandbox-btn" onclick="alert(\'Generating PDF Invoice Structure...\')">Generate Bill</button>');
+                        injectSandbox("🧾 GST Invoice Creator Interface", `
+                            <input type="text" class="sandbox-input" placeholder="Shop Name / கடையின் பெயர்">
+                            <input type="number" class="sandbox-input" placeholder="Total Amount">
+                            <button class="sandbox-btn" onclick="window.open('https://janarmca.github.io/pdf-tools-backend/', '_blank')">🚀 Generate in Full Suite</button>
+                        `);
                     } else if (query.includes('receipt') || query.includes('ரசீது')) {
                         appendMessage("ரசீதுகளை எக்செல் ஆக மாற்ற இதோ உங்களது லோக்கல் அப்ளிகேஷன் விண்டோ:", "bot");
-                        injectSandbox("📸 Receipt to Excel App Sandbox", '<input type="file" class="sandbox-input" accept="image/*"><button class="sandbox-btn" onclick="alert(\'Analyzing Receipt Metrics...\')">Extract to Spreadsheet</button>');
+                        injectSandbox("📸 Receipt to Excel App Sandbox", `
+                            <input type="file" class="sandbox-input" accept="image/*">
+                            <button class="sandbox-btn" onclick="window.open('https://janarmca.github.io/pdf-tools-backend/', '_blank')">🚀 Extract in Full Suite</button>
+                        `);
+                    } else if (query.includes('background') || query.includes('remove')) {
+                        appendMessage("AI-powered background removal tool is ready! Click below to open:", "bot");
+                        injectSandbox("🖼️ AI Background Remover", `
+                            <button class="sandbox-btn" onclick="window.open('https://janarmca.github.io/pdf-tools-backend/', '_blank')">🚀 Open Background Remover</button>
+                            <p style="font-size:12px; color:#475569; margin-top:4px;">Powered by AI - remove.bg quality</p>
+                        `);
+                    } else if (query.includes('ai') || query.includes('assistant') || query.includes('summarize')) {
+                        appendMessage("AI Document Assistant is ready! Ask me to summarize, translate, or analyze your documents:", "bot");
+                        injectSandbox("🧠 AI Document Assistant", `
+                            <button class="sandbox-btn" onclick="window.open('https://janarmca.github.io/pdf-tools-backend/', '_blank')">🚀 Open AI Tools</button>
+                            <p style="font-size:12px; color:#475569; margin-top:4px;">Includes: Summarize, Translate, Handwriting to Text, Resume Review & more</p>
+                        `);
+                    } else if (query.includes('education') || query.includes('game') || query.includes('math') || query.includes('science')) {
+                        appendMessage("🎓 Number Jungle learning game is here! Fun Math & Science for Grades 1-12:", "bot");
+                        injectSandbox("🎓 Number Jungle Education Game", `
+                            <button class="sandbox-btn" onclick="window.open('https://janarmca.github.io/pdf-tools-backend/', '_blank')">🚀 Play Number Jungle</button>
+                            <p style="font-size:12px; color:#475569; margin-top:4px;">Bilingual Tamil/English • XP & Badges • Free for all</p>
+                        `);
                     } else {
                         appendMessage("மன்னிக்கவும்! அந்த டூலின் பெயர் எனக்குப் புரியவில்லை. கீழே உள்ள பட்டியலில் இருந்து உங்களுக்குத் தேவையான டூலைத் தேர்ந்தெடுக்கவும் அல்லது 'PDF to Excel' என்று டைப் செய்யவும்.", "bot");
                     }
@@ -394,6 +486,7 @@
             window.injectSandbox = injectSandbox;
 
             console.log('JAMTARIS AI Agent initialized successfully!');
+            console.log('🔗 Integrated with: https://janarmca.github.io/pdf-tools-backend/');
         })();
     </script>
 </body>
