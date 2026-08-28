@@ -60,7 +60,7 @@
         
         /* 🤖 INTERACTIVE AI AGENT PANEL */
         .hero-right { flex: 0.9; width: 100%; max-width: 480px; }
-        .agent-container { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 24px; box-shadow: 0 20px 30px rgba(0,0,0,0.06); display: flex; flex-direction: column; height: 420px; overflow: hidden; }
+        .agent-container { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 24px; box-shadow: 0 20px 30px rgba(0,0,0,0.06); display: flex; flex-direction: column; height: 480px; overflow: hidden; }
         .agent-header { background: linear-gradient(135deg, #1e293b, #0f172a); color: white; padding: 16px 20px; display: flex; align-items: center; justify-content: space-between; }
         .agent-status { display: flex; align-items: center; gap: 8px; }
         .status-dot { width: 8px; height: 8px; background: #34d399; border-radius: 50%; box-shadow: 0 0 8px #34d399; animation: pulse 2s infinite; }
@@ -70,17 +70,82 @@
         .msg.bot { background: #ffffff; color: var(--slate-900); align-self: flex-start; border: 1px solid #e2e8f0; border-top-left-radius: 4px; box-shadow: 0 1px 2px rgba(0,0,0,0.02); }
         .msg.user { background: var(--primary); color: white; align-self: flex-end; border-top-right-radius: 4px; }
         
+        /* 🆕 SAMPLE INVOICE STYLES */
+        .sample-invoice {
+            background: white;
+            border: 2px solid var(--primary);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 8px 0;
+            font-size: 13px;
+            width: 100%;
+            max-width: 100%;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        .sample-invoice h3 {
+            color: var(--primary);
+            font-size: 18px;
+            margin-bottom: 12px;
+            border-bottom: 2px solid var(--slate-100);
+            padding-bottom: 8px;
+        }
+        .invoice-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 4px 0;
+            border-bottom: 1px dashed #e2e8f0;
+        }
+        .invoice-row.total {
+            font-weight: 700;
+            font-size: 15px;
+            border-bottom: 2px solid var(--primary);
+            padding-top: 8px;
+            margin-top: 4px;
+        }
+        .invoice-label { color: var(--slate-600); }
+        .invoice-value { font-weight: 600; color: var(--slate-900); }
+        .invoice-gst {
+            background: #f0fdf4;
+            padding: 8px 12px;
+            border-radius: 6px;
+            margin-top: 8px;
+            font-size: 12px;
+            border-left: 3px solid var(--accent-emerald);
+        }
+        .invoice-actions {
+            display: flex;
+            gap: 8px;
+            margin-top: 12px;
+            flex-wrap: wrap;
+        }
+        .invoice-actions button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .invoice-actions button:hover { background: var(--primary-dark); }
+        .invoice-actions button.secondary {
+            background: var(--slate-100);
+            color: var(--slate-700);
+        }
+        .invoice-actions button.secondary:hover { background: var(--slate-200); }
+        
         /* DYNAMIC INTERACTIVE APP INJECTOR SANDBOX */
         .app-sandbox { background: #eff6ff; border: 2px dashed #bfdbfe; padding: 18px; border-radius: 16px; margin-top: 5px; display: none; flex-direction: column; gap: 12px; }
         .sandbox-title { font-size: 14px; font-weight: 700; color: #1e40af; display: flex; align-items: center; gap: 6px; }
         .sandbox-input { width: 100%; padding: 10px; border: 1px solid #bfdbfe; border-radius: 8px; outline: none; font-size: 13px; margin-bottom: 2px; }
         .sandbox-btn { background: var(--primary); color: white; border: none; padding: 11px; border-radius: 8px; font-weight: 700; cursor: pointer; font-size: 13px; width: 100%; }
+        .sandbox-btn:hover { background: var(--primary-dark); }
         
         .agent-footer { padding: 12px; background: #ffffff; border-top: 1px solid #e2e8f0; display: flex; gap: 10px; }
         .agent-input { flex: 1; padding: 12px 16px; border: 1px solid #e2e8f0; border-radius: 12px; outline: none; font-size: 14px; background: var(--slate-50); }
         .agent-input:focus { border-color: var(--primary); background: white; }
         
-        /* FIX: id="chat-send" added directly to button */
         .agent-send { background: var(--primary); border: none; width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; cursor: pointer; color: white; }
         .agent-send:hover { background: var(--primary-dark); }
         
@@ -123,7 +188,6 @@
         
         @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
 
-        /* 🆕 INTEGRATION BADGE */
         .integration-badge {
             display: inline-block;
             background: #ecfdf5;
@@ -255,19 +319,19 @@
                             <div class="tool-icon" style="background:#fff7ed; color:var(--accent-amber)">🧾</div>
                             <h4 class="tool-name">GST Invoice Generator</h4>
                             <p class="tool-desc">Auto-calculate tax rates and format professional, clean retail invoices for your boutique or shop.</p>
-                            <a href="https://janarmca.github.io/pdf-tools-backend/" target="_blank" class="integration-badge">🔗 Open in Full Suite</a>
+                            <span class="integration-badge" style="cursor:pointer;" onclick="event.stopPropagation();openDirectTool('GST Invoice Generator')">💬 Ask in Chat</span>
                         </div>
                         <div class="tool-card" onclick="openDirectTool('Receipt to Excel')">
                             <div class="tool-icon" style="background:#eff6ff; color:var(--primary)">📸</div>
                             <h4 class="tool-name">Receipt to Excel</h4>
                             <p class="tool-desc">Snap a quick smartphone photo of any bill to extract dates, vendors, and totals directly into a spreadsheet layout.</p>
-                            <a href="https://janarmca.github.io/pdf-tools-backend/" target="_blank" class="integration-badge">🔗 Open in Full Suite</a>
+                            <span class="integration-badge" style="cursor:pointer;" onclick="event.stopPropagation();openDirectTool('Receipt to Excel')">💬 Ask in Chat</span>
                         </div>
                         <div class="tool-card" onclick="openDirectTool('Salary Slip Generator')">
                             <div class="tool-icon" style="background:#f3e8ff; color:#a855f7">💵</div>
                             <h4 class="tool-name">Salary Slip Generator</h4>
                             <p class="tool-desc">Instantly calculate net pay, allowances, deductions, and print staff-ready PDF payroll slips.</p>
-                            <a href="https://janarmca.github.io/pdf-tools-backend/" target="_blank" class="integration-badge">🔗 Open in Full Suite</a>
+                            <span class="integration-badge" style="cursor:pointer;" onclick="event.stopPropagation();openDirectTool('Salary Slip Generator')">💬 Ask in Chat</span>
                         </div>
                     </div>
                 </div>
@@ -280,44 +344,19 @@
                             <div class="tool-icon" style="background:#ecfdf5; color:var(--accent-emerald)">📊</div>
                             <h4 class="tool-name">PDF → Excel</h4>
                             <p class="tool-desc">Extract complex data tables cleanly into editable .xlsx structures while keeping your layout fully preserved.</p>
-                            <a href="https://janarmca.github.io/pdf-tools-backend/" target="_blank" class="integration-badge">🔗 Open in Full Suite</a>
+                            <span class="integration-badge" style="cursor:pointer;" onclick="event.stopPropagation();openDirectTool('PDF to Excel Converter')">💬 Ask in Chat</span>
                         </div>
                         <div class="tool-card" onclick="openDirectTool('Excel to PDF Converter')">
                             <div class="tool-icon" style="background:#fef2f2; color:var(--accent-red)">📉</div>
                             <h4 class="tool-name">Excel → PDF</h4>
                             <p class="tool-desc">Lock your operational accounting spreadsheets securely into readable, shareable PDF formats.</p>
-                            <a href="https://janarmca.github.io/pdf-tools-backend/" target="_blank" class="integration-badge">🔗 Open in Full Suite</a>
+                            <span class="integration-badge" style="cursor:pointer;" onclick="event.stopPropagation();openDirectTool('Excel to PDF Converter')">💬 Ask in Chat</span>
                         </div>
                         <div class="tool-card" onclick="openDirectTool('PDF to Word Converter')">
                             <div class="tool-icon" style="background:#e0f2fe; color:#0284c7">📃</div>
                             <h4 class="tool-name">PDF → Word</h4>
                             <p class="tool-desc">Convert read-only layout archives into fully customizable and editable text documents instantly.</p>
-                            <a href="https://janarmca.github.io/pdf-tools-backend/" target="_blank" class="integration-badge">🔗 Open in Full Suite</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 🆕 AI Tools Section -->
-                <div id="ai-tools" style="margin-top: 40px; scroll-margin-top: 100px;">
-                    <div class="cat-group-title"><span style="background:var(--accent-purple)"></span> 🤖 AI-Powered Tools / செயற்கை நுண்ணறிவு கருவிகள்</div>
-                    <div class="tools-grid">
-                        <div class="tool-card" onclick="openDirectTool('AI Document Assistant')">
-                            <div class="tool-icon" style="background:#f3e8ff; color:var(--accent-purple)">🧠</div>
-                            <h4 class="tool-name">AI Document Assistant</h4>
-                            <p class="tool-desc">Ask AI about your documents, summarize long texts, translate between languages, and more.</p>
-                            <a href="https://janarmca.github.io/pdf-tools-backend/" target="_blank" class="integration-badge">🔗 Open in Full Suite</a>
-                        </div>
-                        <div class="tool-card" onclick="openDirectTool('Remove Background')">
-                            <div class="tool-icon" style="background:#fce4ec; color:#e11d48">🖼️</div>
-                            <h4 class="tool-name">AI Background Remover</h4>
-                            <p class="tool-desc">Remove backgrounds from images with AI precision. Swap colors or add new backgrounds.</p>
-                            <a href="https://janarmca.github.io/pdf-tools-backend/" target="_blank" class="integration-badge">🔗 Open in Full Suite</a>
-                        </div>
-                        <div class="tool-card" onclick="openDirectTool('Education Games')">
-                            <div class="tool-icon" style="background:#e0f7fa; color:#00838f">🎓</div>
-                            <h4 class="tool-name">Number Jungle Learning</h4>
-                            <p class="tool-desc">Free Math & Science quiz game for Grades 1-12. Bilingual Tamil/English with XP and badges.</p>
-                            <a href="https://janarmca.github.io/pdf-tools-backend/" target="_blank" class="integration-badge">🔗 Open in Full Suite</a>
+                            <span class="integration-badge" style="cursor:pointer;" onclick="event.stopPropagation();openDirectTool('PDF to Word Converter')">💬 Ask in Chat</span>
                         </div>
                     </div>
                 </div>
@@ -378,7 +417,6 @@
             const sandboxTitle = document.getElementById('sandbox-title');
             const sandboxInner = document.getElementById('sandbox-inner');
 
-            // Safety check: ensure all elements exist
             if (!chatBody || !chatInput || !chatSend || !sandboxBox || !sandboxTitle || !sandboxInner) {
                 console.error('One or more chat elements not found!');
                 return;
@@ -388,9 +426,98 @@
             function appendMessage(text, sender) {
                 const el = document.createElement('div');
                 el.className = `msg ${sender}`;
-                el.innerText = text;
+                if (sender === 'bot') {
+                    el.innerHTML = text; // Allow HTML for bot messages
+                } else {
+                    el.innerText = text;
+                }
                 chatBody.appendChild(el);
                 chatBody.scrollTop = chatBody.scrollHeight;
+            }
+
+            // 🆕 FUNCTION TO GENERATE SAMPLE INVOICE HTML
+            function generateSampleInvoice(type, details) {
+                const now = new Date();
+                const dateStr = now.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
+                const invoiceNo = 'INV-' + String(Math.floor(1000 + Math.random() * 9000));
+                
+                let html = `<div class="sample-invoice">`;
+                html += `<h3>🧾 ${type}</h3>`;
+                html += `<div class="invoice-row"><span class="invoice-label">Invoice No:</span><span class="invoice-value">${invoiceNo}</span></div>`;
+                html += `<div class="invoice-row"><span class="invoice-label">Date:</span><span class="invoice-value">${dateStr}</span></div>`;
+                html += `<div class="invoice-row"><span class="invoice-label">Customer:</span><span class="invoice-value">${details.customer || 'Sample Customer'}</span></div>`;
+                
+                if (details.items && details.items.length > 0) {
+                    html += `<div style="margin-top:8px;border-top:1px solid #e2e8f0;padding-top:8px;">`;
+                    details.items.forEach(item => {
+                        html += `<div class="invoice-row"><span>${item.name}</span><span>₹${item.amount}</span></div>`;
+                    });
+                    html += `</div>`;
+                }
+                
+                const subtotal = details.items ? details.items.reduce((sum, i) => sum + i.amount, 0) : 0;
+                const gst = Math.round(subtotal * 0.18);
+                const total = subtotal + gst;
+                
+                html += `<div class="invoice-row"><span class="invoice-label">Subtotal:</span><span>₹${subtotal}</span></div>`;
+                html += `<div class="invoice-row"><span class="invoice-label">GST (18%):</span><span>₹${gst}</span></div>`;
+                html += `<div class="invoice-row total"><span>Total Amount:</span><span>₹${total}</span></div>`;
+                html += `<div class="invoice-gst">✅ GSTIN: 33ABCDE1234F1Z5 • HSN/SAC: 9983</div>`;
+                html += `<div class="invoice-actions">`;
+                html += `<button onclick="window.open('https://janarmca.github.io/pdf-tools-backend/', '_blank')">📄 Create Full Invoice</button>`;
+                html += `<button class="secondary" onclick="this.parentElement.parentElement.parentElement.remove()">✖ Close</button>`;
+                html += `</div>`;
+                html += `</div>`;
+                return html;
+            }
+
+            // 🆕 FUNCTION TO GENERATE SAMPLE RECEIPT
+            function generateSampleReceipt() {
+                const now = new Date();
+                const dateStr = now.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
+                const receiptNo = 'RCP-' + String(Math.floor(1000 + Math.random() * 9000));
+                
+                let html = `<div class="sample-invoice" style="border-color:var(--accent-emerald);">`;
+                html += `<h3 style="color:var(--accent-emerald);">📸 Receipt</h3>`;
+                html += `<div class="invoice-row"><span class="invoice-label">Receipt No:</span><span class="invoice-value">${receiptNo}</span></div>`;
+                html += `<div class="invoice-row"><span class="invoice-label">Date:</span><span class="invoice-value">${dateStr}</span></div>`;
+                html += `<div class="invoice-row"><span class="invoice-label">Vendor:</span><span class="invoice-value">Sample Store</span></div>`;
+                html += `<div class="invoice-row"><span class="invoice-label">Amount:</span><span class="invoice-value">₹${Math.floor(200 + Math.random() * 800)}</span></div>`;
+                html += `<div class="invoice-row"><span class="invoice-label">Payment:</span><span class="invoice-value">${['Cash','UPI','Card'][Math.floor(Math.random()*3)]}</span></div>`;
+                html += `<div class="invoice-gst" style="border-left-color:var(--accent-emerald);">✅ Extracted from bill photo • ${Math.floor(1+Math.random()*5)} items</div>`;
+                html += `<div class="invoice-actions">`;
+                html += `<button onclick="window.open('https://janarmca.github.io/pdf-tools-backend/', '_blank')">📊 Export to Excel</button>`;
+                html += `<button class="secondary" onclick="this.parentElement.parentElement.parentElement.remove()">✖ Close</button>`;
+                html += `</div>`;
+                html += `</div>`;
+                return html;
+            }
+
+            // 🆕 FUNCTION TO GENERATE SAMPLE SALARY SLIP
+            function generateSampleSalarySlip() {
+                const now = new Date();
+                const month = now.toLocaleString('en-IN', { month: 'long', year: 'numeric' });
+                
+                let html = `<div class="sample-invoice" style="border-color:var(--accent-purple);">`;
+                html += `<h3 style="color:var(--accent-purple);">💵 Salary Slip - ${month}</h3>`;
+                html += `<div class="invoice-row"><span class="invoice-label">Employee:</span><span class="invoice-value">Sample Employee</span></div>`;
+                html += `<div class="invoice-row"><span class="invoice-label">Designation:</span><span class="invoice-value">Store Manager</span></div>`;
+                html += `<div style="margin-top:8px;border-top:1px solid #e2e8f0;padding-top:8px;">`;
+                html += `<div class="invoice-row"><span>Basic Pay</span><span>₹25,000</span></div>`;
+                html += `<div class="invoice-row"><span>HRA</span><span>₹5,000</span></div>`;
+                html += `<div class="invoice-row"><span>Allowances</span><span>₹3,000</span></div>`;
+                html += `<div class="invoice-row" style="border-bottom:1px solid #e2e8f0;"><span>Gross Pay</span><span>₹33,000</span></div>`;
+                html += `<div class="invoice-row"><span style="color:#dc2626;">PF Deduction</span><span style="color:#dc2626;">-₹1,800</span></div>`;
+                html += `<div class="invoice-row"><span style="color:#dc2626;">Professional Tax</span><span style="color:#dc2626;">-₹200</span></div>`;
+                html += `<div class="invoice-row total"><span>Net Pay</span><span>₹31,000</span></div>`;
+                html += `</div>`;
+                html += `<div class="invoice-gst" style="border-left-color:var(--accent-purple);">✅ Net Pay: ₹31,000 • Paid via Bank Transfer</div>`;
+                html += `<div class="invoice-actions">`;
+                html += `<button onclick="window.open('https://janarmca.github.io/pdf-tools-backend/', '_blank')">📄 Generate PDF Slip</button>`;
+                html += `<button class="secondary" onclick="this.parentElement.parentElement.parentElement.remove()">✖ Close</button>`;
+                html += `</div>`;
+                html += `</div>`;
+                return html;
             }
 
             // Function to inject a sandbox tool into the chat
@@ -398,7 +525,6 @@
                 sandboxBox.style.display = 'flex';
                 sandboxTitle.innerText = `🛠️ Active Agent Sandbox: ${title}`;
                 sandboxInner.innerHTML = htmlContent;
-                // Ensure the sandbox is visible
                 chatBody.appendChild(sandboxBox);
                 chatBody.scrollTop = chatBody.scrollHeight;
             }
@@ -408,55 +534,71 @@
                 const query = userInput.toLowerCase().trim();
                 if (query === '') return;
 
-                // Simulate AI response delay
                 setTimeout(() => {
-                    if (query.includes('pdf') && query.includes('excel')) {
-                        appendMessage("நிச்சயமாக! இதோ உங்களுக்கான PDF ➡️ Excel மாற்றும் கருவி தயாராக உள்ளது. உங்கள் கோப்பை பதிவேற்றவும்:", "bot");
-                        injectSandbox("📊 PDF → Excel Sandbox", `
-                            <input type="file" class="sandbox-input" accept=".pdf">
-                            <button class="sandbox-btn" onclick="window.open('https://janarmca.github.io/pdf-tools-backend/', '_blank')">🚀 Open Full Tool</button>
-                            <p style="font-size:12px; color:#475569; margin-top:4px;">Full tool suite available at the link above</p>
-                        `);
-                    } else if (query.includes('invoice') || query.includes('bill') || query.includes('பில்') || query.includes('gst')) {
-                        appendMessage("கட்டண பில் உருவாக்க வேண்டுமா? இதோ உங்களுக்கான GST Invoice Creator விட்ஜெட்:", "bot");
-                        injectSandbox("🧾 GST Invoice Creator Interface", `
-                            <input type="text" class="sandbox-input" placeholder="Shop Name / கடையின் பெயர்">
-                            <input type="number" class="sandbox-input" placeholder="Total Amount">
-                            <button class="sandbox-btn" onclick="window.open('https://janarmca.github.io/pdf-tools-backend/', '_blank')">🚀 Generate in Full Suite</button>
-                        `);
-                    } else if (query.includes('receipt') || query.includes('ரசீது')) {
-                        appendMessage("ரசீதுகளை எக்செல் ஆக மாற்ற இதோ உங்களது லோக்கல் அப்ளிகேஷன் விண்டோ:", "bot");
-                        injectSandbox("📸 Receipt to Excel App Sandbox", `
-                            <input type="file" class="sandbox-input" accept="image/*">
-                            <button class="sandbox-btn" onclick="window.open('https://janarmca.github.io/pdf-tools-backend/', '_blank')">🚀 Extract in Full Suite</button>
-                        `);
-                    } else if (query.includes('background') || query.includes('remove')) {
-                        appendMessage("AI-powered background removal tool is ready! Click below to open:", "bot");
-                        injectSandbox("🖼️ AI Background Remover", `
-                            <button class="sandbox-btn" onclick="window.open('https://janarmca.github.io/pdf-tools-backend/', '_blank')">🚀 Open Background Remover</button>
-                            <p style="font-size:12px; color:#475569; margin-top:4px;">Powered by AI - remove.bg quality</p>
-                        `);
-                    } else if (query.includes('ai') || query.includes('assistant') || query.includes('summarize')) {
-                        appendMessage("AI Document Assistant is ready! Ask me to summarize, translate, or analyze your documents:", "bot");
-                        injectSandbox("🧠 AI Document Assistant", `
-                            <button class="sandbox-btn" onclick="window.open('https://janarmca.github.io/pdf-tools-backend/', '_blank')">🚀 Open AI Tools</button>
-                            <p style="font-size:12px; color:#475569; margin-top:4px;">Includes: Summarize, Translate, Handwriting to Text, Resume Review & more</p>
-                        `);
-                    } else if (query.includes('education') || query.includes('game') || query.includes('math') || query.includes('science')) {
-                        appendMessage("🎓 Number Jungle learning game is here! Fun Math & Science for Grades 1-12:", "bot");
-                        injectSandbox("🎓 Number Jungle Education Game", `
-                            <button class="sandbox-btn" onclick="window.open('https://janarmca.github.io/pdf-tools-backend/', '_blank')">🚀 Play Number Jungle</button>
-                            <p style="font-size:12px; color:#475569; margin-top:4px;">Bilingual Tamil/English • XP & Badges • Free for all</p>
-                        `);
-                    } else {
-                        appendMessage("மன்னிக்கவும்! அந்த டூலின் பெயர் எனக்குப் புரியவில்லை. கீழே உள்ள பட்டியலில் இருந்து உங்களுக்குத் தேவையான டூலைத் தேர்ந்தெடுக்கவும் அல்லது 'PDF to Excel' என்று டைப் செய்யவும்.", "bot");
+                    // 🆕 INVOICE GENERATION - Show sample invoice
+                    if (query.includes('invoice') || query.includes('bill') || query.includes('பில்') || query.includes('gst') || query.includes('tax')) {
+                        const sampleInvoiceHTML = generateSampleInvoice('GST Tax Invoice', {
+                            customer: 'Sample Customer',
+                            items: [
+                                { name: 'Product A x 2', amount: 500 },
+                                { name: 'Product B x 1', amount: 300 },
+                                { name: 'Service Charge', amount: 200 }
+                            ]
+                        });
+                        appendMessage(`📋 Here's a sample GST Invoice for you:`, 'bot');
+                        appendMessage(sampleInvoiceHTML, 'bot');
+                        return;
                     }
+
+                    // 🆕 RECEIPT GENERATION
+                    if (query.includes('receipt') || query.includes('ரசீது') || query.includes('bill photo') || query.includes('snap')) {
+                        appendMessage(`📸 Here's a sample receipt extracted from a bill photo:`, 'bot');
+                        appendMessage(generateSampleReceipt(), 'bot');
+                        return;
+                    }
+
+                    // 🆕 SALARY SLIP GENERATION
+                    if (query.includes('salary') || query.includes('payroll') || query.includes('slip') || query.includes('pay slip')) {
+                        appendMessage(`💵 Here's a sample salary slip for the current month:`, 'bot');
+                        appendMessage(generateSampleSalarySlip(), 'bot');
+                        return;
+                    }
+
+                    // 🆕 PDF TO EXCEL
+                    if (query.includes('pdf') && query.includes('excel')) {
+                        appendMessage("📊 PDF ➡️ Excel conversion tool is ready! Here's a sample data structure:", "bot");
+                        injectSandbox("📊 PDF → Excel Sandbox", `
+                            <div style="background:white;padding:12px;border-radius:8px;font-size:12px;">
+                                <strong>Sample Extracted Data:</strong>
+                                <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px;margin-top:6px;background:#f1f5f9;padding:8px;border-radius:4px;">
+                                    <span><strong>Product</strong></span><span><strong>Qty</strong></span><span><strong>Price</strong></span>
+                                    <span>Item A</span><span>2</span><span>₹500</span>
+                                    <span>Item B</span><span>1</span><span>₹300</span>
+                                    <span>Item C</span><span>3</span><span>₹150</span>
+                                </div>
+                            </div>
+                            <button class="sandbox-btn" onclick="window.open('https://janarmca.github.io/pdf-tools-backend/', '_blank')">🚀 Open Full PDF to Excel Tool</button>
+                        `);
+                        return;
+                    }
+
+                    // 🆕 DEFAULT: Show available sample types
+                    appendMessage(`📋 நான் இந்த மாதிரி ஆவணங்களை உருவாக்க முடியும்:`, 'bot');
+                    appendMessage(`
+                        <div style="display:flex;flex-direction:column;gap:6px;margin-top:4px;width:100%;">
+                            <button onclick="triggerAgentLogic('GST Invoice')" style="background:#fff7ed;border:1px solid #f59e0b;padding:8px 14px;border-radius:8px;cursor:pointer;font-weight:600;text-align:left;">🧾 GST Invoice - Generate Sample</button>
+                            <button onclick="triggerAgentLogic('Receipt')" style="background:#eff6ff;border:1px solid #2563eb;padding:8px 14px;border-radius:8px;cursor:pointer;font-weight:600;text-align:left;">📸 Receipt - Generate Sample</button>
+                            <button onclick="triggerAgentLogic('Salary Slip')" style="background:#f3e8ff;border:1px solid #a855f7;padding:8px 14px;border-radius:8px;cursor:pointer;font-weight:600;text-align:left;">💵 Salary Slip - Generate Sample</button>
+                            <button onclick="triggerAgentLogic('PDF to Excel')" style="background:#ecfdf5;border:1px solid #10b981;padding:8px 14px;border-radius:8px;cursor:pointer;font-weight:600;text-align:left;">📊 PDF to Excel - Sample Data</button>
+                            <p style="font-size:12px;color:var(--slate-600);margin-top:4px;">👇 கீழே உள்ள பட்டன்களை கிளிக் செய்து மாதிரி ஆவணங்களை பார்க்கவும்!</p>
+                        </div>
+                    `, 'bot');
                 }, 600);
             }
 
             // Function to open a tool directly from the catalog
             window.openDirectTool = function(name) {
-                appendMessage(`Launching layout frame for: ${name}`, "user");
+                appendMessage(`🔍 Searching for: ${name}`, "user");
                 triggerAgentLogic(name);
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             };
@@ -480,13 +622,16 @@
                 }
             });
 
-            // Expose functions globally for inline onclick usage
+            // Expose functions globally
             window.appendMessage = appendMessage;
             window.triggerAgentLogic = triggerAgentLogic;
             window.injectSandbox = injectSandbox;
+            window.generateSampleInvoice = generateSampleInvoice;
+            window.generateSampleReceipt = generateSampleReceipt;
+            window.generateSampleSalarySlip = generateSampleSalarySlip;
 
-            console.log('JAMTARIS AI Agent initialized successfully!');
-            console.log('🔗 Integrated with: https://janarmca.github.io/pdf-tools-backend/');
+            console.log('JAMTARIS AI Agent initialized with SAMPLE GENERATION!');
+            console.log('Try typing: "GST Invoice", "Receipt", "Salary Slip", or "PDF to Excel"');
         })();
     </script>
 </body>
