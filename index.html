@@ -1,1166 +1,668 @@
-<!DOCTYPE html>
-<html lang="ta">
-<head>
-    <!-- ============================================
-    🔍 SEO - SEARCH ENGINE OPTIMIZATION
-    ============================================ -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Primary Title - Appears in Google Search Results -->
-    <title>JAMTARIS - Free AI Tools, PDF Converter, GST Invoice & Mobile Repair Quotation</title>
-    
-    <!-- Meta Description - Shown below title in Google -->
-    <meta name="description" content="JAMTARIS - Free online tools: PDF to Excel, GST Invoice Generator, Mobile Repair Quotation, Receipt to Excel, Salary Slip Generator. 82+ tools in Tamil & English. No ads, privacy-first.">
-    
-    <!-- Keywords for Search Engines -->
-    <meta name="keywords" content="JAMTARIS, PDF tools, GST invoice generator, mobile repair quotation, receipt to excel, salary slip generator, Tamil tools, free online tools, PDF to Excel, business tools, AI tools, JAMTARIS AI">
-    
-    <!-- Author and Copyright -->
-    <meta name="author" content="JAMTARIS">
-    <meta name="copyright" content="JAMTARIS 2026">
-    
-    <!-- Robots - Allow search engines to index and follow links -->
-    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
-    
-    <!-- Language and Region -->
-    <meta name="language" content="Tamil, English">
-    <meta name="geo.region" content="IN-TN">
-    <meta name="geo.placename" content="Chennai">
-    
-    <!-- ============================================
-    📱 SOCIAL MEDIA & OPEN GRAPH (Facebook, WhatsApp)
-    ============================================ -->
-    <meta property="og:title" content="JAMTARIS - Free AI Tools, PDF Converter, GST Invoice & Mobile Repair Quotation">
-    <meta property="og:description" content="Free online tools in Tamil & English: PDF to Excel, GST Invoice, Mobile Repair Quotation, Receipt to Excel, Salary Slip. 82+ tools, no ads.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://janarmca.github.io/jamtaris/">
-    <meta property="og:image" content="https://janarmca.github.io/jamtaris/og-image.jpg">
-    <meta property="og:locale" content="ta_IN">
-    <meta property="og:site_name" content="JAMTARIS - Free Business Tools">
-    
-    <!-- ============================================
-    🐦 TWITTER CARD
-    ============================================ -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="JAMTARIS - Free AI Tools, PDF Converter, GST Invoice">
-    <meta name="twitter:description" content="Free online tools in Tamil & English: PDF to Excel, GST Invoice, Mobile Repair Quotation, Receipt to Excel, Salary Slip.">
-    <meta name="twitter:image" content="https://janarmca.github.io/jamtaris/og-image.jpg">
-    
-    <!-- ============================================
-    🔗 CANONICAL URL - Avoid duplicate content
-    ============================================ -->
-    <link rel="canonical" href="https://janarmca.github.io/jamtaris/">
-    
-    <!-- ============================================
-    📄 STRUCTURED DATA (JSON-LD) - Rich Snippets
-    ============================================ -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebApplication",
-        "name": "JAMTARIS",
-        "description": "Free online business tools including PDF converter, GST invoice generator, mobile repair quotation, receipt to excel, and salary slip generator. Available in Tamil and English.",
-        "applicationCategory": "BusinessApplication",
-        "operatingSystem": "All",
-        "browserRequirements": "Requires JavaScript",
-        "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "INR"
-        },
-        "inLanguage": ["ta", "en"],
-        "author": {
-            "@type": "Person",
-            "name": "JAMTARIS"
-        },
-        "url": "https://janarmca.github.io/jamtaris/",
-        "keywords": "PDF tools, GST invoice, mobile repair, receipt to excel, salary slip, Tamil tools"
-    }
-    </script>
-    
-    <!-- ============================================
-    🚀 SITE VERIFICATION (Google Search Console)
-    ============================================ -->
-    <meta name="google-site-verification" content="your-verification-code-here">
-    
-    <!-- ============================================
-    🌐 ALTERNATE LANGUAGE VERSIONS
-    ============================================ -->
-    <link rel="alternate" hreflang="ta" href="https://janarmca.github.io/jamtaris/?lang=ta">
-    <link rel="alternate" hreflang="en" href="https://janarmca.github.io/jamtaris/?lang=en">
-    <link rel="alternate" hreflang="x-default" href="https://janarmca.github.io/jamtaris/">
-    
-    <!-- Fast Icon Engine Integration -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        /* 🎨 DESIGN SYSTEM & COLOR VARIABLES */
-        :root {
-            --primary: #2563eb;
-            --primary-dark: #1d4ed8;
-            --accent-amber: #f59e0b;
-            --accent-emerald: #10b981;
-            --accent-red: #ef4444;
-            --accent-purple: #a855f7;
-            --slate-900: #0f172a;
-            --slate-700: #334155;
-            --slate-600: #475569;
-            --slate-100: #f1f5f9;
-        }
-        
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; }
-        body { font-family: system-ui, -apple-system, sans-serif; background-color: #f8fafc; color: var(--slate-900); line-height: 1.6; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-        
-        /* 🌐 FIXED STICKY HEADER & NAVBAR */
-        header { position: sticky; top: 0; background: #ffffff; border-bottom: 1px solid var(--slate-100); z-index: 1000; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
-        .nav-container { display: flex; align-items: center; justify-content: space-between; height: 80px; flex-wrap: wrap; }
-        
-        .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; font-size: 26px; font-weight: 800; color: var(--primary); letter-spacing: 0.5px; }
-        .logo-image { background: linear-gradient(135deg, #3b82f6, #1d4ed8); width: 42px; height: 42px; border-radius: 12px; display: flex; align-items: center; justify-content: center; }
-        .logo-image svg { width: 22px; height: 22px; fill: white; }
-        
-        .nav-links { display: flex; gap: 28px; flex-wrap: wrap; }
-        .nav-links a { text-decoration: none; color: var(--slate-600); font-weight: 600; font-size: 15px; transition: color 0.2s; display: flex; align-items: center; gap: 6px; }
-        .nav-links a:hover { color: var(--primary); }
-        
-        .btn-header { background: var(--primary); color: white; padding: 11px 22px; border-radius: 12px; text-decoration: none; font-weight: 700; font-size: 14px; box-shadow: 0 4px 12px rgba(37,99,235,0.2); }
-        
-        /* 🚀 HERO PRESENTATION LAYOUT */
-        .hero-section { padding: 65px 0; }
-        .hero { display: flex; flex-direction: column; gap: 40px; align-items: center; }
-        @media(min-width: 768px) { .hero { flex-direction: row; text-align: left; } }
-        
-        .hero-left { flex: 1.1; text-align: center; }
-        @media(min-width: 768px) { .hero-left { text-align: left; } }
-        
-        .badge { display: inline-flex; align-items: center; gap: 6px; background: #eff6ff; border: 1px solid #bfdbfe; color: #1e40af; padding: 6px 16px; border-radius: 9999px; font-size: 13px; font-weight: 700; margin-bottom: 24px; text-transform: uppercase; }
-        .hero-title { font-size: 42px; font-weight: 800; line-height: 1.2; margin-bottom: 22px; color: #1e293b; }
-        .hero-title span { background: linear-gradient(to right, #2563eb, #4f46e5); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .hero-desc { font-size: 17px; color: var(--slate-600); margin-bottom: 35px; font-weight: 500; }
-        
-        .btn-hero { background: var(--slate-900); color: white; padding: 16px 36px; border-radius: 14px; text-decoration: none; font-weight: 700; font-size: 16px; box-shadow: 0 10px 20px rgba(15,23,42,0.15); display: inline-flex; align-items: center; gap: 8px; }
-        
-        /* 🤖 INTERACTIVE AI AGENT PANEL */
-        .hero-right { flex: 0.9; width: 100%; max-width: 480px; }
-        .agent-container { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 24px; box-shadow: 0 20px 30px rgba(0,0,0,0.06); display: flex; flex-direction: column; height: 550px; overflow: hidden; }
-        .agent-header { background: linear-gradient(135deg, #1e293b, #0f172a); color: white; padding: 16px 20px; display: flex; align-items: center; justify-content: space-between; }
-        .agent-status { display: flex; align-items: center; gap: 8px; }
-        .status-dot { width: 8px; height: 8px; background: #34d399; border-radius: 50%; box-shadow: 0 0 8px #34d399; animation: pulse 2s infinite; }
-        
-        .agent-body { flex: 1; padding: 20px; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; background: #f8fafc; }
-        .msg { max-width: 100%; padding: 12px 16px; border-radius: 16px; font-size: 14px; font-weight: 500; }
-        .msg.bot { background: #ffffff; color: var(--slate-900); align-self: flex-start; border: 1px solid #e2e8f0; border-top-left-radius: 4px; box-shadow: 0 1px 2px rgba(0,0,0,0.02); width: 100%; }
-        .msg.user { background: var(--primary); color: white; align-self: flex-end; border-top-right-radius: 4px; max-width: 85%; }
-        
-        /* SAMPLE DOCUMENT STYLES */
-        .sample-doc {
-            background: white;
-            border: 2px solid var(--primary);
-            border-radius: 12px;
-            padding: 20px;
-            margin: 8px 0;
-            font-size: 13px;
-            width: 100%;
-            max-width: 100%;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-        }
-        .sample-doc h3 {
-            color: var(--primary);
-            font-size: 18px;
-            margin-bottom: 12px;
-            border-bottom: 2px solid var(--slate-100);
-            padding-bottom: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-        .sample-doc h3 .badge-doc {
-            font-size: 11px;
-            background: #dbeafe;
-            padding: 2px 10px;
-            border-radius: 999px;
-            color: var(--primary);
-            font-weight: 600;
-        }
-        .doc-row {
-            display: flex;
-            justify-content: space-between;
-            padding: 4px 0;
-            border-bottom: 1px dashed #e2e8f0;
-        }
-        .doc-row.total {
-            font-weight: 700;
-            font-size: 15px;
-            border-bottom: 2px solid var(--primary);
-            padding-top: 8px;
-            margin-top: 4px;
-        }
-        .doc-label { color: var(--slate-600); }
-        .doc-value { font-weight: 600; color: var(--slate-900); }
-        .doc-gst {
-            background: #f0fdf4;
-            padding: 8px 12px;
-            border-radius: 6px;
-            margin-top: 8px;
-            font-size: 12px;
-            border-left: 3px solid var(--accent-emerald);
-        }
-        .doc-actions {
-            display: flex;
-            gap: 8px;
-            margin-top: 12px;
-            flex-wrap: wrap;
-        }
-        .doc-actions button, .doc-actions a {
-            background: var(--primary);
-            color: white;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 8px;
-            font-size: 12px;
-            font-weight: 600;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-        }
-        .doc-actions button:hover, .doc-actions a:hover { background: var(--primary-dark); }
-        .doc-actions button.secondary, .doc-actions a.secondary {
-            background: var(--slate-100);
-            color: var(--slate-700);
-        }
-        .doc-actions button.secondary:hover, .doc-actions a.secondary:hover { background: var(--slate-200); }
-        .doc-actions .download-btn {
-            background: var(--accent-emerald);
-        }
-        .doc-actions .download-btn:hover { background: #059669; }
-        
-        /* QUICK ACTION BUTTONS */
-        .quick-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-            width: 100%;
-        }
-        .quick-buttons button {
-            background: white;
-            border: 1px solid #e2e8f0;
-            padding: 10px 14px;
-            border-radius: 10px;
-            cursor: pointer;
-            font-weight: 600;
-            text-align: left;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            transition: all 0.2s;
-            font-size: 13px;
-            width: 100%;
-        }
-        .quick-buttons button:hover {
-            border-color: var(--primary);
-            background: #f8fafc;
-            transform: translateX(4px);
-        }
-        .quick-buttons .icon-circle {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 16px;
-            flex-shrink: 0;
-        }
-        
-        .app-sandbox { background: #eff6ff; border: 2px dashed #bfdbfe; padding: 18px; border-radius: 16px; margin-top: 5px; display: none; flex-direction: column; gap: 12px; width: 100%; }
-        .sandbox-title { font-size: 14px; font-weight: 700; color: #1e40af; display: flex; align-items: center; gap: 6px; }
-        .sandbox-input { width: 100%; padding: 10px; border: 1px solid #bfdbfe; border-radius: 8px; outline: none; font-size: 13px; margin-bottom: 2px; }
-        .sandbox-btn { background: var(--primary); color: white; border: none; padding: 11px; border-radius: 8px; font-weight: 700; cursor: pointer; font-size: 13px; width: 100%; }
-        .sandbox-btn:hover { background: var(--primary-dark); }
-        
-        .agent-footer { padding: 12px; background: #ffffff; border-top: 1px solid #e2e8f0; display: flex; gap: 10px; }
-        .agent-input { flex: 1; padding: 12px 16px; border: 1px solid #e2e8f0; border-radius: 12px; outline: none; font-size: 14px; background: var(--slate-50); }
-        .agent-input:focus { border-color: var(--primary); background: white; }
-        
-        .agent-send { background: var(--primary); border: none; width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; cursor: pointer; color: white; }
-        .agent-send:hover { background: var(--primary-dark); }
-        
-        /* FEATURES ROW */
-        .features-row { background: white; border-top: 1px solid var(--slate-100); border-bottom: 1px solid var(--slate-100); padding: 65px 0; }
-        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 35px; }
-        .f-card { padding: 10px; }
-        .f-icon { width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 18px; }
-        .f-title { font-size: 19px; font-weight: 700; margin-bottom: 10px; color: #1e293b; }
-        .f-desc { font-size: 14.5px; color: var(--slate-600); }
-        
-        /* TOOLS CATALOG */
-        .catalog { padding: 90px 0; scroll-margin-top: 80px; }
-        .cat-header { text-align: center; max-width: 650px; margin: 0 auto 60px; }
-        .cat-header h2 { font-size: 34px; font-weight: 800; margin-bottom: 12px; color: #1e293b; }
-        .cat-group-title { font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--slate-700); margin-bottom: 30px; display: flex; align-items: center; gap: 10px; border-bottom: 2px solid var(--slate-100); padding-bottom: 10px; }
-        .cat-group-title span { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
-        
-        .tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 26px; margin-bottom: 50px; }
-        .tool-card { background: white; padding: 28px; border-radius: 22px; border: 1px solid #e2e8f0; cursor: pointer; transition: all 0.25s ease; }
-        .tool-card:hover { transform: translateY(-5px); box-shadow: 0 15px 25px -5px rgba(0,0,0,0.05); border-color: var(--primary); }
-        .tool-icon { width: 46px; height: 46px; border-radius: 11px; display: flex; align-items: center; justify-content: center; font-size: 20px; margin-bottom: 16px; }
-        .tool-name { font-size: 18px; font-weight: 700; margin-bottom: 8px; color: #1e293b; }
-        .tool-desc { font-size: 14px; color: var(--slate-600); line-height: 1.5; }
-        
-        /* FOOTER */
-        footer { background: white; border-top: 1px solid var(--slate-200); padding: 70px 0 40px; font-size: 14px; color: var(--slate-600); scroll-margin-top: 80px; }
-        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px; margin-bottom: 40px; }
-        .footer-title { font-weight: 700; color: var(--slate-900); font-size: 18px; margin-bottom: 20px; display: flex; align-items: center; gap: 8px; }
-        .footer-desc { font-size: 14px; color: #526173; line-height: 1.7; }
-        
-        .contact-list { list-style: none; }
-        .contact-list li { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; font-size: 14px; color: var(--slate-700); font-weight: 500; }
-        .contact-list svg { width: 16px; height: 16px; fill: var(--primary); flex-shrink: 0; }
-        .contact-list a { color: var(--slate-700); text-decoration: none; }
-        .contact-list a:hover { color: var(--primary); text-decoration: underline; }
-        
-        .footer-bottom { border-top: 1px solid var(--slate-100); padding-top: 30px; display: flex; flex-direction: column; align-items: center; gap: 20px; font-size: 13px; color: #94a3b8; text-align: center; }
-        @media(min-width: 768px) { .footer-bottom { flex-direction: row; justify-content: space-between; } }
-        
-        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
-
-        .integration-badge {
-            display: inline-block;
-            background: #ecfdf5;
-            color: #065f46;
-            padding: 4px 12px;
-            border-radius: 9999px;
-            font-size: 11px;
-            font-weight: 700;
-            margin-top: 8px;
-            border: 1px solid #a7f3d0;
-            cursor: pointer;
-        }
-        .launch-btn {
-            display: inline-block;
-            margin-top: 12px;
-            background: var(--primary);
-            color: white;
-            padding: 8px 18px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 13px;
-            transition: background 0.2s;
-        }
-        .launch-btn:hover { background: var(--primary-dark); }
-
-        /* SEO - Language Toggle */
-        .lang-toggle {
-            display: flex;
-            gap: 6px;
-            align-items: center;
-        }
-        .lang-toggle button {
-            background: var(--slate-100);
-            border: 1px solid var(--slate-200);
-            padding: 4px 12px;
-            border-radius: 6px;
-            font-size: 12px;
-            font-weight: 600;
-            cursor: pointer;
-            color: var(--slate-600);
-        }
-        .lang-toggle button.active {
-            background: var(--primary);
-            color: white;
-            border-color: var(--primary);
-        }
-        .lang-toggle button:hover { opacity: 0.8; }
-
-        /* H1 for SEO - Hidden but helps with ranking */
-        .seo-h1 {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            border: 0;
-        }
-
-        /* Breadcrumb for SEO */
-        .breadcrumb {
-            font-size: 12px;
-            color: var(--slate-600);
-            padding: 16px 0 4px;
-        }
-        .breadcrumb a {
-            color: var(--primary);
-            text-decoration: none;
-        }
-        .breadcrumb a:hover { text-decoration: underline; }
-    </style>
-</head>
-<body>
-
-    <!-- ============================================
-    🔍 SEO HIDDEN H1 - Helps Google understand page
-    ============================================ -->
-    <h1 class="seo-h1">JAMTARIS - Free Online PDF Tools, GST Invoice Generator, Mobile Repair Quotation & Salary Slip Generator in Tamil</h1>
-
-    <!-- ============================================
-    📍 BREADCRUMB - Helps Google understand structure
-    ============================================ -->
-    <div class="container">
-        <div class="breadcrumb">
-            <a href="https://janarmca.github.io/jamtaris/">Home</a> › 
-            <span>Free Business Tools - PDF, GST Invoice, Mobile Repair Quotation</span>
-        </div>
-    </div>
-
-    <!-- 🌐 HEADER NAVIGATION -->
-    <header>
-        <div class="container nav-container">
-            <a href="#" class="logo">
-                <div class="logo-image">
-                    <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-                </div>
-                JAMTARIS
-            </a>
-            <nav class="nav-links">
-                <a href="#pdf-tools">PDF Tools</a>
-                <a href="#business-tools">Business Tools</a>
-                <a href="#contact-section">Contact</a>
-                <span class="lang-toggle">
-                    <button class="active" onclick="setLanguage('ta')">தமிழ்</button>
-                    <button onclick="setLanguage('en')">English</button>
-                </span>
-            </nav>
-            <a href="https://janarmca.github.io/pdf-tools-backend/" target="_blank" class="btn-header">🚀 Open Full Toolkit</a>
-        </div>
-    </header>
-
-    <!-- 🚀 HERO AREA & AI AGENT PANEL -->
-    <main>
-        <section class="container hero-section">
-            <div class="hero">
-                <div class="hero-left">
-                    <div class="badge">🤖 AI Agent Automation Engine</div>
-                    <h2 class="hero-title">Talk to JAMTARIS AI. <br><span>Run 82+ Tools Instantly.</span></h2>
-                    <p class="hero-desc" id="hero-desc">எங்கள் AI ஏஜென்ட்டிடம் அரட்டையடித்து (Chat) கோப்புகளை நொடியில் மாற்றுங்கள். Your files run completely safe inside your device browser storage sandbox.</p>
-                    <a href="https://janarmca.github.io/pdf-tools-backend/" target="_blank" class="btn-hero">View All 82 Tools →</a>
-                </div>
-                
-                <!-- 🤖 CHAT BOT WORKSPACE PANEL -->
-                <div class="hero-right">
-                    <div class="agent-container">
-                        <div class="agent-header">
-                            <div style="font-weight: 700; font-size: 15px; display: flex; align-items: center; gap: 8px;">
-                                <span>🤖</span> JAMTARIS Autonomous AI Agent
-                            </div>
-                            <div class="agent-status">
-                                <div class="status-dot"></div>
-                                <span style="font-size: 12px; font-weight: 700; opacity: 0.95;">Agent Online</span>
-                            </div>
-                        </div>
-                        
-                        <div class="agent-body" id="chat-body">
-                            <div class="msg bot" id="welcome-msg">
-                                <strong>👋 வணக்கம்! நான் JAMTARIS AI உதவியாளர்.</strong><br>
-                                நான் இந்த மாதிரி ஆவணங்களை உருவாக்க முடியும்:
-                                <div class="quick-buttons" style="margin-top:8px;">
-                                    <button onclick="triggerAgentLogic('Quotation')">
-                                        <span class="icon-circle" style="background:#fef3c7;color:#d97706;">📋</span>
-                                        <span><strong>Quotation</strong><br><span style="font-weight:400;font-size:12px;color:var(--slate-600);">Professional price quote with GST</span></span>
-                                    </button>
-                                    <button onclick="triggerAgentLogic('Mobile Repair')">
-                                        <span class="icon-circle" style="background:#dbeafe;color:#2563eb;">📱</span>
-                                        <span><strong>Mobile Repair Quotation</strong><br><span style="font-weight:400;font-size:12px;color:var(--slate-600);">Phone fixing estimate with parts</span></span>
-                                    </button>
-                                    <button onclick="triggerAgentLogic('GST Invoice')">
-                                        <span class="icon-circle" style="background:#d1fae5;color:#059669;">🧾</span>
-                                        <span><strong>GST Invoice</strong><br><span style="font-weight:400;font-size:12px;color:var(--slate-600);">Tax invoice with items & GST</span></span>
-                                    </button>
-                                    <button onclick="triggerAgentLogic('Receipt')">
-                                        <span class="icon-circle" style="background:#fce4ec;color:#dc2626;">📸</span>
-                                        <span><strong>Receipt</strong><br><span style="font-weight:400;font-size:12px;color:var(--slate-600);">Payment receipt for customers</span></span>
-                                    </button>
-                                    <button onclick="triggerAgentLogic('Salary Slip')">
-                                        <span class="icon-circle" style="background:#f3e8ff;color:#7c3aed;">💵</span>
-                                        <span><strong>Salary Slip</strong><br><span style="font-weight:400;font-size:12px;color:var(--slate-600);">Payroll slip with deductions</span></span>
-                                    </button>
-                                </div>
-                                <p style="font-size:12px;color:var(--slate-600);margin-top:8px;">👇 கீழே உள்ள பட்டன்களை கிளிக் செய்து மாதிரி ஆவணங்களை பார்க்கவும் அல்லது டைப் செய்யவும்!</p>
-                            </div>
-                            <div class="app-sandbox" id="sandbox-box">
-                                <div class="sandbox-title" id="sandbox-title">🛠️ Active Tool Framework</div>
-                                <div id="sandbox-inner"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="agent-footer">
-                            <input type="text" class="agent-input" id="chat-input" placeholder="Type 'Quotation', 'Mobile Repair', 'Invoice', 'Receipt', or 'Salary Slip'...">
-                            <button class="agent-send" id="chat-send">
-                                <svg viewBox="0 0 24 24" width="18" height="18" fill="white"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 🔒 FEATURES ROW -->
-        <section class="features-row">
-            <div class="container">
-                <div class="features-grid">
-                    <div class="f-card">
-                        <div class="f-icon" style="background:#eff6ff; color:var(--primary);">🔒</div>
-                        <h3 class="f-title">Privacy-First Design</h3>
-                        <p class="f-desc">உங்களது எந்தவொரு ஃபைலும் எங்களது சர்வர்களில் அப்لوட் செய்யப்படாது. அனைத்தும் உங்களது பிரவுசரிலேயே பாதுகாப்பாக பிராசஸ் செய்யப்படுகிறது.</p>
-                    </div>
-                    <div class="f-card">
-                        <div class="f-icon" style="background:#fff7ed; color:var(--accent-amber);">⚡</div>
-                        <h3 class="f-title">Zero Clutter, No Ads</h3>
-                        <p class="f-desc">எந்தவொரு எரிச்சலூட்டும் விளம்பரங்களோ அல்லது கட்டாய ரீடைரெக்டுகளோ கிடையாது. சிறு வணிகர்கள் மிக வேகமாக வேலைகளை முடிக்கலாம்.</p>
-                    </div>
-                    <div class="f-card">
-                        <div class="f-icon" style="background:#ecfdf5; color:var(--accent-emerald);">🏬</div>
-                        <h3 class="f-title">Store-Ready Toolkit</h3>
-                        <p class="f-desc">காபி ஷாப்கள், துணிக்கடைகள், மொபைல் ரிப்பேர் கடைகள் மற்றும் நடுத்தர நிறுவனங்களின் தினசரி கணக்கு வழக்குகளுக்குத் தேவையான பில்லிங் டூல்ஸ் அனைத்தும் ஒரே இடத்தில்.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 🧰 TOOLS DIRECTORY CATALOG -->
-        <section id="explore-tools" class="catalog">
-            <div class="container">
-                <div class="cat-header">
-                    <h2>Featured Store Utilities</h2>
-                    <p>Select any professional tool layout below to open your localized execution deck.</p>
-                    <a href="https://janarmca.github.io/pdf-tools-backend/" target="_blank" class="launch-btn">🚀 Launch Full 82-Tool Suite</a>
-                </div>
-
-                <!-- Business Tools -->
-                <div id="business-tools" style="margin-bottom:40px; scroll-margin-top: 100px;">
-                    <div class="cat-group-title"><span style="background:var(--accent-amber)"></span> 💼 Shop & Accounting Utilities / வணிக கருவிகள்</div>
-                    <div class="tools-grid">
-                        <div class="tool-card" onclick="openDirectTool('Quotation')">
-                            <div class="tool-icon" style="background:#fef3c7; color:#d97706;">📋</div>
-                            <h4 class="tool-name">Quotation Generator</h4>
-                            <p class="tool-desc">Professional price quotes for services, mobile repairs, and products with GST calculation.</p>
-                            <span class="integration-badge" onclick="event.stopPropagation();openDirectTool('Quotation')">💬 Generate Sample</span>
-                        </div>
-                        <div class="tool-card" onclick="openDirectTool('Mobile Repair')">
-                            <div class="tool-icon" style="background:#dbeafe; color:#2563eb;">📱</div>
-                            <h4 class="tool-name">Mobile Repair Quotation</h4>
-                            <p class="tool-desc">Specialized quotation for phone repair services with parts, labor, and warranty details.</p>
-                            <span class="integration-badge" onclick="event.stopPropagation();openDirectTool('Mobile Repair')">💬 Generate Sample</span>
-                        </div>
-                        <div class="tool-card" onclick="openDirectTool('GST Invoice')">
-                            <div class="tool-icon" style="background:#d1fae5; color:#059669;">🧾</div>
-                            <h4 class="tool-name">GST Invoice Generator</h4>
-                            <p class="tool-desc">Auto-calculate tax rates and format professional, clean retail invoices for your boutique or shop.</p>
-                            <span class="integration-badge" onclick="event.stopPropagation();openDirectTool('GST Invoice')">💬 Generate Sample</span>
-                        </div>
-                        <div class="tool-card" onclick="openDirectTool('Receipt')">
-                            <div class="tool-icon" style="background:#fce4ec; color:#dc2626;">📸</div>
-                            <h4 class="tool-name">Receipt Generator</h4>
-                            <p class="tool-desc">Generate payment receipts with mode, amount, and transaction details for customers.</p>
-                            <span class="integration-badge" onclick="event.stopPropagation();openDirectTool('Receipt')">💬 Generate Sample</span>
-                        </div>
-                        <div class="tool-card" onclick="openDirectTool('Salary Slip')">
-                            <div class="tool-icon" style="background:#f3e8ff; color:#7c3aed;">💵</div>
-                            <h4 class="tool-name">Salary Slip Generator</h4>
-                            <p class="tool-desc">Instantly calculate net pay, allowances, deductions, and print staff-ready PDF payroll slips.</p>
-                            <span class="integration-badge" onclick="event.stopPropagation();openDirectTool('Salary Slip')">💬 Generate Sample</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- PDF Tools -->
-                <div id="pdf-tools" style="scroll-margin-top: 100px;">
-                    <div class="cat-group-title"><span style="background:var(--accent-red)"></span> 📄 Secure File Converters / கோப்பு மாற்றிகள்</div>
-                    <div class="tools-grid">
-                        <div class="tool-card" onclick="openDirectTool('PDF to Excel Converter')">
-                            <div class="tool-icon" style="background:#ecfdf5; color:var(--accent-emerald)">📊</div>
-                            <h4 class="tool-name">PDF → Excel</h4>
-                            <p class="tool-desc">Extract complex data tables cleanly into editable .xlsx structures while keeping your layout fully preserved.</p>
-                            <span class="integration-badge" onclick="event.stopPropagation();openDirectTool('PDF to Excel Converter')">💬 Ask in Chat</span>
-                        </div>
-                        <div class="tool-card" onclick="openDirectTool('Excel to PDF Converter')">
-                            <div class="tool-icon" style="background:#fef2f2; color:var(--accent-red)">📉</div>
-                            <h4 class="tool-name">Excel → PDF</h4>
-                            <p class="tool-desc">Lock your operational accounting spreadsheets securely into readable, shareable PDF formats.</p>
-                            <span class="integration-badge" onclick="event.stopPropagation();openDirectTool('Excel to PDF Converter')">💬 Ask in Chat</span>
-                        </div>
-                        <div class="tool-card" onclick="openDirectTool('PDF to Word Converter')">
-                            <div class="tool-icon" style="background:#e0f2fe; color:#0284c7">📃</div>
-                            <h4 class="tool-name">PDF → Word</h4>
-                            <p class="tool-desc">Convert read-only layout archives into fully customizable and editable text documents instantly.</p>
-                            <span class="integration-badge" onclick="event.stopPropagation();openDirectTool('PDF to Word Converter')">💬 Ask in Chat</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- 📝 FOOTER SECTION -->
-    <footer id="contact-section">
-        <div class="container">
-            <div class="footer-grid">
-                <div>
-                    <p class="footer-title">ℹ️ About JAMTARIS / எங்களைப் பற்றி</p>
-                    <p class="footer-desc">
-                        ஜம்தாரிஸ் (JAMTARIS) என்பது சிறு வணிகர்கள், துணிக்கடை, மொபைல் ரிப்பேர் கடைகள் மற்றும் உணவக உரிமையாளர்களுக்காக பிரத்யேகமாக உருவாக்கப்பட்ட ஒரு எளிய ஆன்லைன் டூல்ஸ் (Online Tools) தளமாகும். உங்களின் முக்கியமான பில்கள், PDF கோப்புகள் மற்றும் கணக்கு விவரங்கள் (Invoices) அனைத்தும் 100% பாதுகாப்பாக, உங்கள் மொபைல் அல்லது கணினியிலேயே பிராசஸ் செய்யப்படுகின்றன.
-                    </p>
-                    <p style="margin-top: 16px;">
-                        <a href="https://janarmca.github.io/pdf-tools-backend/" target="_blank" style="color: var(--primary); font-weight: 600; text-decoration: none;">🚀 Visit Full Toolkit →</a>
-                    </p>
-                </div>
-                
-                <div>
-                    <p class="footer-title">📞 தொடர்பு கொள்ள (Contact Details)</p>
-                    <ul class="contact-list">
-                        <li>
-                            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                            <a href="mailto:janarmca@gmail.com">janarmca@gmail.com</a>
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-                            <a href="tel:+917667663922">+91 76676 63922</a>
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-                            <span>Chennai, Tamil Nadu, India</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2026 JAMTARIS. All rights reserved.</p>
-                <p>Engineered for Speed, AI Agent Automation & Total Device Privacy Sandbox.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- 🧠 SYSTEM AUTOMATION SCRIPTS -->
+<!DOCTYPE html>    
+<html lang="ta">    
+<head>    
+    <meta charset="UTF-8">    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <title>JAMTARIS - Premium Small Business Tools & AI Automation</title>    
+    <!-- Fast Icon Engine Integration -->    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">    
+    <style>    
+    /* 🎨 DESIGN SYSTEM & COLOR VARIABLES */    
+    \:root {    
+    --primary: #2563eb;    
+    --primary-dark: #1d4ed8;    
+    --accent-amber: #f59e0b;    
+    --accent-emerald: #10b981;    
+    --accent-red: #ef4444;    
+    --accent-purple: #a855f7;    
+    --slate-900: #0f172a;    
+    --slate-700: #334155;    
+    --slate-600: #475569;    
+    --slate-100: #f1f5f9;    
+    }    
+    \* { box-sizing: border-box; margin: 0; padding: 0; }    
+    html { scroll-behavior: smooth; }    
+    body { font-family: system-ui, -apple-system, sans-serif; background-color: #f8fafc; color: var(--slate-900); line-height: 1.6; }    
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }    
+    /* 🌐 FIXED STICKY HEADER & NAVBAR */    
+    header { position: sticky; top: 0; background: #ffffff; border-bottom: 1px solid var(--slate-100); z-index: 1000; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }    
+    .nav-container { display: flex; align-items: center; justify-content: space-between; height: 80px; }    
+    /* MODERN CUSTOM SVG LOGO */    
+    .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; font-size: 26px; font-weight: 800; color: var(--primary); letter-spacing: 0.5px; }    
+    .logo-image { background: linear-gradient(135deg, #3b82f6, #1d4ed8); width: 42px; height: 42px; border-radius: 12px; display: flex; align-items: center; justify-content: center; }    
+    .logo-image svg { width: 22px; height: 22px; fill: white; }    
+    .nav-links { display: flex; gap: 28px; }    
+    .nav-links a { text-decoration: none; color: var(--slate-600); font-weight: 600; font-size: 15px; transition: color 0.2s; display: flex; align-items: center; gap: 6px; }    
+    .nav-links a:hover { color: var(--primary); }    
+    .btn-header { background: var(--primary); color: white; padding: 11px 22px; border-radius: 12px; text-decoration: none; font-weight: 700; font-size: 14px; box-shadow: 0 4px 12px rgba(37,99,235,0.2); }    
+    /* 🚀 HERO PRESENTATION LAYOUT */    
+    .hero-section { padding: 65px 0; }    
+    .hero { display: flex; flex-direction: column; gap: 40px; align-items: center; }    
+    @media(min-width: 768px) { .hero { flex-direction: row; text-align: left; } }    
+    .hero-left { flex: 1.1; text-align: center; }    
+    @media(min-width: 768px) { .hero-left { text-align: left; } }    
+    .badge { display: inline-flex; align-items: center; gap: 6px; background: #eff6ff; border: 1px solid #bfdbfe; color: #1e40af; padding: 6px 16px; border-radius: 9999px; font-size: 13px; font-weight: 700; margin-bottom: 24px; text-transform: uppercase; }    
+    .hero-title { font-size: 42px; font-weight: 800; line-height: 1.2; margin-bottom: 22px; color: #1e293b; }    
+    .hero-title span { background: linear-gradient(to right, #2563eb, #4f46e5); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }    
+    .hero-desc { font-size: 17px; color: var(--slate-600); margin-bottom: 35px; font-weight: 500; }    
+    .btn-hero { background: var(--slate-900); color: white; padding: 16px 36px; border-radius: 14px; text-decoration: none; font-weight: 700; font-size: 16px; box-shadow: 0 10px 20px rgba(15,23,42,0.15); display: inline-flex; align-items: center; gap: 8px; }    
+    /* 🤖 INTERACTIVE AI AGENT PANEL */    
+    .hero-right { flex: 0.9; width: 100%; max-width: 480px; }    
+    .agent-container { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 24px; box-shadow: 0 20px 30px rgba(0,0,0,0.06); display: flex; flex-direction: column; height: 420px; overflow: hidden; }    
+    .agent-header { background: linear-gradient(135deg, #1e293b, #0f172a); color: white; padding: 16px 20px; display: flex; align-items: center; justify-content: space-between; }    
+    .agent-status { display: flex; align-items: center; gap: 8px; }    
+    .status-dot { width: 8px; height: 8px; background: #34d399; border-radius: 50%; box-shadow: 0 0 8px #34d399; animation: pulse 2s infinite; }    
+    .agent-body { flex: 1; padding: 20px; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; background: #f8fafc; }    
+    .msg { max-width: 85%; padding: 12px 16px; border-radius: 16px; font-size: 14px; font-weight: 500; }    
+    .msg.bot { background: #ffffff; color: var(--slate-900); align-self: flex-start; border: 1px solid #e2e8f0; border-top-left-radius: 4px; box-shadow: 0 1px 2px rgba(0,0,0,0.02); }    
+    .msg.user { background: var(--primary); color: white; align-self: flex-end; border-top-right-radius: 4px; }    
+    /* DYNAMIC INTERACTIVE APP INJECTOR SANDBOX */    
+    .app-sandbox { background: #eff6ff; border: 2px dashed #bfdbfe; padding: 18px; border-radius: 16px; margin-top: 5px; display: none; flex-direction: column; gap: 12px; }    
+    .sandbox-title { font-size: 14px; font-weight: 700; color: #1e40af; display: flex; align-items: center; gap: 6px; }    
+    .sandbox-input { width: 100%; padding: 10px; border: 1px solid #bfdbfe; border-radius: 8px; outline: none; font-size: 13px; margin-bottom: 2px; }    
+    .sandbox-btn { background: var(--primary); color: white; border: none; padding: 11px; border-radius: 8px; font-weight: 700; cursor: pointer; font-size: 13px; width: 100%; }    
+    .agent-footer { padding: 12px; background: #ffffff; border-top: 1px solid #e2e8f0; display: flex; gap: 10px; }    
+    .agent-input { flex: 1; padding: 12px 16px; border: 1px solid #e2e8f0; border-radius: 12px; outline: none; font-size: 14px; background: var(--slate-50); }    
+    .agent-input:focus { border-color: var(--primary); background: white; }    
+    /* FIX: id="chat-send" added directly to button */    
+    .agent-send { background: var(--primary); border: none; width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; cursor: pointer; color: white; }    
+    .agent-send:hover { background: var(--primary-dark); }    
+    /* 🔒 VALUES ROW */    
+    .features-row { background: white; border-top: 1px solid var(--slate-100); border-bottom: 1px solid var(--slate-100); padding: 65px 0; }    
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 35px; }    
+    .f-card { padding: 10px; }    
+    .f-icon { width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 18px; }    
+    .f-title { font-size: 19px; font-weight: 700; margin-bottom: 10px; color: #1e293b; }    
+    .f-desc { font-size: 14.5px; color: var(--slate-600); }    
+    /* 🧰 TOOLS DIRECTORY CATALOG */    
+    .catalog { padding: 90px 0; scroll-margin-top: 80px; }    
+    .cat-header { text-align: center; max-width: 650px; margin: 0 auto 60px; }    
+    .cat-header h2 { font-size: 34px; font-weight: 800; margin-bottom: 12px; color: #1e293b; }    
+    .cat-group-title { font-size: 14px; font-weight: 700; text-transform: uppercase; tracking-wider; color: var(--slate-700); margin-bottom: 30px; display: flex; align-items: center; gap: 10px; border-bottom: 2px solid var(--slate-100); padding-bottom: 10px; }    
+    .cat-group-title span { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }    
+    .tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 26px; margin-bottom: 50px; }    
+    .tool-card { background: white; padding: 28px; border-radius: 22px; border: 1px solid #e2e8f0; cursor: pointer; transition: all 0.25s ease; }    
+    .tool-card:hover { transform: translateY(-5px); box-shadow: 0 15px 25px -5px rgba(0,0,0,0.05); border-color: var(--primary); }    
+    .tool-icon { width: 46px; height: 46px; border-radius: 11px; display: flex; align-items: center; justify-content: center; font-size: 20px; margin-bottom: 16px; }    
+    .tool-name { font-size: 18px; font-weight: 700; margin-bottom: 8px; color: #1e293b; }    
+    .tool-desc { font-size: 14px; color: var(--slate-600); line-height: 1.5; }    
+    /* 📝 FOOTER SECTION */    
+    footer { background: white; border-top: 1px solid var(--slate-200); padding: 70px 0 40px; font-size: 14px; color: var(--slate-600); scroll-margin-top: 80px; }    
+    .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px; margin-bottom: 40px; }    
+    .footer-title { font-weight: 700; color: var(--slate-900); font-size: 18px; margin-bottom: 20px; display: flex; align-items: center; gap: 8px; }    
+    .footer-desc { font-size: 14px; color: #526173; line-height: 1.7; }    
+    .contact-list { list-style: none; }    
+    .contact-list li { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; font-size: 14px; color: var(--slate-700); font-weight: 500; }    
+    .contact-list svg { width: 16px; height: 16px; fill: var(--primary); flex-shrink: 0; }    
+    .contact-list a { color: var(--slate-700); text-decoration: none; }    
+    .contact-list a:hover { color: var(--primary); text-decoration: underline; }    
+    .footer-bottom { border-top: 1px solid var(--slate-100); padding-top: 30px; display: flex; flex-direction: column; flex-direction: row; justify-content: space-between; align-items: center; gap: 20px; font-size: 13px; color: #94a3b8; }    
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }    
+    </style>    
+</head>    
+<body>    
+    <!-- 🌐 HEADER NAVIGATION -->    
+    <header>    
+    <div class="container nav-container">    
+    <a href="https://janarmca.github.io/allinonetool/#" class="logo">    
+    <div class="logo-image">    
+    <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>    
+    </div>    
+    JAMTARIS    
+    </a>    
+    <nav class="nav-links">    
+    <a href="https://janarmca.github.io/allinonetool/#pdf-tools">PDF Tools</a>    
+    <a href="https://janarmca.github.io/allinonetool/#business-tools">Business Tools</a>    
+    <a href="https://janarmca.github.io/allinonetool/#contact-section">Contact</a>    
+    </nav>    
+    <a href="https://janarmca.github.io/allinonetool/#explore-tools" class="btn-header">Open App</a>    
+    </div>    
+    </header>    
+    <!-- 🚀 HERO AREA & AI AGENT PANEL -->    
+    <main>    
+    <section class="container hero-section">    
+    <div class="hero">    
+    <div class="hero-left">    
+    <div class="badge">🤖 AI Agent Automation Engine</div>    
+    <h1 class="hero-title">Talk to JAMTARIS AI. <span>Run 81+ Tools Instantly.</span></h1>    
+    <p class="hero-desc">எங்கள் AI ஏஜென்ட்டிடம் அரட்டையடித்து (Chat) கோப்புகளை நொடியில் மாற்றுங்கள். Your files run completely safe inside your device browser storage sandbox.</p>    
+    <a href="https://janarmca.github.io/allinonetool/#explore-tools" class="btn-hero">View All 81 Tools ↓</a>    
+    </div>    
+    <!-- 🤖 CHAT BOT WORKSPACE PANEL -->    
+    <div class="hero-right">    
+    <div class="agent-container">    
+    <div class="agent-header">    
+    <div style="font-weight: 700; font-size: 15px; display: flex; align-items: center; gap: 8px;">    
+    <span>🤖</span> JAMTARIS Autonomous AI Agent    
+    </div>    
+    <div class="agent-status">    
+    <div class="status-dot"></div>    
+    <span style="font-size: 12px; font-weight: 700; opacity: 0.95;">Agent Online</span>    
+    </div>    
+    </div>    
+    <div class="agent-body" id="chat-body">    
+    <div class="msg bot">    
+    வணக்கம்! நான் JAMTARIS AI உதவியாளர். உங்களுக்கு என்ன டூல் வேண்டும்? (எ.கா: "PDF to Excel" அல்லது "GST Invoice") என்று கீழே டைப் செய்யுங்கள்!    
+    </div>    
+    <div class="app-sandbox" id="sandbox-box">    
+    <div class="sandbox-title" id="sandbox-title">🛠️ Active Tool Framework</div>    
+    <div id="sandbox-inner"></div>    
+    </div>    
+    </div>    
+    <div style="font-size:10px;color:#94a3b8;text-align:center;padding:4px 12px;background:#fff;">AI key is stored only in this browser. Click ⚙ AI to connect Gemini.</div>
+    <div class="agent-footer">    
+    <input type="text" class="agent-input" id="chat-input" placeholder="Type a tool name or ask a question...">    
+    <!-- FIX: id="chat-send" added to fix click action -->    
+    <button class="agent-send" id="chat-send">    
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="white"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>    
+    </button>    
+    </div>    
+    </div>    
+    </div>    
+    </div>    
+    </section>    
+    <!-- 🔒 FEATURES ROW -->    
+    <section class="features-row">    
+    <div class="container">    
+    <div class="features-grid">    
+    <div class="f-card">    
+    <div class="f-icon" style="background:#eff6ff; color\:var(--primary);">🔒</div>    
+    <h3 class="f-title">Privacy-First Design</h3>    
+    <p class="f-desc">உங்களது எந்தவொரு ஃபைலும் எங்களது சர்வர்களில் அப்لوட் செய்யப்படாது. அனைத்தும் உங்களது பிரவுசரிலேயே பாதுகாப்பாக பிராசஸ் செய்யப்படுகிறது.</p>    
+    </div>    
+    <div class="f-card">    
+    <div class="f-icon" style="background:#fff7ed; color\:var(--accent-amber);">⚡</div>    
+    <h3 class="f-title">Zero Clutter, No Ads</h3>    
+    <p class="f-desc">எந்தவொரு எரிச்சலூட்டும் விளம்பரங்களோ அல்லது கட்டாய ரீடைரெக்டுகளோ கிடையாது. சிறு வணிகர்கள் மிக வேகமாக வேலைகளை முடிக்கலாம்.</p>    
+    </div>    
+    <div class="f-card">    
+    <div class="f-icon" style="background:#ecfdf5; color\:var(--accent-emerald);">🏬</div>    
+    <h3 class="f-title">Store-Ready Toolkit</h3>    
+    <p class="f-desc">காபி ஷாப்கள், துணிக்கடைகள் மற்றும் நடுத்தர நிறுவனங்களின் தினசரி கணக்கு வழக்குகளுக்குத் தேவையான பில்லிங் டூல்ஸ் அனைத்தும் ஒரே இடத்தில்.</p>    
+    </div>    
+    </div>    
+    </div>    
+    </section>    
+    <!-- 🧰 TOOLS DIRECTORY CATALOG -->    
+    <section id="explore-tools" class="catalog">    
+    <div class="container">    
+    <div class="cat-header">    
+    <h2>Featured Store Utilities</h2>    
+    <p>Select any professional tool layout below to open your localized execution deck.</p>    
+    </div>    
+    <!-- Business Tools -->    
+    <div id="business-tools" style="margin-bottom:40px; scroll-margin-top: 100px;">    
+    <div class="cat-group-title"><span style="background\:var(--accent-amber)"></span> 💼 Shop & Accounting Utilities / வணிக கருவிகள்</div>    
+    <div class="tools-grid">    
+    <div class="tool-card" onclick="openDirectTool('GST Invoice Generator')">    
+    <div class="tool-icon" style="background:#fff7ed; color\:var(--accent-amber)">🧾</div>    
+    <h4 class="tool-name">GST Invoice Generator</h4>    
+    <p class="tool-desc">Auto-calculate tax rates and format professional, clean retail invoices for your boutique or shop.</p>    
+    </div>    
+    <div class="tool-card" onclick="openDirectTool('Receipt to Excel')">    
+    <div class="tool-icon" style="background:#eff6ff; color\:var(--primary)">📸</div>    
+    <h4 class="tool-name">Receipt to Excel</h4>    
+    <p class="tool-desc">Snap a quick smartphone photo of any bill to extract dates, vendors, and totals directly into a spreadsheet layout.</p>    
+    </div>    
+    <div class="tool-card" onclick="openDirectTool('Salary Slip Generator')">    
+    <div class="tool-icon" style="background:#f3e8ff; color:#a855f7">💵</div>    
+    <h4 class="tool-name">Salary Slip Generator</h4>    
+    <p class="tool-desc">Instantly calculate net pay, allowances, deductions, and print staff-ready PDF payroll slips.</p>    
+    </div>    
+    </div>    
+    </div>    
+    <!-- PDF Tools -->    
+    <div id="pdf-tools" style="scroll-margin-top: 100px;">    
+    <div class="cat-group-title"><span style="background\:var(--accent-red)"></span> 📄 Secure File Converters / கோப்பு மாற்றிகள்</div>    
+    <div class="tools-grid">    
+    <div class="tool-card" onclick="openDirectTool('PDF to Excel Converter')">    
+    <div class="tool-icon" style="background:#ecfdf5; color\:var(--accent-emerald)">📊</div>    
+    <h4 class="tool-name">PDF → Excel</h4>    
+    <p class="tool-desc">Extract complex data tables cleanly into editable .xlsx structures while keeping your layout fully preserved.</p>    
+    </div>    
+    <div class="tool-card" onclick="openDirectTool('Excel to PDF Converter')">    
+    <div class="tool-icon" style="background:#fef2f2; color\:var(--accent-red)">📉</div>    
+    <h4 class="tool-name">Excel → PDF</h4>    
+    <p class="tool-desc">Lock your operational accounting spreadsheets securely into readable, shareable PDF formats.</p>    
+    </div>    
+    <div class="tool-card" onclick="openDirectTool('PDF to Word Converter')">    
+    <div class="tool-icon" style="background:#e0f2fe; color:#0284c7">📃</div>    
+    <h4 class="tool-name">PDF → Word</h4>    
+    <p class="tool-desc">Convert read-only layout archives into fully customizable and editable text documents instantly.</p>    
+    </div>    
+    </div>    
+    </div>    
+    </div>    
+    </section>    
+    </main>    
+    <!-- 📝 FOOTER SECTION -->    
+    <footer id="contact-section">    
+    <div class="container">    
+    <div class="footer-grid">    
+    <div>    
+    <p class="footer-title">ℹ️ About JAMTARIS / எங்களைப் பற்றி</p>    
+    <p class="footer-desc">    
+    ஜம்தாரிஸ் (JAMTARIS) என்பது சிறு வணிகர்கள், துணிக்கடை மற்றும் உணவக உரிமையாளர்களுக்காக பிரத்யேகமாக உருவாக்கப்பட்ட ஒரு எளிய ஆன்லைன் டூல்ஸ் (Online Tools) தளமாகும். உங்களின் முக்கியமான பில்கள், PDF கோப்புகள் மற்றும் கணக்கு விவரங்கள் (Invoices) அனைத்தும் 100% பாதுகாப்பாக, உங்கள் மொபைல் அல்லது கணினியிலேயே பிராசஸ் செய்யப்படுகின்றன.
+    </p>    
+    </div>    
+    <div>    
+    <p class="footer-title">📞 தொடர்பு கொள்ள (Contact Details)</p>    
+    <ul class="contact-list">    
+    <li>    
+    <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>    
+    <a href="mailto\:janarmca@gmail.com">janarmca@gmail.com</a>    
+    </li>    
+    <li>    
+    <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>    
+    <a href="tel:+917667663922">+91 76676 63922</a>    
+    </li>    
+    <li>    
+    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>    
+    <span>Chennai, Tamil Nadu, India</span>    
+    </li>    
+    </ul>    
+    </div>    
+    </div>    
+    <div class="footer-bottom">    
+    <p>&copy; 2026 JAMTARIS. All rights reserved.</p>    
+    <p>Engineered for Speed, AI Agent Automation & Total Device Privacy Sandbox.</p>    
+    </div>    
+    </div>    
+    </footer>    
+    <!-- 🧠 SYSTEM AUTOMATION SCRIPTS -->    
     <script>
-        (function() {
-            "use strict";
-            
-            // Get DOM elements
-            const chatBody = document.getElementById('chat-body');
-            const chatInput = document.getElementById('chat-input');
-            const chatSend = document.getElementById('chat-send');
-            const sandboxBox = document.getElementById('sandbox-box');
-            const sandboxTitle = document.getElementById('sandbox-title');
-            const sandboxInner = document.getElementById('sandbox-inner');
-            const welcomeMsg = document.getElementById('welcome-msg');
+/* ============================================================
+   JAMTARIS AI AGENT
+   - Real Gemini Interactions API support
+   - Local fallback if no API key is configured
+   - Tool/function routing
+   - Persistent chat history for the current page session
+   ============================================================ */
 
-            if (!chatBody || !chatInput || !chatSend || !sandboxBox || !sandboxTitle || !sandboxInner) {
-                console.error('One or more chat elements not found!');
-                return;
-            }
+const chatBody = document.getElementById('chat-body');
+const chatInput = document.getElementById('chat-input');
+const chatSend = document.getElementById('chat-send');
+const sandboxBox = document.getElementById('sandbox-box');
+const sandboxTitle = document.getElementById('sandbox-title');
+const sandboxInner = document.getElementById('sandbox-inner');
 
-            // ============================================
-            // 🌐 LANGUAGE TOGGLE FUNCTION
-            // ============================================
-            window.setLanguage = function(lang) {
-                const buttons = document.querySelectorAll('.lang-toggle button');
-                buttons.forEach(btn => btn.classList.remove('active'));
-                event.target.classList.add('active');
-                
-                if (lang === 'ta') {
-                    document.documentElement.lang = 'ta';
-                    document.querySelector('meta[name="language"]').content = 'Tamil, English';
-                    document.querySelector('meta[property="og:locale"]').content = 'ta_IN';
-                    document.querySelector('title').textContent = 'JAMTARIS - இலவச AI கருவிகள், PDF மாற்றி, GST இன்வாய்ஸ் & மொபைல் ரிப்பேர் மேற்கோள்';
-                    document.querySelector('meta[name="description"]').content = 'JAMTARIS - இலவச ஆன்லைன் கருவிகள்: PDF to Excel, GST இன்வாய்ஸ் ஜெனரேட்டர், மொபைல் ரிப்பேர் மேற்கோள், ரசீது to Excel, சம்பள சீட்டு ஜெனரேட்டர். 82+ கருவிகள் தமிழ் & ஆங்கிலத்தில்.';
-                    document.getElementById('hero-desc').textContent = 'எங்கள் AI ஏஜென்ட்டிடம் அரட்டையடித்து (Chat) கோப்புகளை நொடியில் மாற்றுங்கள். உங்கள் கோப்புகள் உங்கள் சாதனத்திலேயே பாதுகாப்பாக இயங்கும்.';
-                    chatInput.placeholder = "'Quotation', 'Mobile Repair', 'Invoice', 'Receipt', or 'Salary Slip' என தட்டச்சு செய்யவும்...";
-                } else {
-                    document.documentElement.lang = 'en';
-                    document.querySelector('meta[name="language"]').content = 'English, Tamil';
-                    document.querySelector('meta[property="og:locale"]').content = 'en_US';
-                    document.querySelector('title').textContent = 'JAMTARIS - Free AI Tools, PDF Converter, GST Invoice & Mobile Repair Quotation';
-                    document.querySelector('meta[name="description"]').content = 'JAMTARIS - Free online tools: PDF to Excel, GST Invoice Generator, Mobile Repair Quotation, Receipt to Excel, Salary Slip Generator. 82+ tools in Tamil & English.';
-                    document.getElementById('hero-desc').textContent = 'Chat with our AI Agent to convert files instantly. Your files run completely safe inside your device browser storage sandbox.';
-                    chatInput.placeholder = "Type 'Quotation', 'Mobile Repair', 'Invoice', 'Receipt', or 'Salary Slip'...";
-                }
-            };
+const GEMINI_MODEL = 'gemini-3.7-flash';
+const GEMINI_ENDPOINT = 'https://generativelanguage.googleapis.com/v1beta/interactions';
 
-            // ============================================
-            // 📥 DOWNLOAD FUNCTION - Fixed
-            // ============================================
-            function downloadSample(content, filename) {
-                try {
-                    const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
-                    const url = URL.createObjectURL(blob);
-                    const a = document.createElement('a');
-                    a.href = url;
-                    a.download = filename;
-                    document.body.appendChild(a);
-                    a.click();
-                    setTimeout(() => {
-                        document.body.removeChild(a);
-                        URL.revokeObjectURL(url);
-                    }, 100);
-                    appendMessage(`✅ <strong>Downloaded:</strong> ${filename} (${Math.round(blob.size/1024)} KB)`, 'bot');
-                    return true;
-                } catch (error) {
-                    console.error('Download error:', error);
-                    appendMessage(`❌ Download failed: ${error.message}`, 'bot');
-                    return false;
-                }
-            }
+let geminiApiKey = localStorage.getItem('jamtaris_gemini_api_key') || '';
+let conversationId = null;
+let busy = false;
 
-            // ============================================
-            // 📋 GENERATE FUNCTIONS
-            // ============================================
-            function generateQuotation(type, details) {
-                const now = new Date();
-                const dateStr = now.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
-                const quoteNo = 'QT-' + String(Math.floor(1000 + Math.random() * 9000));
-                const validUntil = new Date();
-                validUntil.setDate(validUntil.getDate() + 15);
-                const validStr = validUntil.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
-                
-                const items = details.items || [
-                    { name: 'Service Consultation', amount: 1500 },
-                    { name: 'Design Work', amount: 2000 },
-                    { name: 'Implementation', amount: 2500 }
-                ];
-                const subtotal = items.reduce((sum, i) => sum + i.amount, 0);
-                const gst = Math.round(subtotal * 0.18);
-                const total = subtotal + gst;
-                
-                const textContent = `${type}
-================================
-Quote No: ${quoteNo}
-Date: ${dateStr}
-Customer: ${details.customer || 'Sample Customer'}
-Contact: ${details.contact || '+91 98765 43210'}
-Valid Until: ${validStr}
---------------------------------
-Items:
-${items.map(i => `  ${i.name.padEnd(30)} ₹${i.amount}`).join('\n')}
---------------------------------
-Subtotal: ₹${subtotal}
-GST (18%): ₹${gst}
---------------------------------
-TOTAL: ₹${total}
-================================
-Terms: 50% advance • 15 days validity • GST applicable
+const TOOL_NAMES = [
+  'GST Invoice Generator',
+  'Receipt to Excel',
+  'Salary Slip Generator',
+  'PDF to Excel Converter',
+  'Excel to PDF Converter',
+  'PDF to Word Converter'
+];
+
+const SYSTEM_INSTRUCTION = `
+You are JAMTARIS Autonomous AI Agent, a helpful business-tools assistant.
+Reply in Tamil or English according to the user's language.
+Your job is to understand natural-language requests and route the user to the correct JAMTARIS tool.
+
+Available tools:
+${TOOL_NAMES.map(x => '- ' + x).join('
+')}
+
+If the user wants one of the available tools, call open_tool.
+If they ask a normal question, answer normally.
+Never claim a file was converted unless the browser actually performed that operation.
+Keep responses concise and practical.
 `;
 
-                let html = `<div class="sample-doc" style="border-color:#d97706;">`;
-                html += `<h3 style="color:#d97706;">📋 ${type} <span class="badge-doc">Valid until ${validStr}</span></h3>`;
-                html += `<div class="doc-row"><span class="doc-label">Quote No:</span><span class="doc-value">${quoteNo}</span></div>`;
-                html += `<div class="doc-row"><span class="doc-label">Date:</span><span class="doc-value">${dateStr}</span></div>`;
-                html += `<div class="doc-row"><span class="doc-label">Customer:</span><span class="doc-value">${details.customer || 'Sample Customer'}</span></div>`;
-                html += `<div class="doc-row"><span class="doc-label">Contact:</span><span class="doc-value">${details.contact || '+91 98765 43210'}</span></div>`;
-                html += `<div style="margin-top:8px;border-top:1px solid #e2e8f0;padding-top:8px;">`;
-                items.forEach(item => {
-                    html += `<div class="doc-row"><span>${item.name}</span><span>₹${item.amount}</span></div>`;
-                });
-                html += `</div>`;
-                html += `<div class="doc-row"><span class="doc-label">Subtotal:</span><span>₹${subtotal}</span></div>`;
-                html += `<div class="doc-row"><span class="doc-label">GST (18%):</span><span>₹${gst}</span></div>`;
-                html += `<div class="doc-row total"><span>Total Quote Amount:</span><span>₹${total}</span></div>`;
-                html += `<div class="doc-gst" style="border-left-color:#d97706;">✅ Terms: 50% advance • 15 days validity • GST applicable</div>`;
-                html += `<div class="doc-actions">`;
-                html += `<button class="download-btn" onclick="downloadSample(\`${textContent.replace(/`/g, '\\`')}\`, 'Quotation_${quoteNo}.txt')">⬇️ Download .txt</button>`;
-                html += `<button onclick="window.open('https://janarmca.github.io/pdf-tools-backend/', '_blank')">📄 Create Full PDF</button>`;
-                html += `<button class="secondary" onclick="this.parentElement.parentElement.parentElement.remove()">✖ Close</button>`;
-                html += `</div>`;
-                html += `</div>`;
-                return html;
-            }
+const agentTools = [{
+  type: "function",
+  name: "open_tool",
+  description: "Open the JAMTARIS tool that best matches the user's request.",
+  parameters: {
+    type: "object",
+    properties: {
+    tool_name: {
+    type: "string",
+    enum: TOOL_NAMES,
+    description: "The exact JAMTARIS tool to open."
+    }
+    },
+    required: ["tool_name"]
+  }
+}];
 
-            function generateMobileRepairQuote() {
-                const now = new Date();
-                const dateStr = now.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
-                const quoteNo = 'MR-' + String(Math.floor(1000 + Math.random() * 9000));
-                const device = ['iPhone 13', 'Samsung Galaxy S23', 'OnePlus 11', 'Pixel 7'][Math.floor(Math.random() * 4)];
-                const issue = ['Screen Cracked', 'Battery Drain', 'Charging Issue', 'Camera Not Working', 'Water Damage'][Math.floor(Math.random() * 5)];
-                
-                const repairItems = [
-                    { name: '📱 Screen Replacement (Original)', amount: 2500 },
-                    { name: '🔋 Battery Replacement', amount: 1200 },
-                    { name: '🔌 Charging Port Repair', amount: 800 },
-                    { name: '📷 Camera Lens Replacement', amount: 1500 },
-                    { name: '🛠️ Labour Charges', amount: 500 }
-                ];
-                const selected = repairItems.slice(0, 2 + Math.floor(Math.random() * 2));
-                const subtotal = selected.reduce((sum, i) => sum + i.amount, 0);
-                const gst = Math.round(subtotal * 0.18);
-                const total = subtotal + gst;
-                const warranty = 3 + Math.floor(Math.random() * 3);
-                
-                const textContent = `Mobile Repair Quotation
-================================
-Quote No: ${quoteNo}
-Date: ${dateStr}
-Customer: Sample Customer
-Device: ${device}
-Issue: ${issue}
---------------------------------
-Repair Items:
-${selected.map(i => `  ${i.name.padEnd(35)} ₹${i.amount}`).join('\n')}
---------------------------------
-Subtotal: ₹${subtotal}
-GST (18%): ₹${gst}
---------------------------------
-TOTAL: ₹${total}
-================================
-Warranty: ${warranty} months on repairs
-Free diagnostic • Genuine parts
-`;
+function appendMessage(text, sender) {
+  const el = document.createElement('div');
+  el.className = `msg ${sender}`;
+  el.innerText = text;
+  chatBody.appendChild(el);
+  chatBody.scrollTop = chatBody.scrollHeight;
+  return el;
+}
 
-                let html = `<div class="sample-doc" style="border-color:#2563eb;">`;
-                html += `<h3 style="color:#2563eb;">📱 Mobile Repair Quotation <span class="badge-doc">${warranty} months warranty</span></h3>`;
-                html += `<div class="doc-row"><span class="doc-label">Quote No:</span><span class="doc-value">${quoteNo}</span></div>`;
-                html += `<div class="doc-row"><span class="doc-label">Date:</span><span class="doc-value">${dateStr}</span></div>`;
-                html += `<div class="doc-row"><span class="doc-label">Customer:</span><span class="doc-value">Sample Customer</span></div>`;
-                html += `<div class="doc-row"><span class="doc-label">Device:</span><span class="doc-value">${device}</span></div>`;
-                html += `<div class="doc-row"><span class="doc-label">Issue:</span><span class="doc-value">${issue}</span></div>`;
-                html += `<div style="margin-top:8px;border-top:1px solid #e2e8f0;padding-top:8px;">`;
-                selected.forEach(item => {
-                    html += `<div class="doc-row"><span>${item.name}</span><span>₹${item.amount}</span></div>`;
-                });
-                html += `</div>`;
-                html += `<div class="doc-row"><span class="doc-label">Subtotal:</span><span>₹${subtotal}</span></div>`;
-                html += `<div class="doc-row"><span class="doc-label">GST (18%):</span><span>₹${gst}</span></div>`;
-                html += `<div class="doc-row total"><span>Total Repair Cost:</span><span>₹${total}</span></div>`;
-                html += `<div class="doc-gst" style="border-left-color:#2563eb;">✅ ${warranty} months warranty on repairs • Free diagnostic • Genuine parts</div>`;
-                html += `<div class="doc-actions">`;
-                html += `<button class="download-btn" onclick="downloadSample(\`${textContent.replace(/`/g, '\\`')}\`, 'MobileRepair_${quoteNo}.txt')">⬇️ Download .txt</button>`;
-                html += `<button onclick="window.open('https://janarmca.github.io/pdf-tools-backend/', '_blank')">📄 Create Full PDF</button>`;
-                html += `<button class="secondary" onclick="this.parentElement.parentElement.parentElement.remove()">✖ Close</button>`;
-                html += `</div>`;
-                html += `</div>`;
-                return html;
-            }
+function showTyping() {
+  const el = document.createElement('div');
+  el.className = 'msg bot';
+  el.id = 'agent-typing';
+  el.innerText = 'JAMTARIS AI is thinking…';
+  chatBody.appendChild(el);
+  chatBody.scrollTop = chatBody.scrollHeight;
+}
 
-            function generateGSTInvoice() {
-                const now = new Date();
-                const dateStr = now.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
-                const invoiceNo = 'INV-' + String(Math.floor(1000 + Math.random() * 9000));
-                const items = [
-                    { name: 'Product A x 2', amount: 500 },
-                    { name: 'Product B x 1', amount: 300 },
-                    { name: 'Service Charge', amount: 200 }
-                ];
-                const subtotal = items.reduce((sum, i) => sum + i.amount, 0);
-                const gst = Math.round(subtotal * 0.18);
-                const total = subtotal + gst;
-                
-                const textContent = `GST Tax Invoice
-================================
-Invoice No: ${invoiceNo}
-Date: ${dateStr}
-Customer: Sample Customer
-GSTIN: 33ABCDE1234F1Z5
---------------------------------
-Items:
-${items.map(i => `  ${i.name.padEnd(30)} ₹${i.amount}`).join('\n')}
---------------------------------
-Subtotal: ₹${subtotal}
-GST (18%): ₹${gst}
---------------------------------
-TOTAL: ₹${total}
-================================
-HSN/SAC: 9983
-`;
+function hideTyping() {
+  document.getElementById('agent-typing')?.remove();
+}
 
-                let html = `<div class="sample-doc" style="border-color:#059669;">`;
-                html += `<h3 style="color:#059669;">🧾 GST Tax Invoice <span class="badge-doc">Tax Invoice</span></h3>`;
-                html += `<div class="doc-row"><span class="doc-label">Invoice No:</span><span class="doc-value">${invoiceNo}</span></div>`;
-                html += `<div class="doc-row"><span class="doc-label">Date:</span><span class="doc-value">${dateStr}</span></div>`;
-                html += `<div class="doc-row"><span class="doc-label">Customer:</span><span class="doc-value">Sample Customer</span></div>`;
-                html += `<div style="margin-top:8px;border-top:1px solid #e2e8f0;padding-top:8px;">`;
-                items.forEach(item => {
-                    html += `<div class="doc-row"><span>${item.name}</span><span>₹${item.amount}</span></div>`;
-                });
-                html += `</div>`;
-                html += `<div class="doc-row"><span class="doc-label">Subtotal:</span><span>₹${subtotal}</span></div>`;
-                html += `<div class="doc-row"><span class="doc-label">GST (18%):</span><span>₹${gst}</span></div>`;
-                html += `<div class="doc-row total"><span>Total Amount:</span><span>₹${total}</span></div>`;
-                html += `<div class="doc-gst">✅ GSTIN: 33ABCDE1234F1Z5 • HSN/SAC: 9983</div>`;
-                html += `<div class="doc-actions">`;
-                html += `<button class="download-btn" onclick="downloadSample(\`${textContent.replace(/`/g, '\\`')}\`, 'Invoice_${invoiceNo}.txt')">⬇️ Download .txt</button>`;
-                html += `<button onclick="window.open('https://janarmca.github.io/pdf-tools-backend/', '_blank')">📄 Create Full PDF</button>`;
-                html += `<button class="secondary" onclick="this.parentElement.parentElement.parentElement.remove()">✖ Close</button>`;
-                html += `</div>`;
-                html += `</div>`;
-                return html;
-            }
+function injectSandbox(title, htmlContent) {
+  sandboxBox.style.display = 'flex';
+  sandboxTitle.innerText = `🛠️ Active Agent Sandbox: ${title}`;
+  sandboxInner.innerHTML = htmlContent;
+  chatBody.appendChild(sandboxBox);
+  chatBody.scrollTop = chatBody.scrollHeight;
+}
 
-            function generateReceipt() {
-                const now = new Date();
-                const dateStr = now.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
-                const receiptNo = 'RCP-' + String(Math.floor(1000 + Math.random() * 9000));
-                const amount = Math.floor(200 + Math.random() * 800);
-                const mode = ['Cash', 'UPI', 'Card', 'Bank Transfer'][Math.floor(Math.random() * 4)];
-                const purpose = ['Product Purchase', 'Service Fee', 'Repair Service', 'Advance Payment'][Math.floor(Math.random() * 4)];
-                const terms = ['No returns after 7 days', 'Exchange within 3 days', 'Warranty applicable'][Math.floor(Math.random() * 3)];
-                
-                const textContent = `Payment Receipt
-================================
-Receipt No: ${receiptNo}
-Date: ${dateStr}
-Received From: Sample Customer
-Amount: ₹${amount}
-Payment Mode: ${mode}
-For: ${purpose}
---------------------------------
-${terms}
-================================
-Received with thanks
-`;
+function openToolUI(name) {
+  const safeName = String(name || '');
 
-                let html = `<div class="sample-doc" style="border-color:#dc2626;">`;
-                html += `<h3 style="color:#dc2626;">📸 Payment Receipt <span class="badge-doc">Paid</span></h3>`;
-                html += `<div class="doc-row"><span class="doc-label">Receipt No:</span><span class="doc-value">${receiptNo}</span></div>`;
-                html += `<div class="doc-row"><span class="doc-label">Date:</span><span class="doc-value">${dateStr}</span></div>`;
-                html += `<div class="doc-row"><span class="doc-label">Received From:</span><span class="doc-value">Sample Customer</span></div>`;
-                html += `<div class="doc-row"><span class="doc-label">Amount:</span><span class="doc-value">₹${amount}</span></div>`;
-                html += `<div class="doc-row"><span class="doc-label">Payment Mode:</span><span class="doc-value">${mode}</span></div>`;
-                html += `<div class="doc-row"><span class="doc-label">For:</span><span class="doc-value">${purpose}</span></div>`;
-                html += `<div class="doc-gst" style="border-left-color:#dc2626;">✅ Received with thanks • ${terms}</div>`;
-                html += `<div class="doc-actions">`;
-                html += `<button class="download-btn" onclick="downloadSample(\`${textContent.replace(/`/g, '\\`')}\`, 'Receipt_${receiptNo}.txt')">⬇️ Download .txt</button>`;
-                html += `<button onclick="window.open('https://janarmca.github.io/pdf-tools-backend/', '_blank')">📄 Create Full PDF</button>`;
-                html += `<button class="secondary" onclick="this.parentElement.parentElement.parentElement.remove()">✖ Close</button>`;
-                html += `</div>`;
-                html += `</div>`;
-                return html;
-            }
+  if (safeName === 'PDF to Excel Converter') {
+    injectSandbox('📊 PDF → Excel', `
+    <input id="pdf-file" type="file" class="sandbox-input" accept="application/pdf,.pdf">
+    <button class="sandbox-btn" id="pdf-start">Select PDF & Prepare</button>
+    <div id="pdf-result" style="font-size:12px;color:#475569;"></div>
+    `);
+    document.getElementById('pdf-start').onclick = () => {
+    const f = document.getElementById('pdf-file').files[0];
+    document.getElementById('pdf-result').innerText =
+    f ? `Selected: ${f.name}. PDF processing module is ready for integration.` :
+    'Please select a PDF file first.';
+    };
+  } else if (safeName === 'GST Invoice Generator') {
+    injectSandbox('🧾 GST Invoice Creator', `
+    <input id="inv-shop" type="text" class="sandbox-input" placeholder="Shop Name / கடையின் பெயர்">
+    <input id="inv-amount" type="number" class="sandbox-input" placeholder="Taxable Amount">
+    <input id="inv-gst" type="number" class="sandbox-input" placeholder="GST % (e.g. 18)" value="18">
+    <button class="sandbox-btn" id="inv-calc">Calculate Invoice</button>
+    <div id="inv-result" style="font-size:13px;color:#334155;"></div>
+    `);
+    document.getElementById('inv-calc').onclick = () => {
+    const amount = Number(document.getElementById('inv-amount').value);
+    const gst = Number(document.getElementById('inv-gst').value);
+    if (!Number.isFinite(amount) || amount < 0 || !Number.isFinite(gst)) {
+    document.getElementById('inv-result').innerText = 'Enter valid amount and GST.';
+    return;
+    }
+    const tax = amount * gst / 100;
+    document.getElementById('inv-result').innerText =
+    `CGST: ₹${(tax/2).toFixed(2)} | SGST: ₹${(tax/2).toFixed(2)} | Total: ₹${(amount+tax).toFixed(2)}`;
+    };
+  } else if (safeName === 'Receipt to Excel') {
+    injectSandbox('📸 Receipt to Excel', `
+    <input id="receipt-file" type="file" class="sandbox-input" accept="image/*">
+    <button class="sandbox-btn" id="receipt-start">Prepare Receipt</button>
+    <div id="receipt-result" style="font-size:12px;color:#475569;"></div>
+    `);
+    document.getElementById('receipt-start').onclick = () => {
+    const f = document.getElementById('receipt-file').files[0];
+    document.getElementById('receipt-result').innerText =
+    f ? `Selected: ${f.name}. OCR engine can be connected here.` :
+    'Please select a receipt image first.';
+    };
+  } else if (safeName === 'Salary Slip Generator') {
+    injectSandbox('💵 Salary Slip Generator', `
+    <input id="salary-basic" type="number" class="sandbox-input" placeholder="Basic Salary">
+    <input id="salary-allow" type="number" class="sandbox-input" placeholder="Allowances" value="0">
+    <input id="salary-deduct" type="number" class="sandbox-input" placeholder="Deductions" value="0">
+    <button class="sandbox-btn" id="salary-calc">Calculate Net Pay</button>
+    <div id="salary-result" style="font-size:13px;color:#334155;"></div>
+    `);
+    document.getElementById('salary-calc').onclick = () => {
+    const b = Number(document.getElementById('salary-basic').value) || 0;
+    const a = Number(document.getElementById('salary-allow').value) || 0;
+    const d = Number(document.getElementById('salary-deduct').value) || 0;
+    document.getElementById('salary-result').innerText = `Net Pay: ₹${(b+a-d).toFixed(2)}`;
+    };
+  } else {
+    injectSandbox(`⚙️ ${safeName}`, `
+    <div style="font-size:13px;color:#334155;margin-bottom:4px;">
+    ${safeName} is selected. The tool workspace is ready.
+    </div>
+    <button class="sandbox-btn" id="generic-tool-btn">Open Workspace</button>
+    <div id="generic-result" style="font-size:12px;color:#475569;"></div>
+    `);
+    document.getElementById('generic-tool-btn').onclick = () => {
+    document.getElementById('generic-result').innerText =
+    'Workspace opened successfully. Connect the corresponding processing library/API here.';
+    };
+  }
+}
 
-            function generateSalarySlip() {
-                const now = new Date();
-                const month = now.toLocaleString('en-IN', { month: 'long', year: 'numeric' });
-                const basic = 25000;
-                const hra = 5000;
-                const allowances = 3000;
-                const gross = basic + hra + allowances;
-                const pf = Math.round(gross * 0.12);
-                const ptax = 200;
-                const net = gross - pf - ptax;
-                
-                const textContent = `Salary Slip - ${month}
-================================
-Employee: Sample Employee
-Designation: Store Manager
---------------------------------
-Earnings:
-  Basic Pay                    ₹${basic}
-  HRA                          ₹${hra}
-  Allowances                   ₹${allowances}
-  ------------------------------
-  Gross Pay                    ₹${gross}
---------------------------------
-Deductions:
-  PF Deduction                 -₹${pf}
-  Professional Tax             -₹${ptax}
-  ------------------------------
-  Net Pay                      ₹${net}
-================================
-Paid via Bank Transfer • ${month}
-`;
+function localFallback(input) {
+  const q = input.toLowerCase();
 
-                let html = `<div class="sample-doc" style="border-color:#7c3aed;">`;
-                html += `<h3 style="color:#7c3aed;">💵 Salary Slip - ${month} <span class="badge-doc">Net: ₹${net}</span></h3>`;
-                html += `<div class="doc-row"><span class="doc-label">Employee:</span><span class="doc-value">Sample Employee</span></div>`;
-                html += `<div class="doc-row"><span class="doc-label">Designation:</span><span class="doc-value">Store Manager</span></div>`;
-                html += `<div style="margin-top:8px;border-top:1px solid #e2e8f0;padding-top:8px;">`;
-                html += `<div class="doc-row"><span>Basic Pay</span><span>₹${basic}</span></div>`;
-                html += `<div class="doc-row"><span>HRA</span><span>₹${hra}</span></div>`;
-                html += `<div class="doc-row"><span>Allowances</span><span>₹${allowances}</span></div>`;
-                html += `<div class="doc-row" style="border-bottom:1px solid #e2e8f0;"><span>Gross Pay</span><span>₹${gross}</span></div>`;
-                html += `<div class="doc-row"><span style="color:#dc2626;">PF Deduction</span><span style="color:#dc2626;">-₹${pf}</span></div>`;
-                html += `<div class="doc-row"><span style="color:#dc2626;">Professional Tax</span><span style="color:#dc2626;">-₹${ptax}</span></div>`;
-                html += `<div class="doc-row total"><span>Net Pay</span><span>₹${net}</span></div>`;
-                html += `</div>`;
-                html += `<div class="doc-gst" style="border-left-color:#7c3aed;">✅ Net Pay: ₹${net} • Paid via Bank Transfer • ${month}</div>`;
-                html += `<div class="doc-actions">`;
-                html += `<button class="download-btn" onclick="downloadSample(\`${textContent.replace(/`/g, '\\`')}\`, 'SalarySlip_${month.replace(/ /g, '_')}.txt')">⬇️ Download .txt</button>`;
-                html += `<button onclick="window.open('https://janarmca.github.io/pdf-tools-backend/', '_blank')">📄 Create Full PDF</button>`;
-                html += `<button class="secondary" onclick="this.parentElement.parentElement.parentElement.remove()">✖ Close</button>`;
-                html += `</div>`;
-                html += `</div>`;
-                return html;
-            }
+  if ((q.includes('pdf') && q.includes('excel')) || q.includes('pdf to xlsx')) {
+    return {
+    text: 'நிச்சயமாக! PDF → Excel tool-ஐ திறக்கிறேன்.',
+    tool: 'PDF to Excel Converter'
+    };
+  }
+  if (q.includes('invoice') || q.includes('gst') || q.includes('bill') || q.includes('பில்')) {
+    return {
+    text: 'சரி. GST Invoice Generator-ஐ திறக்கிறேன்.',
+    tool: 'GST Invoice Generator'
+    };
+  }
+  if (q.includes('receipt') || q.includes('ரசீது')) {
+    return {
+    text: 'சரி. Receipt to Excel tool-ஐ திறக்கிறேன்.',
+    tool: 'Receipt to Excel'
+    };
+  }
+  if (q.includes('salary') || q.includes('payslip') || q.includes('salary slip')) {
+    return {
+    text: 'Salary Slip Generator-ஐ திறக்கிறேன்.',
+    tool: 'Salary Slip Generator'
+    };
+  }
+  if (q.includes('excel') && q.includes('pdf')) {
+    return {
+    text: 'Excel → PDF tool-ஐ திறக்கிறேன்.',
+    tool: 'Excel to PDF Converter'
+    };
+  }
+  if (q.includes('pdf') && q.includes('word')) {
+    return {
+    text: 'PDF → Word tool-ஐ திறக்கிறேன்.',
+    tool: 'PDF to Word Converter'
+    };
+  }
 
-            // ============================================
-            // 🧠 AI AGENT LOGIC
-            // ============================================
-            function appendMessage(text, sender) {
-                const el = document.createElement('div');
-                el.className = `msg ${sender}`;
-                if (sender === 'bot') {
-                    el.innerHTML = text;
-                } else {
-                    el.innerText = text;
-                }
-                chatBody.appendChild(el);
-                chatBody.scrollTop = chatBody.scrollHeight;
-            }
+  return {
+    text: 'நான் JAMTARIS-ல் உள்ள tools-ஐ திறக்க உதவ முடியும். உதாரணம்: “PDF to Excel”, “GST Invoice”, “Receipt to Excel”, “Salary Slip”.'
+  };
+}
 
-            function injectSandbox(title, htmlContent) {
-                sandboxBox.style.display = 'flex';
-                sandboxTitle.innerText = `🛠️ Active Agent Sandbox: ${title}`;
-                sandboxInner.innerHTML = htmlContent;
-                chatBody.appendChild(sandboxBox);
-                chatBody.scrollTop = chatBody.scrollHeight;
-            }
+async function callGemini(userInput) {
+  if (!geminiApiKey) return null;
 
-            function triggerAgentLogic(userInput) {
-                const query = userInput.toLowerCase().trim();
-                if (query === '') return;
+  const body = {
+    model: GEMINI_MODEL,
+    input: userInput,
+    system_instruction: SYSTEM_INSTRUCTION,
+    tools: agentTools
+  };
 
-                setTimeout(() => {
-                    // QUOTATION
-                    if (query.includes('quotation') || query.includes('quote') || query.includes('estimate') || query.includes('price list')) {
-                        appendMessage(`📋 Here's a professional Quotation for your services:`, 'bot');
-                        appendMessage(generateQuotation('Service Quotation', {
-                            customer: 'Sample Business Client',
-                            contact: '+91 98765 43210',
-                            items: [
-                                { name: 'Service Consultation', amount: 1500 },
-                                { name: 'Design Work', amount: 2000 },
-                                { name: 'Implementation', amount: 2500 }
-                            ]
-                        }), 'bot');
-                        return;
-                    }
+  if (conversationId) body.previous_interaction_id = conversationId;
 
-                    // MOBILE REPAIR
-                    if (query.includes('mobile') || query.includes('repair') || query.includes('phone') || query.includes('fix') || query.includes('screen') || query.includes('battery')) {
-                        appendMessage(`📱 Here's a Mobile Repair Quotation with parts and labour:`, 'bot');
-                        appendMessage(generateMobileRepairQuote(), 'bot');
-                        return;
-                    }
+  const response = await fetch(GEMINI_ENDPOINT, {
+    method: 'POST',
+    headers: {
+    'Content-Type': 'application/json',
+    'x-goog-api-key': geminiApiKey
+    },
+    body: JSON.stringify(body)
+  });
 
-                    // GST INVOICE
-                    if (query.includes('invoice') || query.includes('bill') || query.includes('பில்') || query.includes('gst') || query.includes('tax')) {
-                        appendMessage(`🧾 Here's a GST Tax Invoice sample:`, 'bot');
-                        appendMessage(generateGSTInvoice(), 'bot');
-                        return;
-                    }
+  const data = await response.json();
 
-                    // RECEIPT
-                    if (query.includes('receipt') || query.includes('ரசீது') || query.includes('payment')) {
-                        appendMessage(`📸 Here's a Payment Receipt sample:`, 'bot');
-                        appendMessage(generateReceipt(), 'bot');
-                        return;
-                    }
+  if (!response.ok) {
+    throw new Error(data?.error?.message || `Gemini API error (${response.status})`);
+  }
 
-                    // SALARY SLIP
-                    if (query.includes('salary') || query.includes('payroll') || query.includes('slip') || query.includes('pay slip')) {
-                        appendMessage(`💵 Here's a Salary Slip sample for the current month:`, 'bot');
-                        appendMessage(generateSalarySlip(), 'bot');
-                        return;
-                    }
+  conversationId = data.id || conversationId;
 
-                    // PDF TO EXCEL
-                    if (query.includes('pdf') && query.includes('excel')) {
-                        appendMessage("📊 PDF ➡️ Excel conversion tool is ready! Here's a sample data structure:", "bot");
-                        injectSandbox("📊 PDF → Excel Sandbox", `
-                            <div style="background:white;padding:12px;border-radius:8px;font-size:12px;width:100%;">
-                                <strong>Sample Extracted Data:</strong>
-                                <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px;margin-top:6px;background:#f1f5f9;padding:8px;border-radius:4px;">
-                                    <span><strong>Product</strong></span><span><strong>Qty</strong></span><span><strong>Price</strong></span>
-                                    <span>Item A</span><span>2</span><span>₹500</span>
-                                    <span>Item B</span><span>1</span><span>₹300</span>
-                                    <span>Item C</span><span>3</span><span>₹150</span>
-                                </div>
-                            </div>
-                            <button class="sandbox-btn" onclick="window.open('https://janarmca.github.io/pdf-tools-backend/', '_blank')">🚀 Open Full PDF to Excel Tool</button>
-                        `);
-                        return;
-                    }
+  let text = '';
+  let toolCall = null;
 
-                    // DEFAULT: Show quick action buttons
-                    appendMessage(`📋 நான் இந்த மாதிரி ஆவணங்களை உருவாக்க முடியும்:`, 'bot');
-                    appendMessage(`
-                        <div class="quick-buttons">
-                            <button onclick="triggerAgentLogic('Quotation')">
-                                <span class="icon-circle" style="background:#fef3c7;color:#d97706;">📋</span>
-                                <span><strong>Quotation</strong><br><span style="font-weight:400;font-size:12px;color:var(--slate-600);">Professional price quote with GST</span></span>
-                            </button>
-                            <button onclick="triggerAgentLogic('Mobile Repair')">
-                                <span class="icon-circle" style="background:#dbeafe;color:#2563eb;">📱</span>
-                                <span><strong>Mobile Repair Quotation</strong><br><span style="font-weight:400;font-size:12px;color:var(--slate-600);">Phone fixing estimate with parts</span></span>
-                            </button>
-                            <button onclick="triggerAgentLogic('GST Invoice')">
-                                <span class="icon-circle" style="background:#d1fae5;color:#059669;">🧾</span>
-                                <span><strong>GST Invoice</strong><br><span style="font-weight:400;font-size:12px;color:var(--slate-600);">Tax invoice with items & GST</span></span>
-                            </button>
-                            <button onclick="triggerAgentLogic('Receipt')">
-                                <span class="icon-circle" style="background:#fce4ec;color:#dc2626;">📸</span>
-                                <span><strong>Receipt</strong><br><span style="font-weight:400;font-size:12px;color:var(--slate-600);">Payment receipt for customers</span></span>
-                            </button>
-                            <button onclick="triggerAgentLogic('Salary Slip')">
-                                <span class="icon-circle" style="background:#f3e8ff;color:#7c3aed;">💵</span>
-                                <span><strong>Salary Slip</strong><br><span style="font-weight:400;font-size:12px;color:var(--slate-600);">Payroll slip with deductions</span></span>
-                            </button>
-                            <p style="font-size:12px;color:var(--slate-600);margin-top:4px;">👇 கீழே உள்ள பட்டன்களை கிளிக் செய்து மாதிரி ஆவணங்களை பார்க்கவும்!</p>
-                        </div>
-                    `, 'bot');
-                }, 600);
-            }
+  for (const step of (data.steps || [])) {
+    if (step.type === 'model_output') {
+    for (const part of (step.content || [])) {
+    if (part.type === 'text') text += part.text || '';
+    }
+    }
+    if (step.type === 'function_call' && step.name === 'open_tool') {
+    toolCall = step;
+    }
+  }
 
-            // ============================================
-            // 🎯 EVENT HANDLERS
-            // ============================================
-            window.openDirectTool = function(name) {
-                appendMessage(`🔍 Opening: ${name}`, "user");
-                triggerAgentLogic(name);
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            };
+  // Complete a local function call and give the result back to Gemini.
+  if (toolCall) {
+    const toolName = toolCall.arguments?.tool_name || toolCall.args?.tool_name;
+    if (TOOL_NAMES.includes(toolName)) {
+    openToolUI(toolName);
 
-            function handleSend() {
-                const text = chatInput.value.trim();
-                if (!text) return;
-                appendMessage(text, 'user');
-                chatInput.value = '';
-                triggerAgentLogic(text);
-            }
+    const followup = await fetch(GEMINI_ENDPOINT, {
+    method: 'POST',
+    headers: {
+    'Content-Type': 'application/json',
+    'x-goog-api-key': geminiApiKey
+    },
+    body: JSON.stringify({
+    model: GEMINI_MODEL,
+    previous_interaction_id: conversationId,
+    input: [{
+    type: 'function_result',
+    call_id: toolCall.id,
+    name: 'open_tool',
+    result: [{ type: 'text', text: `Opened ${toolName} successfully in the JAMTARIS browser workspace.` }]
+    }]
+    })
+    });
 
-            chatSend.addEventListener('click', handleSend);
-            chatInput.addEventListener('keypress', function(e) {
-                if (e.key === 'Enter') {
-                    e.preventDefault();
-                    handleSend();
-                }
-            });
+    const followData = await followup.json();
+    if (followup.ok) {
+    conversationId = followData.id || conversationId;
+    let finalText = '';
+    for (const step of (followData.steps || [])) {
+    if (step.type === 'model_output') {
+    for (const part of (step.content || [])) {
+    if (part.type === 'text') finalText += part.text || '';
+    }
+    }
+    }
+    return { text: finalText || `Opened ${toolName}.`, tool: toolName };
+    }
+    return { text: `Opened ${toolName}.`, tool: toolName };
+    }
+  }
 
-            // ============================================
-            // 🌐 EXPOSE GLOBALLY
-            // ============================================
-            window.appendMessage = appendMessage;
-            window.triggerAgentLogic = triggerAgentLogic;
-            window.injectSandbox = injectSandbox;
-            window.downloadSample = downloadSample;
-            window.generateQuotation = generateQuotation;
-            window.generateMobileRepairQuote = generateMobileRepairQuote;
-            window.generateGSTInvoice = generateGSTInvoice;
-            window.generateReceipt = generateReceipt;
-            window.generateSalarySlip = generateSalarySlip;
+  return { text: text || 'I could not generate a response.' };
+}
 
-            console.log('✅ JAMTARIS AI Agent initialized with FULL SEO!');
-            console.log('📥 Try typing: "Quotation", "Mobile Repair", "GST Invoice", "Receipt", or "Salary Slip"');
-            console.log('⬇️ Each sample has a working "Download .txt" button!');
-            console.log('🔍 SEO optimized for Google in Tamil & English!');
-        })();
-    </script>
-</body>
-</html>
+async function handleSend() {
+  const text = chatInput.value.trim();
+  if (!text || busy) return;
+
+  busy = true;
+  chatSend.disabled = true;
+  chatInput.value = '';
+  appendMessage(text, 'user');
+  showTyping();
+
+  try {
+    let result;
+
+    if (geminiApiKey) {
+    try {
+    result = await callGemini(text);
+    } catch (err) {
+    console.error('Gemini error:', err);
+    result = localFallback(text);
+    result.text += `
+
+⚠️ AI connection failed, so I used local tool detection. (${err.message})`;
+    }
+    } else {
+    result = localFallback(text);
+    }
+
+    hideTyping();
+    appendMessage(result.text, 'bot');
+
+    if (result.tool && !document.getElementById('sandbox-box').contains(document.activeElement)) {
+    openToolUI(result.tool);
+    }
+  } finally {
+    hideTyping();
+    busy = false;
+    chatSend.disabled = false;
+    chatInput.focus();
+  }
+}
+
+function configureAI() {
+  const current = geminiApiKey ? 'An API key is already saved in this browser.' : 'No API key is configured.';
+  const key = prompt(
+    `JAMTARIS AI Setup
+
+${current}
+
+Paste your Gemini API key. Leave blank to remove it:`,
+    geminiApiKey
+  );
+
+  if (key === null) return;
+
+  geminiApiKey = key.trim();
+
+  if (geminiApiKey) {
+    localStorage.setItem('jamtaris_gemini_api_key', geminiApiKey);
+    appendMessage('✅ Gemini AI connected for this browser session.', 'bot');
+  } else {
+    localStorage.removeItem('jamtaris_gemini_api_key');
+    geminiApiKey = '';
+    conversationId = null;
+    appendMessage('ℹ️ Gemini AI disconnected. Local tool detection remains available.', 'bot');
+  }
+}
+
+function openDirectTool(name) {
+  appendMessage(`Launching: ${name}`, 'user');
+  openToolUI(name);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+/* Add an AI setup button without changing the existing design. */
+const agentHeader = document.querySelector('.agent-header');
+if (agentHeader) {
+  const setup = document.createElement('button');
+  setup.type = 'button';
+  setup.innerText = '⚙ AI';
+  setup.title = 'Configure Gemini AI';
+  setup.style.cssText = 'background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:#fff;border-radius:8px;padding:6px 9px;font-size:11px;font-weight:700;cursor:pointer;margin-left:auto;margin-right:10px;';
+  setup.onclick = configureAI;
+  agentHeader.insertBefore(setup, agentHeader.lastElementChild);
+}
+
+chatSend.addEventListener('click', handleSend);
+chatInput.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') {
+    e.preventDefault();
+    handleSend();
+  }
+});
+</script>    
+</body>    
+</html>    
