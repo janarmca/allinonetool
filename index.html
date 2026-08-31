@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">    
     <style>    
     /* 🎨 DESIGN SYSTEM & COLOR VARIABLES */    
-    \:root {    
+    :root {    
     --primary: #2563eb;    
     --primary-dark: #1d4ed8;    
     --accent-amber: #f59e0b;    
@@ -115,7 +115,7 @@
     <a href="https://janarmca.github.io/allinonetool/#business-tools">Business Tools</a>    
     <a href="https://janarmca.github.io/allinonetool/#contact-section">Contact</a>    
     </nav>    
-    <a href="https://janarmca.github.io/allinonetool/#explore-tools" class="btn-header">Open App</a>    
+    <a href="https://janarmca.github.io/pdf-tools-backend/" class="btn-header" target="_blank" rel="noopener noreferrer">Open App ↗</a>    
     </div>    
     </header>    
     <!-- 🚀 HERO AREA & AI AGENT PANEL -->    
@@ -126,14 +126,16 @@
     <div class="badge">🤖 AI Agent Automation Engine</div>    
     <h1 class="hero-title">Talk to JAMTARIS AI. <span>Run 81+ Tools Instantly.</span></h1>    
     <p class="hero-desc">எங்கள் AI ஏஜென்ட்டிடம் அரட்டையடித்து (Chat) கோப்புகளை நொடியில் மாற்றுங்கள். Your files run completely safe inside your device browser storage sandbox.</p>    
-    <a href="https://janarmca.github.io/allinonetool/#explore-tools" class="btn-hero">View All 81 Tools ↓</a>    
+    <a href="https://janarmca.github.io/pdf-tools-backend/" class="btn-hero">View All 81 Tools ↓</a>
+                    <a href="https://janarmca.github.io/pdf-tools-backend/" target="_blank" rel="noopener noreferrer" class="btn-hero" style="margin-left:10px;background:#2563eb;box-shadow:0 10px 20px rgba(37,99,235,.20);">Open App ↗</a>    
     </div>    
     <!-- 🤖 CHAT BOT WORKSPACE PANEL -->    
     <div class="hero-right">    
     <div class="agent-container">    
     <div class="agent-header">    
-    <div style="font-weight: 700; font-size: 15px; display: flex; align-items: center; gap: 8px;">    
-    <span>🤖</span> JAMTARIS Autonomous AI Agent    
+    <div style="font-weight: 800; font-size: 15px; display: flex; align-items: center; gap: 8px;">    
+    <span style="display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,#2563eb,#7c3aed);padding:6px 10px;border-radius:999px;box-shadow:0 0 18px rgba(96,165,250,.45);">🤖 AI</span>
+    <span>JAMTARIS Autonomous Agent</span>
     </div>    
     <div class="agent-status">    
     <div class="status-dot"></div>    
@@ -149,7 +151,7 @@
     <div id="sandbox-inner"></div>    
     </div>    
     </div>    
-    <div style="font-size:10px;color:#94a3b8;text-align:center;padding:4px 12px;background:#fff;">AI key is stored only in this browser. Click ⚙ AI to connect Gemini.</div>
+    <div id="ai-connection-status" style="font-size:11px;color:#475569;text-align:center;padding:6px 12px;background:#fff;border-top:1px solid #eef2f7;">🟡 AI ready — click ⚙ AI to connect Gemini.</div>
     <div class="agent-footer">    
     <input type="text" class="agent-input" id="chat-input" placeholder="Type a tool name or ask a question...">    
     <!-- FIX: id="chat-send" added to fix click action -->    
@@ -166,17 +168,17 @@
     <div class="container">    
     <div class="features-grid">    
     <div class="f-card">    
-    <div class="f-icon" style="background:#eff6ff; color\:var(--primary);">🔒</div>    
+    <div class="f-icon" style="background:#eff6ff; color:var(--primary);">🔒</div>    
     <h3 class="f-title">Privacy-First Design</h3>    
     <p class="f-desc">உங்களது எந்தவொரு ஃபைலும் எங்களது சர்வர்களில் அப்لوட் செய்யப்படாது. அனைத்தும் உங்களது பிரவுசரிலேயே பாதுகாப்பாக பிராசஸ் செய்யப்படுகிறது.</p>    
     </div>    
     <div class="f-card">    
-    <div class="f-icon" style="background:#fff7ed; color\:var(--accent-amber);">⚡</div>    
+    <div class="f-icon" style="background:#fff7ed; color:var(--accent-amber);">⚡</div>    
     <h3 class="f-title">Zero Clutter, No Ads</h3>    
     <p class="f-desc">எந்தவொரு எரிச்சலூட்டும் விளம்பரங்களோ அல்லது கட்டாய ரீடைரெக்டுகளோ கிடையாது. சிறு வணிகர்கள் மிக வேகமாக வேலைகளை முடிக்கலாம்.</p>    
     </div>    
     <div class="f-card">    
-    <div class="f-icon" style="background:#ecfdf5; color\:var(--accent-emerald);">🏬</div>    
+    <div class="f-icon" style="background:#ecfdf5; color:var(--accent-emerald);">🏬</div>    
     <h3 class="f-title">Store-Ready Toolkit</h3>    
     <p class="f-desc">காபி ஷாப்கள், துணிக்கடைகள் மற்றும் நடுத்தர நிறுவனங்களின் தினசரி கணக்கு வழக்குகளுக்குத் தேவையான பில்லிங் டூல்ஸ் அனைத்தும் ஒரே இடத்தில்.</p>    
     </div>    
@@ -192,15 +194,15 @@
     </div>    
     <!-- Business Tools -->    
     <div id="business-tools" style="margin-bottom:40px; scroll-margin-top: 100px;">    
-    <div class="cat-group-title"><span style="background\:var(--accent-amber)"></span> 💼 Shop & Accounting Utilities / வணிக கருவிகள்</div>    
+    <div class="cat-group-title"><span style="background:var(--accent-amber)"></span> 💼 Shop & Accounting Utilities / வணிக கருவிகள்</div>    
     <div class="tools-grid">    
     <div class="tool-card" onclick="openDirectTool('GST Invoice Generator')">    
-    <div class="tool-icon" style="background:#fff7ed; color\:var(--accent-amber)">🧾</div>    
+    <div class="tool-icon" style="background:#fff7ed; color:var(--accent-amber)">🧾</div>    
     <h4 class="tool-name">GST Invoice Generator</h4>    
     <p class="tool-desc">Auto-calculate tax rates and format professional, clean retail invoices for your boutique or shop.</p>    
     </div>    
     <div class="tool-card" onclick="openDirectTool('Receipt to Excel')">    
-    <div class="tool-icon" style="background:#eff6ff; color\:var(--primary)">📸</div>    
+    <div class="tool-icon" style="background:#eff6ff; color:var(--primary)">📸</div>    
     <h4 class="tool-name">Receipt to Excel</h4>    
     <p class="tool-desc">Snap a quick smartphone photo of any bill to extract dates, vendors, and totals directly into a spreadsheet layout.</p>    
     </div>    
@@ -213,15 +215,15 @@
     </div>    
     <!-- PDF Tools -->    
     <div id="pdf-tools" style="scroll-margin-top: 100px;">    
-    <div class="cat-group-title"><span style="background\:var(--accent-red)"></span> 📄 Secure File Converters / கோப்பு மாற்றிகள்</div>    
+    <div class="cat-group-title"><span style="background:var(--accent-red)"></span> 📄 Secure File Converters / கோப்பு மாற்றிகள்</div>    
     <div class="tools-grid">    
     <div class="tool-card" onclick="openDirectTool('PDF to Excel Converter')">    
-    <div class="tool-icon" style="background:#ecfdf5; color\:var(--accent-emerald)">📊</div>    
+    <div class="tool-icon" style="background:#ecfdf5; color:var(--accent-emerald)">📊</div>    
     <h4 class="tool-name">PDF → Excel</h4>    
     <p class="tool-desc">Extract complex data tables cleanly into editable .xlsx structures while keeping your layout fully preserved.</p>    
     </div>    
     <div class="tool-card" onclick="openDirectTool('Excel to PDF Converter')">    
-    <div class="tool-icon" style="background:#fef2f2; color\:var(--accent-red)">📉</div>    
+    <div class="tool-icon" style="background:#fef2f2; color:var(--accent-red)">📉</div>    
     <h4 class="tool-name">Excel → PDF</h4>    
     <p class="tool-desc">Lock your operational accounting spreadsheets securely into readable, shareable PDF formats.</p>    
     </div>    
@@ -250,7 +252,7 @@
     <ul class="contact-list">    
     <li>    
     <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>    
-    <a href="mailto\:janarmca@gmail.com">janarmca@gmail.com</a>    
+    <a href="mailto:janarmca@gmail.com">janarmca@gmail.com</a>    
     </li>    
     <li>    
     <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>    
@@ -288,6 +290,7 @@ const sandboxInner = document.getElementById('sandbox-inner');
 
 const GEMINI_MODEL = 'gemini-3.7-flash';
 const GEMINI_ENDPOINT = 'https://generativelanguage.googleapis.com/v1beta/interactions';
+const OPEN_APP_URL = 'https://janarmca.github.io/pdf-tools-backend/';
 
 let geminiApiKey = localStorage.getItem('jamtaris_gemini_api_key') || '';
 let conversationId = null;
@@ -308,8 +311,7 @@ Reply in Tamil or English according to the user's language.
 Your job is to understand natural-language requests and route the user to the correct JAMTARIS tool.
 
 Available tools:
-${TOOL_NAMES.map(x => '- ' + x).join('
-')}
+${TOOL_NAMES.map(x => '- ' + x).join('\n')}
 
 If the user wants one of the available tools, call open_tool.
 If they ask a normal question, answer normally.
@@ -429,12 +431,13 @@ function openToolUI(name) {
     <div style="font-size:13px;color:#334155;margin-bottom:4px;">
     ${safeName} is selected. The tool workspace is ready.
     </div>
-    <button class="sandbox-btn" id="generic-tool-btn">Open Workspace</button>
+    <button class="sandbox-btn" id="generic-tool-btn">Open JAMTARIS App ↗</button>
     <div id="generic-result" style="font-size:12px;color:#475569;"></div>
     `);
     document.getElementById('generic-tool-btn').onclick = () => {
+    window.open(OPEN_APP_URL, '_blank', 'noopener,noreferrer');
     document.getElementById('generic-result').innerText =
-    'Workspace opened successfully. Connect the corresponding processing library/API here.';
+    'JAMTARIS App opened in a new tab.';
     };
   }
 }
@@ -454,7 +457,7 @@ function localFallback(input) {
     tool: 'GST Invoice Generator'
     };
   }
-  if (q.includes('receipt') || q.includes('ரசீது')) {
+  if (q.includes('receipt') || q.includes('ரசீது') || q.includes('ரசீதை')) {
     return {
     text: 'சரி. Receipt to Excel tool-ஐ திறக்கிறேன்.',
     tool: 'Receipt to Excel'
@@ -542,6 +545,8 @@ async function callGemini(userInput) {
     body: JSON.stringify({
     model: GEMINI_MODEL,
     previous_interaction_id: conversationId,
+    system_instruction: SYSTEM_INSTRUCTION,
+    tools: agentTools,
     input: [{
     type: 'function_result',
     call_id: toolCall.id,
@@ -629,11 +634,15 @@ Paste your Gemini API key. Leave blank to remove it:`,
 
   if (geminiApiKey) {
     localStorage.setItem('jamtaris_gemini_api_key', geminiApiKey);
+    const status = document.getElementById('ai-connection-status');
+    if (status) { status.innerText = '🟢 Gemini AI connected'; status.style.color = '#047857'; }
     appendMessage('✅ Gemini AI connected for this browser session.', 'bot');
   } else {
     localStorage.removeItem('jamtaris_gemini_api_key');
     geminiApiKey = '';
     conversationId = null;
+    const status = document.getElementById('ai-connection-status');
+    if (status) { status.innerText = '🟡 AI ready — click ⚙ AI to connect Gemini.'; status.style.color = '#475569'; }
     appendMessage('ℹ️ Gemini AI disconnected. Local tool detection remains available.', 'bot');
   }
 }
@@ -645,6 +654,12 @@ function openDirectTool(name) {
 }
 
 /* Add an AI setup button without changing the existing design. */
+const initialStatus = document.getElementById('ai-connection-status');
+if (initialStatus && geminiApiKey) {
+  initialStatus.innerText = '🟢 Gemini AI connected';
+  initialStatus.style.color = '#047857';
+}
+
 const agentHeader = document.querySelector('.agent-header');
 if (agentHeader) {
   const setup = document.createElement('button');
@@ -666,3 +681,4 @@ chatInput.addEventListener('keydown', (e) => {
 </script>    
 </body>    
 </html>    
+    
